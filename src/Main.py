@@ -1,15 +1,19 @@
+import getopt
+import glob
+import math
+import operator
+import os
+import shutil
+import subprocess
+import sys
+
+import ImageChops
+import gdal2tiles
 from PIL import Image
 from PIL import ImageCms
-import sys
-import os
-import subprocess
-import glob
-import shutil
-import getopt
-import gdal2tiles
+
 sys.path.append('C:/Software/Anaconda3/envs/geo_py37/Scripts')
 import gdal_merge
-
 
 Image.MAX_IMAGE_PIXELS = None
 
@@ -111,24 +115,34 @@ def gdal2Tiles(zoom):
                               s_srs='EPSG:3857')
 
 
-# parametr funkcji 50k zmienic rozszerzenie z tfw na pgw
-# 250k - ominac profiletoprofile
+def root_mean_square_diff(im1, im2):
+    h = ImageChops.difference(im1, im2).histogram()
 
+    # calculate rms
+    return math.sqrt(
+        reduce(operator.add, map(lambda h, i: h * (i ** 2), h, range(256))) / (float(im1.size[0]) * im1.size[1]))
+
+
+def equal(im1, im2):
+    return ImageChops.difference(im1, im2).getbbox() is None
 
 def main(argv=None):
     opts, args = getopt.getopt(argv, 'k')
     input_dir = input_250k
 
-    # deleteDirectoryWithContent(output_data_path)
+    deleteDirectoryWithContent(output_data_path)
     makeDirectories()
+    use_profile = False
 
     for opt, arg in opts:
         if opt == '-k':
+            use_profile = True
             input_dir = input_25k
 
     copy(input_dir, output_data_path)
 
-    profileToProfile(output_data_path)
+    if use_profile:
+        profileToProfile(output_data_path)
     gdalMerge(output_data_path)
     gdalWarp()
     gdalTranslate()
@@ -137,4 +151,3 @@ def main(argv=None):
 
 if __name__ == '__main__':
     main(sys.argv[1:])
-
