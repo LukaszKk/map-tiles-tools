@@ -45,6 +45,7 @@ def getFiles(directory):
 
 
 def copy(src, dest):
+    print("Copying files...")
     for file_path in glob.glob(os.path.join(src, '**', '*.tif'), recursive=True):
         new_path = os.path.join(dest, os.path.basename(file_path))
         shutil.copy(file_path, new_path)
@@ -52,7 +53,7 @@ def copy(src, dest):
 
 def deleteDirectoryWithContent(directory):
     try:
-        shutil.rmtree(directory)
+        shutil.rmtree(directory, ignore_errors=True)
     except FileNotFoundError:
         pass
 
@@ -73,6 +74,7 @@ def makeDirectories():
 
 
 def profileToProfile(data_path):
+    print("Profiling...")
     files = getFiles(data_path)
     for image in files:
         in_image = Image.open(image)
@@ -83,6 +85,7 @@ def profileToProfile(data_path):
 
 
 def gdalMerge(data_path):
+    print("Merging...")
     params = ['',
               '-o', merged_file,
               '-of', 'GTiff',
@@ -94,14 +97,17 @@ def gdalMerge(data_path):
 
 
 def gdalWarp():
+    print("Warping...")
     params = ['-s_srs', 'EPSG:27700',
               '-t_srs', 'EPSG:3857',
+              '-of', 'GTiff',
               merged_file,
               warped_file]
     subprocess.run(['C:/Software/Anaconda3/envs/geo_py37/Library/bin/gdalwarp.exe'] + params)
 
 
 def gdalTranslate():
+    print("Translating...")
     params = ['-of', 'GTiff',
               '-expand', 'rgb',
               warped_file,
@@ -110,10 +116,11 @@ def gdalTranslate():
 
 
 def gdal2Tiles(zoom):
-    params = [translated_file,
-              output_tiles_path,
-              '-z', zoom,
-              '-s', 'EPSG:3857']
+    print("Tiling...")
+    params = ['--zoom=' + zoom,
+              '--s_srs=EPSG:3857',
+              translated_file,
+              output_tiles_path]
     gdal2tiles.main(params)
 
 
@@ -143,15 +150,16 @@ def main(argv=None):
             zoom = arg
 
     # deleteDirectoryWithContent(output_data_path)
-    # deleteDirectoryWithContent(output_tiles_path)
+    # deleteDirectoryWithContent(output_merged_path)
+    deleteDirectoryWithContent(output_tiles_path)
     makeDirectories()
     # copy(input_dir, output_data_path)
-    #
-    # if use_profile:
-    #     profileToProfile(output_data_path)
+
+    if use_profile:
+        profileToProfile(output_data_path)
     # gdalMerge(output_data_path)
-    # gdalWarp()
-    # gdalTranslate()
+    gdalWarp()
+    gdalTranslate()
     gdal2Tiles(zoom)
 
 
