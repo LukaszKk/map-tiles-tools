@@ -6,14 +6,15 @@ import os
 import shutil
 import subprocess
 import sys
+import functools
 
-import ImageChops
-import gdal2tiles
 from PIL import Image
 from PIL import ImageCms
+from PIL import ImageChops
 
 sys.path.append('C:/Software/Anaconda3/envs/geo_py37/Scripts')
 import gdal_merge
+import gdal2tiles
 
 Image.MAX_IMAGE_PIXELS = None
 
@@ -24,7 +25,7 @@ output_path = src_dir + '/../output/'
 
 input_data_path = input_path + 'data/'
 output_data_path = output_path + 'data/'
-output_tiles_path = output_path + 'tiles3/'
+output_tiles_path = output_path + 'tiles/'
 
 input_25k = input_data_path + '25k/'
 input_250k = input_data_path + '250k/'
@@ -109,45 +110,58 @@ def gdalTranslate():
 
 
 def gdal2Tiles(zoom):
-    gdal2tiles.generate_tiles(translated_file,
-                              output_tiles_path,
-                              zoom=zoom,
-                              s_srs='EPSG:3857')
+    params = [translated_file,
+              output_tiles_path,
+              '-z', zoom,
+              '-s', 'EPSG:3857']
+    gdal2tiles.main(params)
 
 
 def root_mean_square_diff(im1, im2):
-    h = ImageChops.difference(im1, im2).histogram()
-
-    # calculate rms
-    return math.sqrt(
-        reduce(operator.add, map(lambda h, i: h * (i ** 2), h, range(256))) / (float(im1.size[0]) * im1.size[1]))
+    dif = ImageChops.difference(im1, im2).histogram()
+    return math.sqrt(functools.reduce(operator.add, map(lambda h, i: h * (i ** 2), dif, range(256))) / (
+                float(im1.size[0]) * im1.size[1]))
 
 
 def equal(im1, im2):
     return ImageChops.difference(im1, im2).getbbox() is None
 
+
 def main(argv=None):
-    opts, args = getopt.getopt(argv, 'k')
     input_dir = input_250k
+    zoom = '11'
+    global output_tiles_path
+    output_tiles_path = output_path + 'tiles3/'
 
-    deleteDirectoryWithContent(output_data_path)
-    makeDirectories()
     use_profile = False
-
+    opts, args = getopt.getopt(argv, 'kz:')
     for opt, arg in opts:
         if opt == '-k':
             use_profile = True
             input_dir = input_25k
+        if opt == '-z':
+            zoom = arg
 
-    copy(input_dir, output_data_path)
+    # deleteDirectoryWithContent(output_data_path)
+    # deleteDirectoryWithContent(output_tiles_path)
+    makeDirectories()
+    # copy(input_dir, output_data_path)
+    #
+    # if use_profile:
+    #     profileToProfile(output_data_path)
+    # gdalMerge(output_data_path)
+    # gdalWarp()
+    # gdalTranslate()
+    gdal2Tiles(zoom)
 
-    if use_profile:
-        profileToProfile(output_data_path)
-    gdalMerge(output_data_path)
-    gdalWarp()
-    gdalTranslate()
-    gdal2Tiles('7-10')
+
+def main2():
+    img1 = input_data_path + '11/' + '969/' + '1351.png'
+    img2 = output_tiles_path + '11/' + '969/' + '1351.png'
+    print(root_mean_square_diff(img1, img2))
+    print(equal(img1, img2))
 
 
 if __name__ == '__main__':
     main(sys.argv[1:])
+    # main2()
