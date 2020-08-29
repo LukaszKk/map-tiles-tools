@@ -16,6 +16,7 @@ from PIL import ImageChops
 Image.MAX_IMAGE_PIXELS = None
 
 src_dir = os.path.dirname(os.path.abspath(__file__))
+# src_dir = 'C:/Projects/map-tiles-tools/src'
 env_path = 'C:/Software/Anaconda3/envs/geo2/'
 input_path = src_dir + '/../input/'
 output_path = src_dir + '/../output/'
@@ -98,10 +99,13 @@ def gdalMerge(data_path):
     print("Merging...")
     deleteDirectoryWithContent(output_merged_path)
     makeDirectory(output_merged_path)
-    files_to_merge = getFilesString(data_path)
-    # -of gtiff -pct -co ALPHA=NO
-    command = "python " + scripts_path + "gdal_merge.py -pct -o " + merged_file + " " + files_to_merge
-    os.system(command)
+    files_to_merge = getFilesList(data_path)
+    params = ['-pct',
+              '-of', 'GTiff',
+              '-co', 'ALPHA=NO',
+              '-o', merged_file]
+    params = params + files_to_merge
+    subprocess.call(["python", scripts_path + "gdal_merge.py"] + params)
 
 
 def gdalWarp():
@@ -129,8 +133,12 @@ def gdal2Tiles(zoom):
     print("Tiling...")
     deleteDirectoryWithContent(output_tiles_path)
     makeDirectory(output_tiles_path)
-    command = 'python ' + scripts_path + 'gdal2tiles.py --s_srs=EPSG:3857 --xyz --zoom=' + zoom + ' ' + translated_file + ' ' + output_tiles_path
-    os.system(command)
+    params = ['-s', 'EPSG:3857',
+              '--xyz',
+              '-z', zoom,
+              translated_file,
+              output_tiles_path]
+    subprocess.call(["python", scripts_path + 'gdal2tiles.py'] + params)
 
 
 def root_mean_square_diff(img1, img2):
@@ -166,14 +174,14 @@ def main(argv=None):
         if opt == '-z':
             zoom = arg
 
-    # if use_profile:
-    #     copyFiles(input_dir, output_tmp_path)
-    #     profileToProfile(output_tmp_path, output_data_path)
-    # else:
-    #     copyFiles(input_dir, output_data_path)
+    if use_profile:
+        copyFiles(input_dir, output_tmp_path)
+        profileToProfile(output_tmp_path, output_data_path)
+    else:
+        copyFiles(input_dir, output_data_path)
     gdalMerge(output_data_path)
-    # gdalWarp()
-    # gdalTranslate()
+    gdalWarp()
+    gdalTranslate()
     # gdal2Tiles(zoom)
 
 
