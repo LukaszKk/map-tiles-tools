@@ -13,18 +13,13 @@ from PIL import Image
 from PIL import ImageCms
 from PIL import ImageChops
 
-env_path = 'C:/Software/Anaconda3/envs/geo2/'
-
-sys.path.append(env_path + 'Scripts')
-import gdal_merge
-import gdal2tiles
-
 Image.MAX_IMAGE_PIXELS = None
 
 src_dir = os.path.dirname(os.path.abspath(__file__))
-
+env_path = 'C:/Software/Anaconda3/envs/geo2/'
 input_path = src_dir + '/../input/'
 output_path = src_dir + '/../output/'
+scripts_path = env_path + 'Scripts/'
 
 input_data_path = input_path + 'data/'
 output_data_path = output_path + 'data/'
@@ -43,12 +38,17 @@ input_icc = input_path + 'OS_Map_uncoated_FOGRA29_GCR_bas.icc'
 output_icc = input_path + 'sRGB_v4_ICC_preference.icc'
 
 
-def getFiles(directory):
+def getFilesList(directory):
     files = os.listdir(directory)
     return [directory + file for file in files]
 
 
-def copy(src, dest):
+def getFilesString(directory):
+    files = glob.glob(directory + '*.tif')
+    return " ".join(files)
+
+
+def copyFiles(src, dest):
     print("Copying files...")
     deleteDirectoryWithContent(dest)
     makeDirectory(dest)
@@ -78,10 +78,10 @@ def makeDirectory(path):
         pass
 
 
-def profileToProfile(data_path):
+def profileToProfile(data_path, out_path):
     print("Profiling...")
-    makeDirectory(output_data_path)
-    files = getFiles(data_path)
+    makeDirectory(out_path)
+    files = getFilesList(data_path)
     for image in files:
         in_image = Image.open(image)
         in_image = in_image.convert('CMYK')
@@ -90,20 +90,18 @@ def profileToProfile(data_path):
         file_name = image.split('/')
         file_name_len = len(file_name)
         file_name = file_name[file_name_len - 1]
-        out_im.save(output_data_path + file_name)
+        out_im.save(out_path + file_name)
+    deleteDirectoryWithContent(data_path)
 
 
 def gdalMerge(data_path):
     print("Merging...")
     deleteDirectoryWithContent(output_merged_path)
     makeDirectory(output_merged_path)
-    params = ['',
-              '-o', merged_file,
-              '-of', 'GTiff',
-              '-pct']
-    files_to_merge = getFiles(data_path)
-    params = params + files_to_merge
-    gdal_merge.main(params)
+    files_to_merge = getFilesString(data_path)
+    # -of gtiff -pct -co ALPHA=NO
+    command = "python " + scripts_path + "gdal_merge.py -pct -o " + merged_file + " " + files_to_merge
+    os.system(command)
 
 
 def gdalWarp():
@@ -131,18 +129,14 @@ def gdal2Tiles(zoom):
     print("Tiling...")
     deleteDirectoryWithContent(output_tiles_path)
     makeDirectory(output_tiles_path)
-    params = ['--zoom=' + zoom,
-              '--s_srs=EPSG:3857',
-              '--xyz',
-              translated_file,
-              output_tiles_path]
-    gdal2tiles.main(params)
+    command = 'python ' + scripts_path + 'gdal2tiles.py --s_srs=EPSG:3857 --xyz --zoom=' + zoom + ' ' + translated_file + ' ' + output_tiles_path
+    os.system(command)
 
 
 def root_mean_square_diff(img1, img2):
     dif = ImageChops.difference(img1, img2).histogram()
     return math.sqrt(functools.reduce(operator.add, map(lambda h, i: h * (i ** 2), dif, range(256))) / (
-                float(img1.size[0]) * img1.size[1]))
+            float(img1.size[0]) * img1.size[1]))
 
 
 def equal(img1, img2, show_dif=False):
@@ -172,14 +166,14 @@ def main(argv=None):
         if opt == '-z':
             zoom = arg
 
-    if use_profile:
-        copy(input_dir, output_tmp_path)
-        profileToProfile(output_tmp_path)
-    else:
-        copy(input_dir, output_data_path)
+    # if use_profile:
+    #     copyFiles(input_dir, output_tmp_path)
+    #     profileToProfile(output_tmp_path, output_data_path)
+    # else:
+    #     copyFiles(input_dir, output_data_path)
     gdalMerge(output_data_path)
-    gdalWarp()
-    gdalTranslate()
+    # gdalWarp()
+    # gdalTranslate()
     # gdal2Tiles(zoom)
 
 
