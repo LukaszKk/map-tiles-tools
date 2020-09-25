@@ -16,20 +16,20 @@ from PIL import ImageChops
 Image.MAX_IMAGE_PIXELS = None
 
 src_dir = os.path.dirname(os.path.abspath(__file__))
-env_path = 'D:/Software/Anaconda3/envs/geo2/'
-input_path = src_dir + '/../input/'
-output_path = src_dir + '/../output/'
-scripts_path = env_path + 'Scripts/'
+env_path = 'D:\\Software\\Anaconda3\\envs\\geo2\\'
+input_path = src_dir + '\\..\\input\\'
+output_path = src_dir + '\\..\\output\\'
+scripts_path = env_path + 'Scripts\\'
 
-input_data_path = input_path + 'data/'
-output_data_path = output_path + 'data/'
-output_tmp_path = output_path + 'tmp/'
-output_tiles_path = output_path + 'tiles/'
+input_data_path = input_path + 'data\\'
+output_data_path = output_path + 'data\\'
+output_tmp_path = output_path + 'tmp\\'
+output_tiles_path = output_path + 'tiles\\'
 
-input_25k = input_data_path + '25k/'
-input_250k = input_data_path + '250k/'
+input_25k = input_data_path + '25k\\'
+input_250k = input_data_path + '250k\\'
 
-output_merged_path = output_path + 'merged/'
+output_merged_path = output_path + 'merged\\'
 merged_file = output_merged_path + 'merged.tif'
 warped_file = output_merged_path + 'warped.tif'
 translated_file = output_merged_path + 'translated.vrt'
@@ -39,20 +39,20 @@ output_icc = input_path + 'sRGB_v4_ICC_preference.icc'
 
 
 def getFilesList(directory):
-    files = os.listdir(directory)
-    return [directory + file for file in files]
+    return glob.glob(directory + '*.tif')
 
 
 def getFilesString(directory):
-    files = glob.glob(directory + '*.tif')
+    files = getFilesList(directory)
     return " ".join(files)
 
 
-def copyFiles(src, dest):
+def copyFiles(src, dest, regex='*.t*', delete_content=True):
     print("Copying files...")
-    deleteDirectoryWithContent(dest)
+    if delete_content:
+        deleteDirectoryWithContent(dest)
     makeDirectory(dest)
-    for file_path in glob.glob(os.path.join(src, '**', '*.tif'), recursive=True):
+    for file_path in glob.glob(os.path.join(src, '**', regex), recursive=True):
         new_path = os.path.join(dest, os.path.basename(file_path))
         shutil.copy(file_path, new_path)
 
@@ -86,11 +86,10 @@ def profileToProfile(data_path, out_path):
         in_image = Image.open(image)
 
         out_im = ImageCms.profileToProfile(in_image, inputProfile=input_icc, outputProfile=output_icc, outputMode='RGB')
-        file_name = image.split('/')
+        file_name = image.split('\\')
         file_name_len = len(file_name)
         file_name = file_name[file_name_len - 1]
         out_im.save(out_path + file_name)
-    deleteDirectoryWithContent(data_path)
 
 
 def gdalMerge(data_path):
@@ -114,7 +113,7 @@ def gdalWarp():
               '-of', 'GTiff',
               merged_file,
               warped_file]
-    subprocess.call([env_path + 'Library/bin/gdalwarp.exe'] + params)
+    subprocess.call([env_path + 'Library\\bin\\gdalwarp.exe'] + params)
 
 
 def gdalTranslate():
@@ -124,7 +123,7 @@ def gdalTranslate():
               '-expand', 'rgba',
               warped_file,
               translated_file]
-    subprocess.call([env_path + 'Library/bin/gdal_translate.exe'] + params)
+    subprocess.call([env_path + 'Library\\bin\\gdal_translate.exe'] + params)
 
 
 def gdal2Tiles(zoom):
@@ -161,7 +160,7 @@ def equal(img1, img2, show_dif=False):
 def main(argv=None):
     print('Usage: python src\\Main.py [-k -z <zoom_levels>]')
     input_dir = input_250k
-    zoom = '12'
+    zoom = '13'
 
     use_profile = False
     opts, args = getopt.getopt(argv, 'kz:')
@@ -175,6 +174,8 @@ def main(argv=None):
     if use_profile:
         copyFiles(input_dir, output_tmp_path)
         profileToProfile(output_tmp_path, output_data_path)
+        copyFiles(output_tmp_path, output_data_path, "*.TFW", False)
+        deleteDirectoryWithContent(output_tmp_path)
     else:
         copyFiles(input_dir, output_data_path)
     gdalMerge(output_data_path)
@@ -191,8 +192,8 @@ def main2(argv=None):
         if opt == '-s':
             show_dif = True
 
-    img_path = '11/' + '987/' + '622.png'
-    # img_path = '13/' + '3902/' + '2476.png'
+    img_path = '11\\' + '987\\' + '622.png'
+    # img_path = '13\\' + '3902\\' + '2476.png'
 
     img1_path = input_data_path + img_path
     img2_path = output_tiles_path + img_path
@@ -204,7 +205,7 @@ def main2(argv=None):
 
 
 if __name__ == '__main__':
-    output_tiles_path = output_path + '250k-11/'
+    output_tiles_path = output_path + 'tiles\\'
 
-    # main(sys.argv[1:])
-    main2(sys.argv[1:])
+    main(sys.argv[1:])
+    # main2(sys.argv[1:])
