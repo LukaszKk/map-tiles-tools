@@ -16,7 +16,7 @@ from PIL import ImageChops
 Image.MAX_IMAGE_PIXELS = None
 
 src_dir = os.path.dirname(os.path.abspath(__file__))
-env_path = 'D:\\Software\\Anaconda3\\envs\\geo2\\'
+env_path = 'C:\\Users\\obliczenia\\anaconda3\\envs\\geo2\\'
 input_path = src_dir + '\\..\\input\\'
 output_path = src_dir + '\\..\\output\\'
 scripts_path = env_path + 'Scripts\\'
@@ -30,9 +30,9 @@ input_25k = input_data_path + '25k\\'
 input_250k = input_data_path + '250k\\'
 
 output_merged_path = output_path + 'merged\\'
-merged_file = output_merged_path + 'merged.tif'
-warped_file = output_merged_path + 'warped.tif'
-translated_file = output_merged_path + 'translated.vrt'
+merged_file = output_merged_path + 'merged.tiff'
+warped_file = output_merged_path + 'warped.tiff'
+translated_file = output_merged_path + 'translated.tiff'
 
 input_icc = input_path + 'OS_Map_uncoated_FOGRA29_GCR_bas.icc'
 output_icc = input_path + 'sRGB_v4_ICC_preference.icc'
@@ -99,7 +99,9 @@ def gdalMerge(data_path):
     files_to_merge = getFilesList(data_path)
     params = ['-pct',
               '-of', 'GTiff',
-              '-co', 'ALPHA=NO',
+              # '-co', 'ALPHA=NO',
+              '-co', 'TFW=YES',
+              '-co', 'COMPRESS=DEFLATE',
               '-o', merged_file]
     params = params + files_to_merge
     subprocess.call(["python", scripts_path + "gdal_merge.py"] + params)
@@ -110,8 +112,11 @@ def gdalWarp():
     deleteFile(warped_file)
     params = ['-s_srs', 'EPSG:27700',
               '-t_srs', 'EPSG:3857',
+              # '-nosrcalpha',
               '-of', 'GTiff',
-              merged_file,
+              '-co', 'PHOTOMETRIC=RGB',
+              '-co', 'COMPRESS=DEFLATE',
+              translated_file,
               warped_file]
     subprocess.call([env_path + 'Library\\bin\\gdalwarp.exe'] + params)
 
@@ -119,9 +124,11 @@ def gdalWarp():
 def gdalTranslate():
     print("Translating...")
     deleteFile(translated_file)
-    params = ['-of', 'vrt',
-              '-expand', 'rgba',
-              warped_file,
+    params = ['-of', 'GTiff',
+              '-expand', 'rgb',
+              '-co', 'PHOTOMETRIC=RGB',
+              '-co', 'COMPRESS=DEFLATE',
+              merged_file,
               translated_file]
     subprocess.call([env_path + 'Library\\bin\\gdal_translate.exe'] + params)
 
@@ -133,7 +140,7 @@ def gdal2Tiles(zoom):
     params = ['-s', 'EPSG:3857',
               '--xyz',
               '-z', zoom,
-              translated_file,
+              warped_file,
               output_tiles_path]
     subprocess.call(["python", scripts_path + 'gdal2tiles.py'] + params)
 
@@ -160,7 +167,7 @@ def equal(img1, img2, show_dif=False):
 def main(argv=None):
     print('Usage: python src\\Main.py [-k -z <zoom_levels>]')
     input_dir = input_250k
-    zoom = '13'
+    zoom = '11'
 
     use_profile = False
     opts, args = getopt.getopt(argv, 'kz:')
@@ -172,6 +179,7 @@ def main(argv=None):
             zoom = arg
 
     if use_profile:
+        # copyFiles(input_dir, output_data_path)
         copyFiles(input_dir, output_tmp_path)
         profileToProfile(output_tmp_path, output_data_path)
         copyFiles(output_tmp_path, output_data_path, "*.TFW", False)
@@ -179,8 +187,8 @@ def main(argv=None):
     else:
         copyFiles(input_dir, output_data_path)
     gdalMerge(output_data_path)
-    gdalWarp()
     gdalTranslate()
+    gdalWarp()
     gdal2Tiles(zoom)
 
 
