@@ -16,7 +16,7 @@ from PIL import ImageChops
 Image.MAX_IMAGE_PIXELS = None
 
 src_dir = os.path.dirname(os.path.abspath(__file__))
-env_path = 'C:\\Users\\obliczenia\\anaconda3\\envs\\geo2\\'
+env_path = 'D:\\Software\\anaconda3\\envs\\geo2\\'
 input_path = src_dir + '\\..\\input\\'
 output_path = src_dir + '\\..\\output\\'
 scripts_path = env_path + 'Scripts\\'
@@ -88,7 +88,7 @@ def profileToProfile(input_data, out_path):
         in_image = Image.open(image)
 
         out_im = ImageCms.profileToProfile(in_image, inputProfile=input_icc, outputProfile=output_icc,
-                                           outputMode='RGB', renderingIntent=ImageCms.INTENT_ABSOLUTE_COLORIMETRIC)
+                                           outputMode='RGBA')
         file_name = image.split('\\')
         file_name_len = len(file_name)
         file_name = file_name[file_name_len - 1]
@@ -105,12 +105,10 @@ def translateIntoOneFile(input_data, out_path):
         file_name = file_name[file_name_len - 1]
         params = [
             '-of', 'GTiff',
-            '-ot', 'Byte',
             '-b', '1',
             '-b', '2',
             '-b', '3',
-            # '-expand', 'rgb',
-            # '-co', 'PHOTOMETRIC=CMYK',
+            '-co', 'PHOTOMETRIC=RGB',
             '-co', 'COMPRESS=DEFLATE',
             file,
             out_path + file_name
@@ -128,11 +126,8 @@ def gdalMerge(input_data, out_file, is_pct=False):
         pct = ['-pct']
     params = pct + [
         '-of', 'GTiff',
-        '-ot', 'Byte',
-        # '-co', 'ALPHA=NO',
-        # '-co', 'PHOTOMETRIC=RGB',
+        '-co', 'PHOTOMETRIC=RGB',
         '-co', 'COMPRESS=DEFLATE',
-        # '-co', 'TILED=YES',
         '-o', out_file]
     params = params + files_to_merge
     subprocess.call(["python", scripts_path + "gdal_merge.py"] + params)
@@ -144,13 +139,12 @@ def gdalTranslate(input_file, out_file):
     params = [
         '-of', 'GTiff',
         '-ot', 'Byte',
-        '-b', '1',
-        '-b', '2',
-        '-b', '3',
-        # '-expand', 'rgb',
-        # '-co', 'PHOTOMETRIC=RGB',
+        # '-b', '1',
+        # '-b', '2',
+        # '-b', '3',
+        '-expand', 'rgb',
+        '-co', 'PHOTOMETRIC=RGB',
         '-co', 'COMPRESS=DEFLATE',
-        # '-co', 'TILED=YES',
         input_file,
         out_file]
     subprocess.call([env_path + 'Library\\bin\\gdal_translate.exe'] + params)
@@ -164,7 +158,6 @@ def gdalWarp(in_file, out_file):
               '-of', 'GTiff',
               # '-co', 'PHOTOMETRIC=RGB',
               '-co', 'COMPRESS=DEFLATE',
-              # '-co', 'TILED=YES',
               in_file,
               out_file]
     subprocess.call([env_path + 'Library\\bin\\gdalwarp.exe'] + params)
@@ -218,14 +211,13 @@ def main(argv=None):
 
     warp_in_file = merged_file
     if use_profile:
-        # copyFiles(src=input_dir, dest=output_tmp_path)
-        # profileToProfile(input_data=output_tmp_path, out_path=output_tmp2_path)
-        # copyFiles(src=output_tmp_path, dest=output_tmp2_path, file_name_regex="*.TFW", delete_dest_before_copy=False)
+        copyFiles(src=input_dir, dest=output_tmp_path)
+        profileToProfile(input_data=output_tmp_path, out_path=output_tmp2_path)
+        copyFiles(src=output_tmp_path, dest=output_tmp2_path, file_name_regex="*.TFW", delete_dest_before_copy=False)
         translateIntoOneFile(input_data=output_tmp2_path, out_path=output_data_path)
         # deleteDirectory(path=output_tmp_path)
         # deleteDirectory(path=output_tmp2_path)
         gdalMerge(input_data=output_data_path, out_file=merged_file)
-        gdalTranslate(input_file=merged_file, out_file=translated_file)
     else:
         copyFiles(src=input_dir, dest=output_data_path)
         gdalMerge(input_data=output_data_path, out_file=merged_file, is_pct=True)
