@@ -16,7 +16,7 @@ from PIL import ImageChops
 Image.MAX_IMAGE_PIXELS = None
 
 src_dir = os.path.dirname(os.path.abspath(__file__))
-env_path = 'D:\\Software\\anaconda3\\envs\\geo2\\'
+env_path = 'C:\\Users\\obliczenia\\anaconda3\\envs\\geo2\\'
 input_path = src_dir + '\\..\\input\\'
 output_path = src_dir + '\\..\\output\\'
 scripts_path = env_path + 'Scripts\\'
@@ -104,12 +104,12 @@ def translateIntoOneFile(input_data, out_path):
         file_name_len = len(file_name)
         file_name = file_name[file_name_len - 1]
         params = [
-            '-of', 'GTiff',
             '-b', '1',
             '-b', '2',
             '-b', '3',
             '-co', 'PHOTOMETRIC=RGB',
             '-co', 'COMPRESS=DEFLATE',
+            '-co', 'BIGTIFF=IF_NEEDED',
             file,
             out_path + file_name
         ]
@@ -121,13 +121,13 @@ def gdalMerge(input_data, out_file, is_pct=False):
     deleteDirectory(output_merged_path)
     makeDirectory(output_merged_path)
     files_to_merge = getFilesList(input_data)
-    pct = []
     if is_pct:
-        pct = ['-pct']
-    params = pct + [
-        '-of', 'GTiff',
-        '-co', 'PHOTOMETRIC=RGB',
+        additional_options = ['-pct']
+    else:
+        additional_options = ['-co', 'PHOTOMETRIC=RGB']
+    params = additional_options + [
         '-co', 'COMPRESS=DEFLATE',
+        '-co', 'BIGTIFF=IF_NEEDED',
         '-o', out_file]
     params = params + files_to_merge
     subprocess.call(["python", scripts_path + "gdal_merge.py"] + params)
@@ -137,14 +137,10 @@ def gdalTranslate(input_file, out_file):
     print("Translating...")
     deleteFile(out_file)
     params = [
-        '-of', 'GTiff',
-        '-ot', 'Byte',
-        # '-b', '1',
-        # '-b', '2',
-        # '-b', '3',
         '-expand', 'rgb',
         '-co', 'PHOTOMETRIC=RGB',
         '-co', 'COMPRESS=DEFLATE',
+        '-co', 'BIGTIFF=IF_NEEDED',
         input_file,
         out_file]
     subprocess.call([env_path + 'Library\\bin\\gdal_translate.exe'] + params)
@@ -155,9 +151,9 @@ def gdalWarp(in_file, out_file):
     deleteFile(out_file)
     params = ['-s_srs', 'EPSG:27700',
               '-t_srs', 'EPSG:3857',
-              '-of', 'GTiff',
-              # '-co', 'PHOTOMETRIC=RGB',
+              '-co', 'PHOTOMETRIC=RGB',
               '-co', 'COMPRESS=DEFLATE',
+              '-co', 'BIGTIFF=IF_NEEDED',
               in_file,
               out_file]
     subprocess.call([env_path + 'Library\\bin\\gdalwarp.exe'] + params)
@@ -205,7 +201,7 @@ def main(argv=None):
     for opt, arg in opts:
         if opt == '-k':
             use_profile = True
-            input_dir = input_25kTmp
+            input_dir = input_25k
         if opt == '-z':
             zoom = arg
 
@@ -223,8 +219,8 @@ def main(argv=None):
         gdalMerge(input_data=output_data_path, out_file=merged_file, is_pct=True)
         gdalTranslate(input_file=merged_file, out_file=translated_file)
         warp_in_file = translated_file
-    # gdalWarp(in_file=warp_in_file, out_file=warped_file)
-    # gdal2Tiles(in_file=warped_file, zoom=zoom)
+    gdalWarp(in_file=warp_in_file, out_file=warped_file)
+    gdal2Tiles(in_file=warped_file, zoom=zoom)
 
 
 def main2(argv=None):
@@ -235,13 +231,14 @@ def main2(argv=None):
         if opt == '-s':
             show_dif = True
 
-    img_path = '11\\' + '987\\' + '622.png'
-    # img_path = '13\\' + '3902\\' + '2476.png'
+    # img_path = '11\\' + '987\\' + '622.png'
+    # TODO: What happened with the duck? img_path = '13\\' + '3902\\' + '2472.png'
+    img_path = '13\\' + '3902\\' + '2472.png'
 
     img1_path = input_path + img_path
     img2_path = output_tiles_path + img_path
-    img1 = Image.open(img1_path).convert('RGB')
-    img2 = Image.open(img2_path).convert('RGB')
+    img1 = Image.open(img1_path).convert('RGBA')
+    img2 = Image.open(img2_path).convert('RGBA')
 
     print(root_mean_square_diff(img1, img2))
     equal(img1, img2, show_dif)
