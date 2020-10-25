@@ -27,8 +27,9 @@ output_tmp_path = output_path + 'tmp\\'
 output_tmp2_path = output_path + 'tmp2\\'
 output_tiles_path = output_path + 'tiles\\'
 
-input_25k = input_data_path + '25k\\'
-input_25kTmp = input_data_path + '25kTmp\\'
+input_50k = input_data_path + '50k\\'
+input_50k_incomplete = input_data_path + '50kIncomplete\\'
+input_50kTmp = input_data_path + '50kTmp\\'
 input_250k = input_data_path + '250k\\'
 
 output_merged_path = output_path + 'merged\\'
@@ -201,7 +202,7 @@ def main(argv=None):
     for opt, arg in opts:
         if opt == '-k':
             use_profile = True
-            input_dir = input_25k
+            input_dir = input_50k
         if opt == '-z':
             zoom = arg
 
@@ -211,8 +212,8 @@ def main(argv=None):
         profileToProfile(input_data=output_tmp_path, out_path=output_tmp2_path)
         copyFiles(src=output_tmp_path, dest=output_tmp2_path, file_name_regex="*.TFW", delete_dest_before_copy=False)
         translateIntoOneFile(input_data=output_tmp2_path, out_path=output_data_path)
-        # deleteDirectory(path=output_tmp_path)
-        # deleteDirectory(path=output_tmp2_path)
+        deleteDirectory(path=output_tmp_path)
+        deleteDirectory(path=output_tmp2_path)
         gdalMerge(input_data=output_data_path, out_file=merged_file)
     else:
         copyFiles(src=input_dir, dest=output_data_path)
@@ -232,7 +233,6 @@ def main2(argv=None):
             show_dif = True
 
     # img_path = '11\\' + '987\\' + '622.png'
-    # TODO: What happened with the duck? img_path = '13\\' + '3902\\' + '2472.png'
     img_path = '13\\' + '3902\\' + '2472.png'
 
     img1_path = input_path + img_path
