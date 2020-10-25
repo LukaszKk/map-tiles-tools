@@ -5,6 +5,7 @@
 input
 output
 venv
+log
 
 # cache
 __pycache__

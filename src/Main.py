@@ -3,11 +3,14 @@ import os
 import sys
 
 src_dir = os.path.dirname(os.path.abspath(__file__))
+log_dir = src_dir + '\\..\\log\\'
 sys.path.append(src_dir)
+sys.path.append(log_dir)
 
 import Transformations as Tr
 import IOperations as Io
 import Comparator as Cp
+from LoggerService import LoggerService
 
 input_path = src_dir + '\\..\\input\\'
 output_path = src_dir + '\\..\\output\\'
@@ -43,6 +46,8 @@ def main(argv=None):
         if opt == '-z':
             zoom = arg
 
+    logger_service = LoggerService()
+
     warp_in_file = merged_file
     if use_profile:
         Io.copyFiles(src=input_dir, dest=output_tmp_path)
@@ -59,6 +64,8 @@ def main(argv=None):
         warp_in_file = translated_file
     Tr.gdalWarp(in_file=warp_in_file, out_file=warped_file)
     Tr.gdal2Tiles(in_file=warped_file, out_dir=output_tiles_path, zoom=zoom)
+
+    logger_service.join()
 
 
 def compare(argv=None):
