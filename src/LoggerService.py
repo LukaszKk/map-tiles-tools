@@ -1,6 +1,7 @@
 import time
 import datetime
 import multiprocessing as mp
+import psutil
 
 from Logger import Logger
 
@@ -25,7 +26,12 @@ class LoggerService:
 
     def log(self):
         time_passed = int(time.time() - self.init_time)
-        self.logger.info('Time passed: ' + str(datetime.timedelta(seconds=time_passed)))
+        time_delta = str(datetime.timedelta(seconds=time_passed))
+        cpu_percent = psutil.cpu_percent()
+        ram_percent = psutil.virtual_memory().percent
+        self.logger.debug('Time running: ' + time_delta)
+        self.logger.debug('CPU: {}'.format(cpu_percent))
+        self.logger.debug('RAM used: {}'.format(ram_percent))
 
     def close(self):
         self.log()

@@ -1,5 +1,5 @@
 import os
-import logging
+import logging.handlers
 import multiprocessing as mp
 
 
@@ -13,7 +13,9 @@ class Logger:
     def create_logger(self):
         logger = mp.get_logger()
         logger.setLevel(logging.DEBUG)
-        handler = logging.FileHandler(self.FILE, mode='w')
+
+        handler = logging.handlers.RotatingFileHandler(filename=self.FILE, backupCount=8)
+        handler.doRollover()
         handler.setFormatter(self.FORMATTER)
         logger.addHandler(handler)
 
