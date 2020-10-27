@@ -14,6 +14,7 @@ from LoggerService import LoggerService
 
 input_path = src_dir + '\\..\\input\\'
 output_path = src_dir + '\\..\\output\\'
+logs_path = src_dir + '\\..\\logs\\'
 
 input_data_path = input_path + 'data\\'
 output_data_path = output_path + 'data\\'
@@ -42,10 +43,11 @@ def main(argv=None):
     for opt, arg in opts:
         if opt == '-k':
             use_profile = True
-            input_dir = input_50kTmp
+            input_dir = input_50k
         if opt == '-z':
             zoom = arg
 
+    Io.makeDirectory(logs_path)
     logger_service = LoggerService()
 
     warp_in_file = merged_file
@@ -65,7 +67,7 @@ def main(argv=None):
     Tr.gdalWarp(in_file=warp_in_file, out_file=warped_file)
     Tr.gdal2Tiles(in_file=warped_file, out_dir=output_tiles_path, zoom=zoom)
 
-    logger_service.join()
+    logger_service.close()
 
 
 def compare(argv=None):

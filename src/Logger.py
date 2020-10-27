@@ -1,21 +1,20 @@
 import os
-
 import logging
+import multiprocessing as mp
 
 
 class Logger:
 
     src_dir = os.path.dirname(os.path.abspath(__file__))
-    log_dir = src_dir + '\\..\\log\\'
+    log_dir = src_dir + '\\..\\logs\\'
     FILE = log_dir + 'logfile.log'
     FORMATTER = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
 
-    def __init__(self):
-        self.logger = logging.getLogger(__name__)
-        self.logger.setLevel(logging.DEBUG)
-        handler = logging.FileHandler(self.FILE)
+    def create_logger(self):
+        logger = mp.get_logger()
+        logger.setLevel(logging.DEBUG)
+        handler = logging.FileHandler(self.FILE, mode='w')
         handler.setFormatter(self.FORMATTER)
-        self.logger.addHandler(handler)
+        logger.addHandler(handler)
 
-    def log(self):
-        self.logger.info('Information')
+        return logger
