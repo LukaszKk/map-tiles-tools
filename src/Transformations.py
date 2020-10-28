@@ -1,30 +1,13 @@
-import os
 import subprocess
-import sys
 
 from PIL import Image
 from PIL import ImageCms
 
-src_dir = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(src_dir)
-
 import IOperations as Io
+from PathProvider import PathProvider
 
 
 Image.MAX_IMAGE_PIXELS = None
-
-src_dir = os.path.dirname(os.path.abspath(__file__))
-env_path = 'C:\\Users\\obliczenia\\anaconda3\\envs\\geo2\\'
-
-input_path = src_dir + '\\..\\input\\'
-output_path = src_dir + '\\..\\output\\'
-scripts_path = env_path + 'Scripts\\'
-
-output_merged_path = output_path + 'merged\\'
-
-
-input_icc = input_path + 'OS_Map_uncoated_FOGRA29_GCR_bas.icc'
-output_icc = input_path + 'sRGB_v4_ICC_preference.icc'
 
 
 def profileToProfile(input_data, out_path):
@@ -34,7 +17,9 @@ def profileToProfile(input_data, out_path):
     for image in files:
         in_image = Image.open(image)
 
-        out_im = ImageCms.profileToProfile(in_image, inputProfile=input_icc, outputProfile=output_icc,
+        out_im = ImageCms.profileToProfile(in_image,
+                                           inputProfile=PathProvider.input_icc,
+                                           outputProfile=PathProvider.output_icc,
                                            outputMode='RGBA')
         file_name = image.split('\\')
         file_name_len = len(file_name)
@@ -60,13 +45,13 @@ def translateIntoOneFile(input_data, out_path):
             file,
             out_path + file_name
         ]
-        subprocess.call([env_path + 'Library\\bin\\gdal_translate.exe'] + params)
+        subprocess.call([PathProvider.env_path + 'Library\\bin\\gdal_translate.exe'] + params)
 
 
 def gdalMerge(input_data, out_file, is_pct=False):
     print("Merging...")
-    Io.deleteDirectory(output_merged_path)
-    Io.makeDirectory(output_merged_path)
+    Io.deleteDirectory(PathProvider.output_merged_path)
+    Io.makeDirectory(PathProvider.output_merged_path)
     files_to_merge = Io.getFilesList(input_data)
     if is_pct:
         additional_options = ['-pct']
@@ -77,7 +62,7 @@ def gdalMerge(input_data, out_file, is_pct=False):
         '-co', 'BIGTIFF=IF_NEEDED',
         '-o', out_file]
     params = params + files_to_merge
-    subprocess.call(["python", scripts_path + "gdal_merge.py"] + params)
+    subprocess.call(["python", PathProvider.scripts_path + "gdal_merge.py"] + params)
 
 
 def gdalTranslate(input_file, out_file):
@@ -90,7 +75,7 @@ def gdalTranslate(input_file, out_file):
         '-co', 'BIGTIFF=IF_NEEDED',
         input_file,
         out_file]
-    subprocess.call([env_path + 'Library\\bin\\gdal_translate.exe'] + params)
+    subprocess.call([PathProvider.env_path + 'Library\\bin\\gdal_translate.exe'] + params)
 
 
 def gdalWarp(in_file, out_file):
@@ -103,7 +88,7 @@ def gdalWarp(in_file, out_file):
               '-co', 'BIGTIFF=IF_NEEDED',
               in_file,
               out_file]
-    subprocess.call([env_path + 'Library\\bin\\gdalwarp.exe'] + params)
+    subprocess.call([PathProvider.env_path + 'Library\\bin\\gdalwarp.exe'] + params)
 
 
 def gdal2Tiles(in_file, out_dir, zoom):
@@ -116,4 +101,4 @@ def gdal2Tiles(in_file, out_dir, zoom):
         '-z', zoom,
         in_file,
         out_dir]
-    subprocess.call(["python", scripts_path + 'gdal2tiles.py'] + params)
+    subprocess.call(["python", PathProvider.scripts_path + 'gdal2tiles.py'] + params)
