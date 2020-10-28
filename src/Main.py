@@ -41,10 +41,10 @@ def main(argv=None):
     else:
         Io.copyFiles(src=input_dir, dest=PathProvider.output_data_path)
         Tr.gdalMerge(input_data=PathProvider.output_data_path, out_file=PathProvider.merged_file, is_pct=True)
-        # Tr.gdalTranslate(input_file=PathProvider.merged_file, out_file=PathProvider.translated_file)
-        # warp_in_file = PathProvider.translated_file
-    # Tr.gdalWarp(in_file=warp_in_file, out_file=PathProvider.warped_file)
-    # Tr.gdal2Tiles(in_file=PathProvider.warped_file, out_dir=PathProvider.output_tiles_path, zoom=zoom)
+        Tr.gdalTranslate(input_file=PathProvider.merged_file, out_file=PathProvider.translated_file)
+        warp_in_file = PathProvider.translated_file
+    Tr.gdalWarp(in_file=warp_in_file, out_file=PathProvider.warped_file)
+    Tr.gdal2Tiles(in_file=PathProvider.warped_file, out_dir=PathProvider.output_tiles_path, zoom=zoom)
 
     logger_service.close()
 

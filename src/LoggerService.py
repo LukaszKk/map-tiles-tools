@@ -4,18 +4,15 @@ import psutil
 import multiprocessing as mp
 
 from Logger import Logger
-from PoolService import PoolService
 
 
 class LoggerService:
 
     init_time = 0
-    delay = 5
+    delay = 600
 
     def __init__(self):
         self.logger = None
-        # self.pool_service = PoolService()
-        # self.pool_service.run_async(self.run())
         self.pool = mp.Pool(mp.cpu_count())
         self.pool.apply_async(self.run)
 
@@ -41,7 +38,6 @@ class LoggerService:
         self.log()
         self.pool.close()
         self.pool.terminate()
-        # self.pool_service.close()
 
     def __getstate__(self):
         self_dict = self.__dict__.copy()

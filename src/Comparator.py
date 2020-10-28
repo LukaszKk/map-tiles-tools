@@ -28,7 +28,7 @@ def equal(img1, img2, show_dif=False):
         print("Images are the same")
 
 
-def main(argv):
+def main(argv=None):
     print('Usage: python src\\Main.py [-s]')
     show_dif = False
     opts, args = getopt.getopt(argv, 's')
