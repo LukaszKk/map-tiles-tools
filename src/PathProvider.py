@@ -3,7 +3,7 @@ import os
 
 class PathProvider:
 
-    env_path = 'D:\\Software\\anaconda3\\envs\\geo2\\'
+    env_path = 'C:\\Users\\obliczenia\\anaconda3\\envs\\geo2\\'
 
     src_dir = os.path.dirname(os.path.abspath(__file__))
     log_dir = src_dir + '\\..\\logs\\'

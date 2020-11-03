@@ -11,7 +11,6 @@ Image.MAX_IMAGE_PIXELS = None
 
 
 def profileToProfile(input_data, out_path):
-    print("Profiling...")
     Io.makeDirectory(out_path)
     files = Io.getFilesList(input_data)
     for image in files:
@@ -49,7 +48,6 @@ def translateIntoOneFile(input_data, out_path):
 
 
 def gdalMerge(input_data, out_file, is_pct=False):
-    print("Merging...")
     Io.deleteDirectory(PathProvider.output_merged_path)
     Io.makeDirectory(PathProvider.output_merged_path)
     files_to_merge = Io.getFilesList(input_data)
@@ -66,7 +64,6 @@ def gdalMerge(input_data, out_file, is_pct=False):
 
 
 def gdalTranslate(input_file, out_file):
-    print("Translating...")
     Io.deleteFile(out_file)
     params = [
         '-expand', 'rgb',
@@ -79,7 +76,6 @@ def gdalTranslate(input_file, out_file):
 
 
 def gdalWarp(in_file, out_file):
-    print("Warping...")
     Io.deleteFile(out_file)
     params = ['-s_srs', 'EPSG:27700',
               '-t_srs', 'EPSG:3857',
@@ -92,7 +88,6 @@ def gdalWarp(in_file, out_file):
 
 
 def gdal2Tiles(in_file, out_dir, zoom):
-    print("Tiling...")
     Io.deleteDirectory(out_dir)
     Io.makeDirectory(out_dir)
     params = [

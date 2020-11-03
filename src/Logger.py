@@ -7,7 +7,7 @@ from PathProvider import PathProvider
 class Logger:
 
     FILE = PathProvider.log_dir + 'logfile.log'
-    FORMATTER = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+    FORMATTER = logging.Formatter('%(asctime)s [%(levelname)s] %(message)s')
 
     @staticmethod
     def create_logger():

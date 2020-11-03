@@ -13,7 +13,6 @@ def getFilesString(directory):
 
 
 def copyFiles(src, dest, file_name_regex='*.t*', delete_dest_before_copy=True):
-    print("Copying files...")
     if delete_dest_before_copy:
         deleteDirectory(dest)
     makeDirectory(dest)

@@ -34,6 +34,11 @@ class LoggerService:
         self.logger.debug('CPU: {}'.format(cpu_percent))
         self.logger.debug('RAM used: {}\n'.format(ram_percent))
 
+    def log_message(self, message):
+        if self.logger is None:
+            return
+        self.logger.info(message)
+
     def close(self):
         self.log()
         self.pool.close()
