@@ -38,6 +38,8 @@ def translateIntoOneFile(input_data, out_path):
             '-b', '1',
             '-b', '2',
             '-b', '3',
+            '-a_srs', 'EPSG:27700',
+            # '-of', 'GTiff',
             '-co', 'PHOTOMETRIC=RGB',
             '-co', 'COMPRESS=DEFLATE',
             '-co', 'BIGTIFF=IF_NEEDED',

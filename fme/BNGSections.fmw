@@ -1,0 +1,1393 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <WORKSPACE
+#    Command-line to run this workspace:
+#        "C:\Program Files\FME\fme.exe" C:\Users\obliczenia\Desktop\BNGSections.fmw
+#              --SourceDataset_GEOTIFF "C:\Users\obliczenia\map-tiles-tools\input\data\50k\data\**\*.tif"
+#              --DestDataset_CSV2 "C:\Users\obliczenia\map-tiles-tools\input\data"
+#    
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BEGIN_PYTHON=""
+#!   BEGIN_TCL=""
+#!   CATEGORY=""
+#!   DESCRIPTION=""
+#!   DESTINATION="NONE"
+#!   DESTINATION_ROUTING_FILE=""
+#!   DOC_EXTENTS="4892.17 561.006"
+#!   DOC_TOP_LEFT="-873.759 -383.503"
+#!   END_PYTHON=""
+#!   END_TCL=""
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="20202"
+#!   FME_DOCUMENT_GUID="158ddb3f-225f-4f08-b5f6-84f6975ee5d5"
+#!   FME_DOCUMENT_PRIORGUID="d36f1ac2-8d9d-419a-923f-39a90f31f0ab"
+#!   FME_GEOMETRY_HANDLING="Enhanced"
+#!   FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
+#!   FME_REPROJECTION_ENGINE="FME"
+#!   FME_SERVER_SERVICES=""
+#!   FME_STROKE_MAX_DEVIATION="0"
+#!   HISTORY=""
+#!   IGNORE_READER_FAILURE="No"
+#!   LAST_SAVE_BUILD="FME(R) 2020.0.0.1 (20200316 - Build 20202 - WIN64)"
+#!   LAST_SAVE_DATE="2020-11-04T09:13:32"
+#!   LOG_FILE=""
+#!   LOG_MAX_RECORDED_FEATURES="200"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOG_FEATURES="200"
+#!   MULTI_WRITER_DATASET_ORDER="BY_ID"
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="37"
+#!   REDIRECT_TERMINATORS="NONE"
+#!   SAVE_ON_PROMPT_AND_RUN="Yes"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   SOURCE="NONE"
+#!   SOURCE_ROUTING_FILE=""
+#!   TERMINATE_REJECTED="YES"
+#!   TITLE=""
+#!   USAGE=""
+#!   USE_MARKDOWN=""
+#!   VIEW_POSITION="2506.28 159.377"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! <DATASET
+#!   IS_SOURCE="true"
+#!   ROLE="READER"
+#!   FORMAT="GEOTIFF"
+#!   DATASET="$(SourceDataset_GEOTIFF)"
+#!   KEYWORD="GEOTIFF_1"
+#!   MULTI_GEOM_ALLOWED="false"
+#!   ATTR_MAX_LENGTH="0"
+#!   ATTR_CASE="ANY"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE=""
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="multi_reader_type char(50) geotiff_photometric_interpretation char(10) geotiff_tifftag_software char(255) fme_basename char(50) geotiff_tifftag_datetime datetime geotiff_number_of_bits_per_cell decimal(1,0) geotiff_private_keys{}.value char(255) fme_text_size float geotiff_pyramid_level{}.num_rows integer fme_start_angle float geotiff_pyramid_level{}.num_columns integer geotiff_subdataset_name char(255) fme_text_string char(50) fme_primary_axis float geotiff_tifftag_copyright char(255) geotiff_interleaving_type char(3) geotiff_tifftag_maxsamplevalue integer geotiff_compression_method char(9) geotiff_tifftag_imagedescription char(255) geotiff_tifftag_hostcomputer char(255) fme_feature_type char(50) geotiff_tifftag_resolutionunit decimal(1,0) geotiff_pyramid_num_levels integer geotiff_tifftag_minsamplevalue integer fme_type char(50) geotiff_tifftag_artist char(255) multi_reader_id integer multi_reader_keyword char(50) geotiff_area_or_point char(255) geotiff_private_keys{}.id integer geotiff_byte_order char(7) fme_fill_color char(50) geotiff_private_keys{}.type char(6) fme_secondary_axis float geotiff_tifftag_yresolution float multi_reader_full_id integer fme_rotation float fme_geometry char(50) geotiff_tifftag_documentname char(255) fme_dataset char(50) geotiff_tifftag_xresolution float geotiff_type char(255) fme_color char(50) fme_sweep_angle float geotiff_subdataset_description char(255)"
+#!   DEFLINE_PARMS=""
+#!   ATTR_INDEX_TYPES=""
+#!   ATTR_NAME_INVALID_CHARS=""
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="FILEDIR"
+#!   FTTR_TYPE="LISTBOX_ENCODED"
+#!   GENERATE_FME_BUILD_NUM="20202"
+#!   COORDSYS="EPSG:27700"
+#!   FEATURE_TYPES=""
+#!   MAX_FEATURES=""
+#!   MAX_FEATURES_PER_FEATURE_TYPE=""
+#!   MIN_FEATURES=""
+#!   START_FEATURE=""
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="ADVANCED_PARMS"
+#!   VALUE="GEOTIFF_IN_IGNORE_RASTER_TYPE_KEY GEOTIFF_IN_PYRAMID_LEVEL GEOTIFF_IN_PREFER_FILE_CS_UNITS GEOTIFF_IN_READ_OFFSETS_IN_CS_UNITS GEOTIFF_OUT_IGNORE_RASTER_TYPE_KEY GEOTIFF_OUT_WRITE_OFFSETS_IN_CS_UNITS GEOTIFF_OUT_WRITE_PROJECTED_COORDSYS_AS_EPSG_CODE GEOTIFF_OUT_WRITE_GEOGRAPHIC_COORDSYS_AS_EPSG_CODE GEOTIFF_OUT_WRITE_GEOGRAPHIC_KEYS_FOR_PROJECTED_COORDSYS GEOTIFF_OUT_WRITE_ESRI_COMPATIBLE_COORDSYS"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="AUTO_FANOUT_ATTRIBUTE"
+#!   VALUE="fme_basename"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DATASET_NAME"
+#!   VALUE="tif file"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_DEFAULT_NAME"
+#!   VALUE="Raster1"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_NAME"
+#!   VALUE="Raster File"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="MIME_TYPE"
+#!   VALUE="image/TIFF"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="READER_AUTO_EXPOSE"
+#!   VALUE="fme_basename char(50)"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="READER_DATASET_HINT"
+#!   VALUE="Select the GeoTIFF file(s)"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="WRITER_DATASET_HINT"
+#!   VALUE="Specify a folder for the GeoTIFF file"
+#! />
+#! </DATASET>
+#! <DATASET
+#!   IS_SOURCE="false"
+#!   ROLE="WRITER"
+#!   FORMAT="CSV2"
+#!   DATASET="$(DestDataset_CSV2)"
+#!   KEYWORD="CSV2_1"
+#!   MULTI_GEOM_ALLOWED="true"
+#!   ATTR_MAX_LENGTH="255"
+#!   ATTR_CASE="ANY"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE="csv_existing_file_handling Yes csv_write_field_names firstrow"
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="fme_sweep_angle string fme_start_angle string csv_type string fme_geometry string fme_secondary_axis string fme_text_size string fme_dataset string fme_feature_type string fme_text_string string fme_fill_color string fme_primary_axis string fme_basename string fme_type string fme_color string fme_rotation string"
+#!   DEFLINE_PARMS="&quot;GUI OPTIONAL NAMEDGROUP csv_dataset_group csv_existing_file_handling Dataset&quot; &quot;&quot; &quot;GUI CHOICE csv_existing_file_handling Yes%No Overwrite Existing File&quot; Yes &quot;GUI OPTIONAL NAMEDGROUP csv_fields_group csv_write_field_names Fields&quot; &quot;&quot; &quot;GUI LOOKUP_CHOICE csv_write_field_names If&lt;space&gt;Writing&lt;space&gt;First&lt;space&gt;Row,firstrow%Yes,yes%No,no Write Field Names Row&quot; firstrow "
+#!   ATTR_INDEX_TYPES=""
+#!   ATTR_NAME_INVALID_CHARS="&quot;*{}$"
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="FILEDIR"
+#!   FTTR_TYPE=""
+#!   GENERATE_FME_BUILD_NUM="20202"
+#!   COORDSYS=""
+#!   FANOUT_EXPRESSION="&lt;Unused&gt;"
+#!   FANOUT_GROUP="NO"
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="ADVANCED_PARMS"
+#!   VALUE="CSV2_OUT_QUALIFY_FIELD_NAMES CSV2_OUT_QUALIFY_FIELD_VALUES CSV2_OUT_FIELD_QUALIFIER_CHARACTER CSV2_OUT_FIELD_QUALIFIER_ESCAPE_CHARACTER CSV2_OUT_ROW_TERMINATION CSV2_OUT_WRITE_SCHEMA_FILE CSV2_OUT_EXISTING_SCHEMA_FILE_HANDLING"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="ATTRIBUTE_READING"
+#!   VALUE="DEFLINE"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DATASET_NAME"
+#!   VALUE="csv file"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DEFAULT_ATTR_TYPE"
+#!   VALUE="string"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_DEFAULT_NAME"
+#!   VALUE="File1"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_NAME"
+#!   VALUE="CSV File"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="READER_DATASET_HINT"
+#!   VALUE="Select the CSV file(s)"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="WRITER_DATASET_HINT"
+#!   VALUE="Specify a folder for the CSV file"
+#! />
+#! </DATASET>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="char(width)"
+#!   FME_TYPE="fme_varchar(width)"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="char(width)"
+#!   FME_TYPE="fme_varbinary(width)"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="char(width)"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="char(width)"
+#!   FME_TYPE="fme_binary(width)"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="char(254)"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="char(254)"
+#!   FME_TYPE="fme_binarybuffer"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="char(254)"
+#!   FME_TYPE="fme_xml"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="char(254)"
+#!   FME_TYPE="fme_json"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="datetime"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="time"
+#!   FME_TYPE="fme_time"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="date"
+#!   FME_TYPE="fme_date"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="decimal(width,decimal)"
+#!   FME_TYPE="fme_decimal(width,decimal)"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="float"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="float"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="integer"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="largeint"
+#!   FME_TYPE="fme_int64"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="decimal(20,0)"
+#!   FME_TYPE="fme_uint64"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="largeint"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="logical"
+#!   FME_TYPE="fme_boolean"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="smallint"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="integer"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="smallint"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="smallint"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_binarybuffer"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_xml"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_json"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_varchar(width)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_varbinary(width)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_binary(width)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_time"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_date"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="real64"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="x_coordinate"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="y_coordinate"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="z_coordinate"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="real32"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_int64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="int64"
+#!   FME_TYPE="fme_int64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="int32"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="int16"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="int8"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_uint64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="uint64"
+#!   FME_TYPE="fme_uint64"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="uint32"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="uint16"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="uint8"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_boolean"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="boolean"
+#!   FME_TYPE="fme_boolean"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_decimal(width,decimal)"
+#!   FORMAT="CSV2"
+#! />
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geotiff_raster"
+#!   FME_TYPE="fme_raster"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geotiff_none"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_point"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_text"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_line"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_arc"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_area"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_ellipse"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_rectangle"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_rounded_rectangle"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_surface"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_solid"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_point_cloud"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geotiff_none"
+#!   FME_TYPE="fme_feature_table"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geotiff_none"
+#!   FME_TYPE="fme_collection"
+#!   FORMAT="GEOTIFF"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="csv_feature_table"
+#!   FME_TYPE="fme_feature_table"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="csv_point"
+#!   FME_TYPE="fme_point"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_line"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_area"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_text"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_ellipse"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_arc"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_rectangle"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_rounded_rectangle"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_no_map"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_collection"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_raster"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_surface"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_solid"
+#!   FORMAT="CSV2"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="csv_none"
+#!   FME_TYPE="fme_point_cloud"
+#!   FORMAT="CSV2"
+#! />
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! <FEATURE_TYPE
+#!   IS_SOURCE="true"
+#!   NODE_NAME="GEOTIFF"
+#!   FEATURE_TYPE_NAME=""
+#!   FEATURE_TYPE_NAME_QUALIFIER=""
+#!   IS_EDITABLE="false"
+#!   IDENTIFIER="2"
+#!   FEAT_GEOMTYPE="geotiff_raster"
+#!   POSITION="-873.75893758937605 -191.24956249562499"
+#!   BOUNDING_RECT="-873.75893758937605 -191.24956249562499 454 71"
+#!   ORDER="500000000000000"
+#!   COLLAPSED="true"
+#!   KEYWORD="GEOTIFF_1"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   HIDDEN_USER_ATTRS=""
+#!   MERGE_FILTER="*"
+#!   MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
+#!   MERGE_FILTER_CASE_SENSITIVE="false"
+#!   DYNAMIC_SCHEMA="false"
+#! >
+#!     <FEAT_ATTRIBUTE ATTR_NAME="fme_basename" ATTR_TYPE="char(50)"  EXPOSABLE_ATTR="true" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="fme_dataset" ATTR_TYPE="char(50)"  EXPOSABLE_ATTR="true" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#! </FEATURE_TYPE>
+#! <FEATURE_TYPE
+#!   IS_SOURCE="false"
+#!   NODE_NAME="groups"
+#!   FEATURE_TYPE_NAME=""
+#!   FEATURE_TYPE_NAME_QUALIFIER=""
+#!   IS_EDITABLE="true"
+#!   IDENTIFIER="22"
+#!   FEAT_GEOMTYPE="All"
+#!   POSITION="3584.4108441084422 -287.50287502875028"
+#!   BOUNDING_RECT="3584.4108441084422 -287.50287502875028 430 71"
+#!   ORDER="500000000000014"
+#!   COLLAPSED="false"
+#!   KEYWORD="CSV2_1"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   SCHEMA_ATTRIBUTE_SOURCE="1"
+#! >
+#!     <FEAT_ATTRIBUTE ATTR_NAME="fileName" ATTR_TYPE="string" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="filePath" ATTR_TYPE="string" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="fme_basename" ATTR_TYPE="string"  EXPOSABLE_ATTR="true" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="fme_dataset" ATTR_TYPE="string"  EXPOSABLE_ATTR="true" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="csv_dataset_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="csv_existing_file_handling" PARM_VALUE="Yes"/>
+#!     <DEFLINE_PARM PARM_NAME="csv_fields_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="csv_write_field_names" PARM_VALUE="firstrow"/>
+#! </FEATURE_TYPE>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! <READER_DATASETS>
+#! <DATASET
+#!   NAME="GEOTIFF_1"
+#!   OVERRIDE="-GEOTIFF_1_DATASET"
+#!   DATASET="GEOTIFF_1/*.tif"
+#! />
+#! </READER_DATASETS>
+#! <WRITER_DATASETS>
+#! <DATASET
+#!   NAME="CSV2_1"
+#!   OVERRIDE="-CSV2_1_DATASET"
+#!   DATASET="CSV2_1/data"
+#! />
+#! </WRITER_DATASETS>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI MULTIFILE SourceDataset_GEOTIFF GeoTIFF_Files(*.tif;*.tiff;*.itiff;*.ovr)|*.tif;*.tiff;*.itiff;*.ovr|Compressed_Files(*.bz2;*.gz)|*.bz2;*.gz|Archive_Files(*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx)|*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx|All_Files(*)|* Source GeoTIFF File(s):"
+#!   DEFAULT_VALUE="C:\Users\obliczenia\map-tiles-tools\input\data\50k\data\**\*.tif"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI DIRNAME DestDataset_CSV2 Destination CSV (Comma Separated Value) Folder:"
+#!   DEFAULT_VALUE="C:\Users\obliczenia\map-tiles-tools\input\data"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! <COMMENT
+#!   IDENTIFIER="15"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Podział na grupy wg wlasnego uznania, patrzac na mape BNG&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="946.38484384843832 90.002000020000196"
+#!   TOP_LEFT="946.38484384843832 90.002000020000196"
+#!   BOTTOM_RIGHT="1400.3848438484383 89.002000020000196"
+#!   BOUNDING_RECT="946.38484384843832 90.002000020000196 454 1"
+#!   ORDER="500000000000016"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="0.28627450980392155,0.29803921568627451,0.0078431372549019607,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="7"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="17"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Ustalenie, ktore pliki z drugiej, sasiadujacej grupy stykaja sie z grupa 1.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="1806.2680626806268 177.50287502875028"
+#!   TOP_LEFT="1806.2680626806268 177.50287502875028"
+#!   BOTTOM_RIGHT="2236.2680626806268 176.50287502875028"
+#!   BOUNDING_RECT="1806.2680626806268 177.50287502875028 430 1"
+#!   ORDER="500000000000017"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="0.28627450980392155,0.29803921568627451,0.0078431372549019607,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="12"
+#! />
+#! <COMMENT
+#!   IDENTIFIER="18"
+#!   COMMENT_VALUE="&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;&#10;&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;&#10;p, li { white-space: pre-wrap; }&#10;&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;&#10;&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Zapis do pliku CSV&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"
+#!   POSITION="3546.4108441084422 -135.25218752187521"
+#!   TOP_LEFT="3546.4108441084422 -135.25218752187521"
+#!   BOTTOM_RIGHT="4018.4108441084422 -136.25218752187521"
+#!   BOUNDING_RECT="3546.4108441084422 -135.25218752187521 472 1"
+#!   ORDER="500000000000018"
+#!   FOLLOW_ANCHOR="true"
+#!   INFO_NODE="false"
+#!   CUSTOM_USER_COLOR="false"
+#!   COLOUR="0.28627450980392155,0.29803921568627451,0.0078431372549019607,0.78431372549019607"
+#!   SIZE_POLICY="10"
+#!   ANCHORED_NODE="22"
+#! />
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! <TRANSFORMER
+#!   IDENTIFIER="3"
+#!   TYPE="RasterExtentsCoercer"
+#!   VERSION="1"
+#!   POSITION="353.12853128531276 -191.24956249562496"
+#!   BOUNDING_RECT="353.12853128531276 -191.24956249562496 463.09999999999997 71"
+#!   ORDER="500000000000001"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20202"
+#! >
+#!     <OUTPUT_FEAT NAME="EXTENTS"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_message" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_PARM PARM_NAME="EXTENTS_TYPE" PARM_VALUE="Raster Extents"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="RasterExtentsCoercer"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="7"
+#!   TYPE="TestFilter"
+#!   VERSION="2"
+#!   POSITION="984.38484384843832 -131.24956249562496"
+#!   BOUNDING_RECT="984.38484384843832 -131.24956249562496 454 71"
+#!   ORDER="500000000000003"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20202"
+#! >
+#!     <OUTPUT_FEAT NAME="group&lt;space&gt;1"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="group&lt;space&gt;2"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
+#!     <XFORM_PARM PARM_NAME="PRESERVE_FEATURE_ORDER" PARM_VALUE="Per Output Port"/>
+#!     <XFORM_PARM PARM_NAME="TESTLISTGRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;1&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,CASE_INSENSITIVE_TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Left&lt;lt&gt;openparen&lt;gt&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;fme_basename&lt;lt&gt;closeparen&lt;gt&gt;&lt;lt&gt;comma&lt;gt&gt;2&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;IN&lt;space&gt;HP&lt;lt&gt;comma&lt;gt&gt;HT&lt;lt&gt;comma&lt;gt&gt;HU&lt;lt&gt;comma&lt;gt&gt;HW&lt;lt&gt;comma&lt;gt&gt;HX&lt;lt&gt;comma&lt;gt&gt;HY&lt;lt&gt;comma&lt;gt&gt;HZ&lt;lt&gt;comma&lt;gt&gt;NA&lt;lt&gt;comma&lt;gt&gt;NB&lt;lt&gt;comma&lt;gt&gt;NC&lt;lt&gt;comma&lt;gt&gt;ND&lt;lt&gt;comma&lt;gt&gt;NF&lt;lt&gt;comma&lt;gt&gt;NG&lt;lt&gt;comma&lt;gt&gt;NH&lt;lt&gt;comma&lt;gt&gt;NJ&lt;lt&gt;comma&lt;gt&gt;NK&quot;,group&lt;space&gt;1,&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;1&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,CASE_INSENSITIVE_TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Left&lt;lt&gt;openparen&lt;gt&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;fme_basename&lt;lt&gt;closeparen&lt;gt&gt;&lt;lt&gt;comma&lt;gt&gt;2&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;IN&lt;space&gt;NL&lt;lt&gt;comma&lt;gt&gt;NM&lt;lt&gt;comma&lt;gt&gt;NN&lt;lt&gt;comma&lt;gt&gt;NO&lt;lt&gt;comma&lt;gt&gt;NR&lt;lt&gt;comma&lt;gt&gt;NS&lt;lt&gt;comma&lt;gt&gt;NT&lt;lt&gt;comma&lt;gt&gt;NU&lt;lt&gt;comma&lt;gt&gt;NW&lt;lt&gt;comma&lt;gt&gt;NX&lt;lt&gt;comma&lt;gt&gt;NY&lt;lt&gt;comma&lt;gt&gt;NZ&quot;,group&lt;space&gt;2"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="12"
+#!   TYPE="SpatialFilter"
+#!   VERSION="11"
+#!   POSITION="1806.2680626806268 -131.24956249562496"
+#!   BOUNDING_RECT="1806.2680626806268 -131.24956249562496 430 71"
+#!   ORDER="500000000000005"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20202"
+#! >
+#!     <OUTPUT_FEAT NAME="PASSED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_predicate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <OUTPUT_FEAT NAME="FAILED"/>
+#!     <FEAT_COLLAPSED COLLAPSED="1"/>
+#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
+#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
+#!     <FEAT_COLLAPSED COLLAPSED="2"/>
+#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
+#!     <XFORM_PARM PARM_NAME="AGGREGATE_HANDLING" PARM_VALUE="Yes"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="YES"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Filter"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Candidate"/>
+#!     <XFORM_PARM PARM_NAME="ATTR_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="BASE_TYPE" PARM_VALUE="Multiple Filters"/>
+#!     <XFORM_PARM PARM_NAME="CURVE_BOUNDARY_RULE_PARAM" PARM_VALUE="Default Rule"/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="GROUP_BY_MODE" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="PASS_CRITERIA" PARM_VALUE="Pass Against One Filter"/>
+#!     <XFORM_PARM PARM_NAME="PREDATTR" PARM_VALUE="_predicate"/>
+#!     <XFORM_PARM PARM_NAME="PREDICATES" PARM_VALUE="INTERSECTS"/>
+#!     <XFORM_PARM PARM_NAME="TESTS_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="USE_BOUNDING_BOX" PARM_VALUE="No"/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SpatialFilter"/>
+#! </TRANSFORMER>
+#! <TRANSFORMER
+#!   IDENTIFIER="16"
+#!   TYPE="AttributeCreator"
+#!   VERSION="9"
+#!   POSITION="3009.4050940509396 -312.50312503125031"
+#!   BOUNDING_RECT="3009.4050940509396 -312.50312503125031 454 71"
+#!   ORDER="500000000000015"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   LAST_PARM_EDIT="20202"
+#! >
+#!     <OUTPUT_FEAT NAME="OUTPUT"/>
+#!     <FEAT_COLLAPSED COLLAPSED="0"/>
+#!     <XFORM_ATTR ATTR_NAME="fileName" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="filePath" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_ATTR ATTR_NAME="_predicate" IS_USER_CREATED="false" FEAT_INDEX="0" />
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; fileName SET_TO &lt;at&gt;Value&lt;openparen&gt;fme_basename&lt;closeparen&gt;  filePath SET_TO &lt;at&gt;Value&lt;openparen&gt;fme_dataset&lt;closeparen&gt;"/>
+#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
+#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
+#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
+#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator"/>
+#! </TRANSFORMER>
+#! </TRANSFORMERS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="20"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="-1"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="8"
+#!   SOURCE_NODE="3"
+#!   TARGET_NODE="7"
+#!   SOURCE_PORT_DESC="fo 0 EXTENTS"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="21"
+#!   SOURCE_NODE="12"
+#!   TARGET_NODE="16"
+#!   SOURCE_PORT_DESC="fo 0 PASSED"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="23"
+#!   SOURCE_NODE="16"
+#!   TARGET_NODE="22"
+#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
+#!   TARGET_PORT_DESC="-1"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="25"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="16"
+#!   SOURCE_PORT_DESC="fo 0 group&lt;lt&gt;space&lt;gt&gt;1"
+#!   TARGET_PORT_DESC="fi 0 "
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS="1715 -65 2915 -68"
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="13"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="fo 0 group&lt;lt&gt;space&lt;gt&gt;1"
+#!   TARGET_PORT_DESC="fi 0 Filter"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="1"
+#!   HIDDEN="false"
+#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! <FEAT_LINK
+#!   IDENTIFIER="14"
+#!   SOURCE_NODE="7"
+#!   TARGET_NODE="12"
+#!   SOURCE_PORT_DESC="fo 1 group&lt;lt&gt;space&lt;gt&gt;2"
+#!   TARGET_PORT_DESC="fi 1 Candidate"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </WORKSPACE>
+
+FME_PYTHON_VERSION 37
+GUI IGNORE SourceDataset_GEOTIFF_1,GEOTIFF_IN_APPLY_GCPS_GEOTIFF_1,GEOTIFF_IN_GCP_INTERPOLATION_METHOD_GEOTIFF_1,GEOTIFF_IN_USE_SEARCH_ENVELOPE_GEOTIFF_1,GEOTIFF_IN_SEARCH_ENVELOPE_MINX_GEOTIFF_1,GEOTIFF_IN_SEARCH_ENVELOPE_MINY_GEOTIFF_1,GEOTIFF_IN_SEARCH_ENVELOPE_MAXX_GEOTIFF_1,GEOTIFF_IN_SEARCH_ENVELOPE_MAXY_GEOTIFF_1,GEOTIFF_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_GEOTIFF_1,GEOTIFF_IN_CLIP_TO_ENVELOPE_GEOTIFF_1,GEOTIFF_IN_GEOTIFF_RDR_ADV_PARM_GROUP_GEOTIFF_1,GEOTIFF_IN_PYRAMID_LEVEL_GEOTIFF_1,GEOTIFF_IN_PREFER_FILE_CS_UNITS_GEOTIFF_1,GEOTIFF_IN_READ_OFFSETS_IN_CS_UNITS_GEOTIFF_1,GEOTIFF_IN_IGNORE_RASTER_TYPE_KEY_GEOTIFF_1,GEOTIFF_IN_NETWORK_AUTHENTICATION_GEOTIFF_1,DestDataset_CSV2_1,CSV2_OUT_DATASET_GROUP_CSV2_1,CSV2_OUT_EXTENSION_CSV2_1,CSV2_OUT_FIELDS_GROUP_CSV2_1,CSV2_OUT_DELIMITER_CSV2_1,CSV2_OUT_ENCODING_GROUP_CSV2_1,CSV2_OUT_ENCODING_CSV2_1,CSV2_OUT_WRITE_BOM_FOR_UNICODE_CSV2_1,CSV2_OUT_ADVANCED_GROUP_CSV2_1,CSV2_OUT_QUALIFY_FIELD_NAMES_CSV2_1,CSV2_OUT_QUALIFY_FIELD_VALUES_CSV2_1,CSV2_OUT_UNQUALIFIED_FIELD_VALUE_HANDLING_CSV2_1,CSV2_OUT_FIELD_QUALIFIER_CHARACTER_CSV2_1,CSV2_OUT_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_1,CSV2_OUT_ROW_TERMINATION_CSV2_1,CSV2_OUT_WRITE_SCHEMA_FILE_CSV2_1,CSV2_OUT_EXISTING_SCHEMA_FILE_HANDLING_CSV2_1
+DEFAULT_MACRO SourceDataset_GEOTIFF C:\Users\obliczenia\map-tiles-tools\input\data\50k\data\**\*.tif
+GUI MULTIFILE SourceDataset_GEOTIFF GeoTIFF_Files(*.tif;*.tiff;*.itiff;*.ovr)|*.tif;*.tiff;*.itiff;*.ovr|Compressed_Files(*.bz2;*.gz)|*.bz2;*.gz|Archive_Files(*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx)|*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx|All_Files(*)|* Source GeoTIFF File(s):
+DEFAULT_MACRO DestDataset_CSV2 C:\Users\obliczenia\map-tiles-tools\input\data
+GUI DIRNAME DestDataset_CSV2 Destination CSV (Comma Separated Value) Folder:
+INCLUDE [ if {{$(SourceDataset_GEOTIFF)} == {}} { puts_real {Parameter 'SourceDataset_GEOTIFF' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(DestDataset_CSV2)} == {}} { puts_real {Parameter 'DestDataset_CSV2' must be given a value.}; exit 1; }; ]
+#! START_HEADER
+#! START_WB_HEADER
+READER_TYPE MULTI_READER
+MULTI_READER_TYPE{0} GEOTIFF
+MULTI_READER_KEYWORD{0} GEOTIFF_1
+MULTI_READER_GEN_DIRECTIVES{0} FEATURE_TYPE_NAME,FORMAT_NAME,SEARCH_ENVELOPE_MINX,0,EXPOSE_ATTRS_GROUP,,SEARCH_ENVELOPE_MINY,0,GEOTIFF_EXPOSE_FORMAT_ATTRS,,PREFER_FILE_CS_UNITS,Yes,GCP_INTERPOLATION_METHOD,NearestNeighbor,USE_SEARCH_ENVELOPE,NO,READ_OFFSETS_IN_CS_UNITS,No,CLIP_TO_ENVELOPE,NO,_MERGE_SCHEMAS,YES,SEARCH_ENVELOPE_COORDINATE_SYSTEM,,PYRAMID_LEVEL,,READER_META_ATTRIBUTES,fme_dataset<space>fme_basename,IGNORE_RASTER_TYPE_KEY,No,SEARCH_ENVELOPE_MAXY,0,SEARCH_ENVELOPE_MAXX,0,APPLY_GCPS,NO,GEOTIFF_RDR_ADV_PARM_GROUP,
+WRITER_TYPE MULTI_WRITER
+MULTI_WRITER_DATASET_ORDER BY_ID
+MULTI_WRITER_FIRST_WRITER_ID 0
+MULTI_WRITER_TYPE{0} CSV2
+MULTI_WRITER_KEYWORD{0} CSV2_1
+#! END_WB_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "GEOTIFF_1"
+#! END_WB_HEADER
+#! START_SOURCE_HEADER GEOTIFF GEOTIFF_1
+# =======================================================================
+# The following GUI line prompts for a file to be used as the source GEOTIFF file.
+# The user input is stored in a macro, which is then used to define
+# the dataset to be read.
+# The dataset this mapping file was generated from was:
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO SourceDataset
+INCLUDE [ if {{$(SourceDataset)} != ""} {                        \
+ puts {DEFAULT_MACRO SourceDataset_GEOTIFF_1 $(SourceDataset)}     \
+ } ]
+#! END_WB_HEADER
+#! START_SOURCE_HEADER GEOTIFF GEOTIFF_1
+DEFAULT_MACRO SourceDataset_GEOTIFF_1 $(SourceDataset_GEOTIFF)
+GUI MULTIFILE SourceDataset_GEOTIFF_1 GeoTIFF_Files(*.tif;*.tiff;*.itiff;*.ovr)|*.tif;*.tiff;*.itiff;*.ovr|All_Files(*)|* Source GeoTIFF File(s):
+DEFAULT_MACRO GEOTIFF_IN_READER_META_ATTRIBUTES_GEOTIFF_1 fme_dataset fme_basename
+GEOTIFF_1_READER_META_ATTRIBUTES "$(GEOTIFF_IN_READER_META_ATTRIBUTES_GEOTIFF_1)"
+DEFAULT_MACRO GEOTIFF_IN_FEATURE_TYPE_NAME_GEOTIFF_1 FORMAT_NAME
+GEOTIFF_1_FEATURE_TYPE_NAME "$(GEOTIFF_IN_FEATURE_TYPE_NAME_GEOTIFF_1)"
+DEFAULT_MACRO GEOTIFF_IN_APPLY_GCPS_GEOTIFF_1 NO
+GEOTIFF_1_APPLY_GCPS "$(GEOTIFF_IN_APPLY_GCPS_GEOTIFF_1)"
+GUI ACTIVEDISCLOSUREGROUP GEOTIFF_IN_APPLY_GCPS_GEOTIFF_1 GEOTIFF_IN_GCP_INTERPOLATION_METHOD_GEOTIFF_1 Apply GCP's
+DEFAULT_MACRO GEOTIFF_IN_GCP_INTERPOLATION_METHOD_GEOTIFF_1 NearestNeighbor
+GEOTIFF_1_GCP_INTERPOLATION_METHOD "$(GEOTIFF_IN_GCP_INTERPOLATION_METHOD_GEOTIFF_1)"
+GUI LOOKUP_CHOICE GEOTIFF_IN_GCP_INTERPOLATION_METHOD_GEOTIFF_1 Nearest<space>Neighbor,NearestNeighbor%Bilinear,Bilinear%Bicubic,Bicubic GCP Interpolation Method
+GUI LOOKUP GEOTIFF_IN_GCP_INTERPOLATION_METHOD_GEOTIFF_1 <Unused>,NearestNeighbor 
+DEFAULT_MACRO GEOTIFF_IN_EXPOSE_ATTRS_GROUP_GEOTIFF_1 
+GEOTIFF_1_EXPOSE_ATTRS_GROUP "$(GEOTIFF_IN_EXPOSE_ATTRS_GROUP_GEOTIFF_1)"
+# Include this file in source setting section to add external search envelope processing
+# Zero as a default means we don't do any search -- this makes workbench happier
+DEFAULT_MACRO GEOTIFF_IN_USE_SEARCH_ENVELOPE_GEOTIFF_1 NO
+GEOTIFF_1_USE_SEARCH_ENVELOPE "$(GEOTIFF_IN_USE_SEARCH_ENVELOPE_GEOTIFF_1)"
+GUI ACTIVEDISCLOSUREGROUP GEOTIFF_IN_USE_SEARCH_ENVELOPE_GEOTIFF_1 GEOTIFF_IN_SEARCH_ENVELOPE_MINX_GEOTIFF_1%GEOTIFF_IN_SEARCH_ENVELOPE_MINY_GEOTIFF_1%GEOTIFF_IN_SEARCH_ENVELOPE_MAXX_GEOTIFF_1%GEOTIFF_IN_SEARCH_ENVELOPE_MAXY_GEOTIFF_1%GEOTIFF_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_GEOTIFF_1%GEOTIFF_IN_CLIP_TO_ENVELOPE_GEOTIFF_1%GEOTIFF_IN_SEARCH_METHOD%GEOTIFF_IN_SEARCH_METHOD_FILTER%GEOTIFF_IN_SEARCH_ORDER%GEOTIFF_IN_SEARCH_FEATURE%GEOTIFF_IN_DUMMY_SEARCH_ENVELOPE_PARAMETER Use Search Envelope
+# ===========================================================================
+GUI LOOKUP GEOTIFF_IN_SEARCH_ENVELOPE_MINX_GEOTIFF_1 <Unused>,0 
+DEFAULT_MACRO GEOTIFF_IN_SEARCH_ENVELOPE_MINX_GEOTIFF_1 0
+GEOTIFF_1_SEARCH_ENVELOPE "$(GEOTIFF_IN_SEARCH_ENVELOPE_MINX_GEOTIFF_1)"
+GUI OPTIONAL FLOAT GEOTIFF_IN_SEARCH_ENVELOPE_MINX_GEOTIFF_1 Minimum X:
+# ===========================================================================
+GUI LOOKUP GEOTIFF_IN_SEARCH_ENVELOPE_MINY_GEOTIFF_1 <Unused>,0 
+DEFAULT_MACRO GEOTIFF_IN_SEARCH_ENVELOPE_MINY_GEOTIFF_1 0
+GEOTIFF_1_SEARCH_ENVELOPE "$(GEOTIFF_IN_SEARCH_ENVELOPE_MINY_GEOTIFF_1)"
+GUI OPTIONAL FLOAT GEOTIFF_IN_SEARCH_ENVELOPE_MINY_GEOTIFF_1 Minimum Y:
+# ===========================================================================
+GUI LOOKUP GEOTIFF_IN_SEARCH_ENVELOPE_MAXX_GEOTIFF_1 <Unused>,0 
+DEFAULT_MACRO GEOTIFF_IN_SEARCH_ENVELOPE_MAXX_GEOTIFF_1 0
+GEOTIFF_1_SEARCH_ENVELOPE "$(GEOTIFF_IN_SEARCH_ENVELOPE_MAXX_GEOTIFF_1)"
+GUI OPTIONAL FLOAT GEOTIFF_IN_SEARCH_ENVELOPE_MAXX_GEOTIFF_1 Maximum X:
+# ===========================================================================
+GUI LOOKUP GEOTIFF_IN_SEARCH_ENVELOPE_MAXY_GEOTIFF_1 <Unused>,0 
+DEFAULT_MACRO GEOTIFF_IN_SEARCH_ENVELOPE_MAXY_GEOTIFF_1 0
+GEOTIFF_1_SEARCH_ENVELOPE "$(GEOTIFF_IN_SEARCH_ENVELOPE_MAXY_GEOTIFF_1)"
+GUI OPTIONAL FLOAT GEOTIFF_IN_SEARCH_ENVELOPE_MAXY_GEOTIFF_1 Maximum Y:
+# ===========================================================================
+GUI LOOKUP GEOTIFF_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_GEOTIFF_1 <Unused>, 
+DEFAULT_MACRO GEOTIFF_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_GEOTIFF_1 
+GEOTIFF_1_SEARCH_ENVELOPE "$(GEOTIFF_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_GEOTIFF_1)"
+GUI OPTIONAL COORDSYS GEOTIFF_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_GEOTIFF_1 Search Envelope Coordinate System:
+# ===========================================================================
+# BUG18999: We now have a soft clip to fall back on like native spatial index
+# thus we are reintroducing the clip to envelop as an option for users.
+# Defualt to soft clip as per the existing database readers we are emulating
+GUI LOOKUP GEOTIFF_IN_CLIP_TO_ENVELOPE_GEOTIFF_1 <Unused>,NO 
+DEFAULT_MACRO GEOTIFF_IN_CLIP_TO_ENVELOPE_GEOTIFF_1 NO
+GEOTIFF_1_CLIP_TO_ENVELOPE "$(GEOTIFF_IN_CLIP_TO_ENVELOPE_GEOTIFF_1)"
+GUI OPTIONAL CHECKBOX GEOTIFF_IN_CLIP_TO_ENVELOPE_GEOTIFF_1 YES%NO Clip to Search Envelope
+DEFAULT_MACRO GEOTIFF_IN_GEOTIFF_RDR_ADV_PARM_GROUP_GEOTIFF_1 
+GUI OPTIONAL DISCLOSUREGROUP GEOTIFF_IN_GEOTIFF_RDR_ADV_PARM_GROUP_GEOTIFF_1 GEOTIFF_IN_PYRAMID_LEVEL_GEOTIFF_1%GEOTIFF_IN_PREFER_FILE_CS_UNITS_GEOTIFF_1%GEOTIFF_IN_READ_OFFSETS_IN_CS_UNITS_GEOTIFF_1%GEOTIFF_IN_IGNORE_RASTER_TYPE_KEY_GEOTIFF_1 Advanced
+DEFAULT_MACRO GEOTIFF_IN_PYRAMID_LEVEL_GEOTIFF_1 
+GEOTIFF_1_PYRAMID_LEVEL "$(GEOTIFF_IN_PYRAMID_LEVEL_GEOTIFF_1)"
+GUI OPTIONAL INTEGER GEOTIFF_IN_PYRAMID_LEVEL_GEOTIFF_1 Pyramid Level to Read:
+DEFAULT_MACRO GEOTIFF_IN_PREFER_FILE_CS_UNITS_GEOTIFF_1 Yes
+GEOTIFF_1_PREFER_FILE_CS_UNITS "$(GEOTIFF_IN_PREFER_FILE_CS_UNITS_GEOTIFF_1)"
+GUI CHOICE GEOTIFF_IN_PREFER_FILE_CS_UNITS_GEOTIFF_1 Yes%No Prefer File Coordinate System Units:
+DEFAULT_MACRO GEOTIFF_IN_READ_OFFSETS_IN_CS_UNITS_GEOTIFF_1 No
+GEOTIFF_1_READ_OFFSETS_IN_CS_UNITS "$(GEOTIFF_IN_READ_OFFSETS_IN_CS_UNITS_GEOTIFF_1)"
+GUI CHOICE GEOTIFF_IN_READ_OFFSETS_IN_CS_UNITS_GEOTIFF_1 Yes%No Offsets in Coordinate System Units:
+DEFAULT_MACRO GEOTIFF_IN_IGNORE_RASTER_TYPE_KEY_GEOTIFF_1 No
+GEOTIFF_1_IGNORE_RASTER_TYPE_KEY "$(GEOTIFF_IN_IGNORE_RASTER_TYPE_KEY_GEOTIFF_1)"
+GUI CHOICE GEOTIFF_IN_IGNORE_RASTER_TYPE_KEY_GEOTIFF_1 Yes%No Ignore Raster Type Key:
+# ===========================================================================
+DEFAULT_MACRO GEOTIFF_IN_NETWORK_AUTHENTICATION_GEOTIFF_1 
+GEOTIFF_1_NETWORK_AUTHENTICATION "$(GEOTIFF_IN_NETWORK_AUTHENTICATION_GEOTIFF_1)"
+GUI OPTIONAL AUTHENTICATOR GEOTIFF_IN_NETWORK_AUTHENTICATION_GEOTIFF_1 CONTAINER%GROUP%CONTAINER_TITLE%"Network Authentication"%PROMPT_TYPE%NETWORK Network Authentication
+# ============================================================================ 
+DEFAULT_MACRO GEOTIFF_IN_ATTRIBUTE_READING_GEOTIFF_1 ALL
+GEOTIFF_1_ATTRIBUTE_READING "$(GEOTIFF_IN_ATTRIBUTE_READING_GEOTIFF_1)"
+# ============================================================================ 
+GEOTIFF_1_GENERATE_FME_BUILD_NUM 20202
+GEOTIFF_1_DATASET "$(SourceDataset_GEOTIFF_1)"
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "CSV2_1"
+#! END_WB_HEADER
+#! START_DEST_HEADER CSV2 CSV2_1
+# =====================================================================
+# The following GUI line prompts for a folder where the
+# CSV files will be stored
+#! END_DEST_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO DestDataset
+INCLUDE [ if {"$(DestDataset)" != ""} {                          \
+ puts {DEFAULT_MACRO DestDataset_CSV2_1 $(DestDataset)}         \
+ } ]
+#! END_WB_HEADER
+#! START_DEST_HEADER CSV2 CSV2_1
+DEFAULT_MACRO DestDataset_CSV2_1 $(DestDataset_CSV2)
+GUI DIRNAME DestDataset_CSV2_1 Destination CSV (Comma Separated Value) Folder:
+DEFAULT_MACRO CSV2_OUT_DATASET_GROUP_CSV2_1 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_OUT_DATASET_GROUP_CSV2_1 CSV2_OUT_EXTENSION_CSV2_1%CSV2_OUT_EXISTING_FILE_HANDLING Dataset
+DEFAULT_MACRO CSV2_OUT_EXTENSION_CSV2_1 csv
+CSV2_1_EXTENSION "$(CSV2_OUT_EXTENSION_CSV2_1)"
+GUI OPTIONAL TEXT CSV2_OUT_EXTENSION_CSV2_1 Extension:
+DEFAULT_MACRO CSV2_OUT_EXISTING_FILE_HANDLING_CSV2_1 Yes
+CSV2_1_EXISTING_FILE_HANDLING "$(CSV2_OUT_EXISTING_FILE_HANDLING_CSV2_1)"
+DEFAULT_MACRO CSV2_OUT_FIELDS_GROUP_CSV2_1 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_OUT_FIELDS_GROUP_CSV2_1 CSV2_OUT_DELIMITER_CSV2_1%CSV2_OUT_WRITE_FIELD_NAMES Fields
+DEFAULT_MACRO CSV2_OUT_DELIMITER_CSV2_1 <comma>
+CSV2_1_DELIMITER "$(CSV2_OUT_DELIMITER_CSV2_1)"
+GUI STRING_OR_CHOICE_ENCODED CSV2_OUT_DELIMITER_CSV2_1 ,%;%|%space%tab Delimiter Character:
+DEFAULT_MACRO CSV2_OUT_WRITE_FIELD_NAMES_CSV2_1 firstrow
+CSV2_1_WRITE_FIELD_NAMES "$(CSV2_OUT_WRITE_FIELD_NAMES_CSV2_1)"
+DEFAULT_MACRO CSV2_OUT_ENCODING_GROUP_CSV2_1 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_OUT_ENCODING_GROUP_CSV2_1 CSV2_OUT_ENCODING_CSV2_1%CSV2_OUT_WRITE_BOM_FOR_UNICODE_CSV2_1 Encoding
+DEFAULT_MACRO CSV2_OUT_ENCODING_CSV2_1 UTF-8
+CSV2_1_ENCODING "$(CSV2_OUT_ENCODING_CSV2_1)"
+GUI STRING_OR_ENCODING CSV2_OUT_ENCODING_CSV2_1 fme-system%* Character Encoding:
+DEFAULT_MACRO CSV2_OUT_WRITE_BOM_FOR_UNICODE_CSV2_1 Yes
+CSV2_1_WRITE_BOM_FOR_UNICODE "$(CSV2_OUT_WRITE_BOM_FOR_UNICODE_CSV2_1)"
+GUI CHOICE CSV2_OUT_WRITE_BOM_FOR_UNICODE_CSV2_1 Yes%No Write Byte Order Mark for Unicode:
+DEFAULT_MACRO CSV2_OUT_ADVANCED_GROUP_CSV2_1 
+GUI OPTIONAL DISCLOSUREGROUP CSV2_OUT_ADVANCED_GROUP_CSV2_1 FME_DISCLOSURE_CLOSED%CSV2_OUT_QUALIFY_FIELD_NAMES_CSV2_1%CSV2_OUT_QUALIFY_FIELD_VALUES_CSV2_1%CSV2_OUT_UNQUALIFIED_FIELD_VALUE_HANDLING_CSV2_1%CSV2_OUT_FIELD_QUALIFIER_CHARACTER_CSV2_1%CSV2_OUT_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_1%CSV2_OUT_ROW_TERMINATION_CSV2_1%CSV2_OUT_WRITE_SCHEMA_FILE_CSV2_1 Advanced
+DEFAULT_MACRO CSV2_OUT_QUALIFY_FIELD_NAMES_CSV2_1 if_needed
+CSV2_1_QUALIFY_FIELD_NAMES "$(CSV2_OUT_QUALIFY_FIELD_NAMES_CSV2_1)"
+GUI LOOKUP_CHOICE CSV2_OUT_QUALIFY_FIELD_NAMES_CSV2_1 Yes,yes%No,no%If<space>Needed,if_needed Qualify Field Names:
+DEFAULT_MACRO CSV2_OUT_QUALIFY_FIELD_VALUES_CSV2_1 if_needed
+CSV2_1_QUALIFY_FIELD_VALUES "$(CSV2_OUT_QUALIFY_FIELD_VALUES_CSV2_1)"
+GUI ACTIVECHOICE_LOOKUP CSV2_OUT_QUALIFY_FIELD_VALUES_CSV2_1 Yes,yes,CSV2_OUT_UNQUALIFIED_FIELD_VALUE_HANDLING_CSV2_1%No,no%If<space>Needed,if_needed,CSV2_OUT_UNQUALIFIED_FIELD_VALUE_HANDLING_CSV2_1 Qualify Field Values:
+DEFAULT_MACRO CSV2_OUT_UNQUALIFIED_FIELD_VALUE_HANDLING_CSV2_1 <Unused>
+CSV2_1_UNQUALIFIED_FIELD_VALUE_HANDLING "$(CSV2_OUT_UNQUALIFIED_FIELD_VALUE_HANDLING_CSV2_1)"
+GUI LOOKUP_CHOICE CSV2_OUT_UNQUALIFIED_FIELD_VALUE_HANDLING_CSV2_1 Remove<space>Unsafe<space>Characters,remove_unsafe%Preserve<space>Unsafe<space>Characters,preserve_unsafe Unqualified Field Value Handling:
+DEFAULT_MACRO CSV2_OUT_FIELD_QUALIFIER_CHARACTER_CSV2_1 <quote>
+CSV2_1_FIELD_QUALIFIER_CHARACTER "$(CSV2_OUT_FIELD_QUALIFIER_CHARACTER_CSV2_1)"
+GUI STRING_ENCODED CSV2_OUT_FIELD_QUALIFIER_CHARACTER_CSV2_1 Field Qualifier Character:
+DEFAULT_MACRO CSV2_OUT_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_1 <quote>
+CSV2_1_FIELD_QUALIFIER_ESCAPE_CHARACTER "$(CSV2_OUT_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_1)"
+GUI STRING_ENCODED CSV2_OUT_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_1 Field Qualifier Escape Character:
+DEFAULT_MACRO CSV2_OUT_ROW_TERMINATION_CSV2_1 System
+CSV2_1_ROW_TERMINATION "$(CSV2_OUT_ROW_TERMINATION_CSV2_1)"
+GUI CHOICE CSV2_OUT_ROW_TERMINATION_CSV2_1 System%Windows%Unix%Macintosh Row Termination:
+DEFAULT_MACRO CSV2_OUT_WRITE_SCHEMA_FILE_CSV2_1 NO
+CSV2_1_WRITE_SCHEMA_FILE "$(CSV2_OUT_WRITE_SCHEMA_FILE_CSV2_1)"
+GUI ACTIVEDISCLOSUREGROUP CSV2_OUT_WRITE_SCHEMA_FILE_CSV2_1 FME_DISCLOSURE_CLOSED%CSV2_OUT_EXISTING_SCHEMA_FILE_HANDLING_CSV2_1 Write Schema Configuration File
+DEFAULT_MACRO CSV2_OUT_EXISTING_SCHEMA_FILE_HANDLING_CSV2_1 <Unused>
+CSV2_1_EXISTING_SCHEMA_FILE_HANDLING "$(CSV2_OUT_EXISTING_SCHEMA_FILE_HANDLING_CSV2_1)"
+GUI CHOICE CSV2_OUT_EXISTING_SCHEMA_FILE_HANDLING_CSV2_1 Overwrite%Prepend Existing Schema File Handling:
+DEFAULT_MACRO CSV2_OUT_COORDINATE_SYSTEM_GRANULARITY_CSV2_1 FEATURE_TYPE
+CSV2_1_COORDINATE_SYSTEM_GRANULARITY "$(CSV2_OUT_COORDINATE_SYSTEM_GRANULARITY_CSV2_1)"
+# ============================================================================ 
+CSV2_1_GENERATE_FME_BUILD_NUM 20202
+CSV2_1_DATASET "$(DestDataset_CSV2_1)"
+#! END_DEST_HEADER
+#! START_WB_HEADER
+#! END_WB_HEADER
+#! END_HEADER
+
+LOG_FILENAME "$(FME_MF_DIR)BNGSections.log"
+LOG_APPEND NO
+LOG_FILTER_MASK -1
+LOG_MAX_FEATURES 200
+LOG_MAX_RECORDED_FEATURES 200
+FME_REPROJECTION_ENGINE FME
+FME_IMPLICIT_CSMAP_REPROJECTION_MODE Auto
+FME_GEOMETRY_HANDLING Enhanced
+FME_STROKE_MAX_DEVIATION 0
+DEFAULT_MACRO DATASET_KEYWORD_GEOTIFF_1 GEOTIFF_1
+DEFAULT_MACRO DATASET_KEYWORD_CSV2_1 CSV2_1
+# -------------------------------------------------------------------------
+
+GEOTIFF_1_READER_META_ATTRIBUTES fme_dataset fme_feature_type fme_basename
+
+# -------------------------------------------------------------------------
+
+GEOTIFF_1_COORDINATE_SYSTEM EPSG:27700
+MULTI_READER_CONTINUE_ON_READER_FAILURE No
+
+# -------------------------------------------------------------------------
+
+MACRO WORKSPACE_NAME BNGSections
+MACRO FME_VIEWER_APP fmedatainspector
+# -------------------------------------------------------------------------
+GEOTIFF_1_DEF GEOTIFF
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * RoutingFactory   FACTORY_NAME "Router and Unexpected Input Remover"   COMMAND_PARM_EVALUATION SINGLE_PASS   MULTI_READER_KEYWORD $(DATASET_KEYWORD_GEOTIFF_1)   INPUT FEATURE_TYPE *    ROUTE GEOTIFF GEOTIFF_1::GEOTIFF multi_reader_keyword,$(DATASET_KEYWORD_GEOTIFF_1) TO FME_GENERIC ::GEOTIFF ALIAS_GEOMETRY    MERGE_INPUT Yes   OUTPUT ROUTED FEATURE_TYPE *
+GEOTIFF_1_MERGE_DEF GEOTIFF_1::GEOTIFF EXACT GEOTIFF
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME "GEOTIFF(GEOTIFF_1) Splitter"    INPUT FEATURE_TYPE GEOTIFF    OUTPUT FEATURE_TYPE GEOTIFF_GEOTIFF_1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+# -------------------------------------------------------------------------
+# -------------------------------------------------------------------------
+# Adds a prefix to existing attributes. This is done to ensure we don't
+# overwrite any attributes when we add new ones.
+Tcl2 proc RasterExtentsCoercer_prefixExistingAttributes {attrNames} {    set kAttrPrefix ".";    foreach oldName $attrNames {       set newName $kAttrPrefix;       append newName $oldName;       FME_RenameAttribute $newName $oldName;    }; };
+# -------------------------------------------------------------------------
+# Restores all previously prefixed attributes.
+# This assumes any new attributes added since then begin with '_'.
+Tcl2 proc RasterExtentsCoercer_restorePrefixedAttributes {attrNames} {    FME_Execute RemoveAttributes fme_regexp_match {^_};    set kAttrPrefix ".";    foreach oldName $attrNames {       set newName $kAttrPrefix;       append newName $oldName;       FME_RenameAttribute $oldName $newName;    }; };
+# -------------------------------------------------------------------------
+# Replaces the existing geometry on a feature with a polygon.
+Tcl2 proc RasterExtentsCoercer_replaceGeometryWithPolygon {ulx uly urx ury lrx lry llx lly} {    set comment {       Remove the existing geometry.    };    FME_Execute RemoveGeometry;    set comment {       Create the polygon.    };    FME_Coordinates addCoord $ulx $uly;    FME_Coordinates addCoord $urx $ury;    FME_Coordinates addCoord $lrx $lry;    FME_Coordinates addCoord $llx $lly;    FME_Coordinates addCoord $ulx $uly;    FME_Execute GeometryType fme_polygon;    FME_SetAttribute fme_type fme_area; };
+# -------------------------------------------------------------------------
+# Replaces the raster geometry with a polygon, using the rotated corners
+# of the raster.
+Tcl2 proc RasterExtentsCoercer_getRasterExtents {} {    set comment {       Retrieve the rotated extents.    };    set attrNames [FME_AttributeNames];    FME_Execute RenameAttributes FME_STRICT ___fme_rejection_code___ fme_rejection_code    RasterExtentsCoercer_prefixExistingAttributes $attrNames;    FME_Execute RasterProperties REJECTABLE RASTER;    if {[string length [FME_GetAttribute {fme_rejection_code}]] == 0} {       set ulx [FME_GetAttribute _upper_left_x];       set uly [FME_GetAttribute _upper_left_y];       set urx [FME_GetAttribute _upper_right_x];       set ury [FME_GetAttribute _upper_right_y];       set lrx [FME_GetAttribute _lower_right_x];       set lry [FME_GetAttribute _lower_right_y];       set llx [FME_GetAttribute _lower_left_x];       set lly [FME_GetAttribute _lower_left_y];       set comment {          Create the extents polygon.       };       RasterExtentsCoercer_restorePrefixedAttributes $attrNames;       RasterExtentsCoercer_replaceGeometryWithPolygon $ulx $uly $urx $ury $lrx $lry $llx $lly;    } else {       RasterExtentsCoercer_restorePrefixedAttributes $attrNames;    } };
+# -------------------------------------------------------------------------
+# Replaces the raster geometry with a polygon, using the MBR extents of
+# the data in the raster.
+Tcl2 proc RasterExtentsCoercer_getDataMBRExtents {} {    set comment {       Get the raster properties and calculate the row/col data extents.    };    set attrNames [FME_AttributeNames];    FME_Execute RenameAttributes FME_STRICT ___fme_rejection_code___ fme_rejection_code    RasterExtentsCoercer_prefixExistingAttributes $attrNames;    FME_Execute RasterProperties REJECTABLE RASTER;    FME_Execute ProcessRasterTiles REJECTABLE DATAEXTENTS;    if {[string length [FME_GetAttribute {fme_rejection_code}]] == 0} {       set originX [FME_GetAttribute _origin_x];       set originY [FME_GetAttribute _origin_y];       set spacingX [FME_GetAttribute _spacing_x];       set spacingY [FME_GetAttribute _spacing_y];       set minRow [FME_GetAttribute _data_min_row];       set minCol [FME_GetAttribute _data_min_column];       set maxRow [FME_GetAttribute _data_max_row];       set maxCol [FME_GetAttribute _data_max_column];       RasterExtentsCoercer_restorePrefixedAttributes $attrNames;       set comment {          Calculate the extents in ground coordinates.       };       set minX [expr $originX + ($minCol*$spacingX)];       set maxX [expr $originX + (($maxCol+1)*$spacingX)];       set minY [expr $originY - (($maxRow+1)*$spacingY)];       set maxY [expr $originY - ($minRow*$spacingY)];       set comment {          Create the extents polygon.       };       RasterExtentsCoercer_replaceGeometryWithPolygon $minX $maxY $maxX $maxY $maxX $minY $minX $minY;    } else {       RasterExtentsCoercer_restorePrefixedAttributes $attrNames;    } };
+INCLUDE [ if {{RasterExtents} == {RasterExtents}} {    puts {       FACTORY_DEF * TeeFactory          FACTORY_NAME RasterExtentsCoercer_RasterExtents          INPUT  FEATURE_TYPE GEOTIFF_GEOTIFF_1          OUTPUT FEATURE_TYPE ___TOREJECTOR___             @RenameAttributes(FME_STRICT,___fme_rejection_code___,fme_rejection_code)             @Tcl2("RasterExtentsCoercer_getRasterExtents")    };    puts {       FACTORY_DEF * TestFactory          FACTORY_NAME RasterExtentsCoercer_Rejector          INPUT FEATURE_TYPE ___TOREJECTOR___          TEST @Value(fme_rejection_code) != ""          OUTPUT PASSED FEATURE_TYPE RasterExtentsCoercer_<REJECTED>             @RemoveAttributes(___fme_rejection_code___)          OUTPUT FAILED FEATURE_TYPE RasterExtentsCoercer_EXTENTS             @RenameAttributes(FME_STRICT,fme_rejection_code,___fme_rejection_code___)    }; } elseif {{RasterExtents} == {DataMBRExtents}} {    puts {       FACTORY_DEF * TeeFactory          FACTORY_NAME RasterExtentsCoercer_DataMBRExtents          INPUT  FEATURE_TYPE GEOTIFF_GEOTIFF_1          OUTPUT FEATURE_TYPE ___TOREJECTOR___             @RenameAttributes(FME_STRICT,___fme_rejection_code___,fme_rejection_code)             @ApplyRasterRotation(REJECTABLE,NEARESTNEIGHBOR)             @Tcl2("RasterExtentsCoercer_getDataMBRExtents")    };    puts {       FACTORY_DEF * TestFactory          FACTORY_NAME RasterExtentsCoercer_Rejector          INPUT FEATURE_TYPE ___TOREJECTOR___          TEST @Value(fme_rejection_code) != ""          OUTPUT PASSED FEATURE_TYPE RasterExtentsCoercer_<REJECTED>             @RemoveAttributes(___fme_rejection_code___)          OUTPUT FAILED FEATURE_TYPE RasterExtentsCoercer_EXTENTS             @RenameAttributes(FME_STRICT,fme_rejection_code,___fme_rejection_code___)    }; } else {    puts {       FACTORY_DEF * TeeFactory          FACTORY_NAME RasterExtentsCoercer_RasterIDGenerator          INPUT  FEATURE_TYPE GEOTIFF_GEOTIFF_1          OUTPUT FEATURE_TYPE RasterExtentsCoercer_rasters_with_IDs             @SupplyAttributes(__rasterID__, @Count(RasterExtentsCoercer_COUNTER))    };    puts {       FACTORY_DEF * RasterSegmentationFactory          FACTORY_NAME RasterExtentsCoercer_PolygonGenerator          INPUT FEATURE_TYPE RasterExtentsCoercer_rasters_with_IDs          POLYGON_MODE NODATA          PRESERVE_ATTRIBUTES yes          REJECT_INVALID_FEATURES YES          POLYGON_LABEL_ATTRIBUTE __polygon_type__          OUTPUT POLYGONS FEATURE_TYPE RasterExtentsCoercer_polygons          OUTPUT <REJECTED> FEATURE_TYPE RasterExtentsCoercer_<REJECTED>    };    puts {       FACTORY_DEF * TestFactory          FACTORY_NAME RasterExtentsCoercer_NodataPolygonDiscarder          INPUT FEATURE_TYPE RasterExtentsCoercer_polygons          TEST &__polygon_type__ == "data"          OUTPUT PASSED FEATURE_TYPE RasterExtentsCoercer_data_polygons             @RemoveAttributes(__polygon_type__)    };    puts {       FACTORY_DEF * AggregateFactory          FACTORY_NAME RasterExtentsCoercer_DataPolygonAggregator          INPUT FEATURE_TYPE RasterExtentsCoercer_data_polygons          GROUP_BY __rasterID__          BREAK_BEFORE_FIELD_CHANGE __rasterID__          ACCUMULATE_ATTRIBUTES yes          OUTPUT AGGREGATE FEATURE_TYPE RasterExtentsCoercer_EXTENTS             @RemoveAttributes(__rasterID__)          OUTPUT SINGLETON FEATURE_TYPE RasterExtentsCoercer_EXTENTS             @RemoveAttributes(__rasterID__)    }; }; ]
+DEFAULT_MACRO _WB_BYPASS_TERMINATION No
+FACTORY_DEF * TeeFactory FACTORY_NAME RasterExtentsCoercer_<Rejected> INPUT FEATURE_TYPE RasterExtentsCoercer_<REJECTED>  OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED, RasterExtentsCoercer<space>output<space>a<space><lt>Rejected<gt><space>feature.<space><space>To<space>continue<space>translation<space>when<space>features<space>are<space>rejected<comma><space>change<space><apos>Workspace<space>Parameters<apos><space><gt><space>Translation<space><gt><space><apos>Rejected<space>Feature<space>Handling<apos><space>to<space><apos>Continue<space>Translation<apos>)
+# -------------------------------------------------------------------------
+FACTORY_DEF * TeeFactory    FACTORY_NAME TestFilter    INPUT  FEATURE_TYPE RasterExtentsCoercer_EXTENTS    OUTPUT FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_0
+FACTORY_DEF * TestFactory FACTORY_NAME TestFilter_Condition_1 INPUT FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_0 CASE_INSENSITIVE_TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Left<openparen><at>Value<openparen>fme_basename<closeparen><comma>2<closeparen>,TestFilter) IN HP<comma>HT<comma>HU<comma>HW<comma>HX<comma>HY<comma>HZ<comma>NA<comma>NB<comma>NC<comma>ND<comma>NF<comma>NG<comma>NH<comma>NJ<comma>NK ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "1" FEATURE_TABLE_SHIM_SUPPORT Yes PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT OUTPUT PASSED FEATURE_TYPE TestFilter_group<space>1 OUTPUT FAILED FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TestFactory FACTORY_NAME TestFilter_Condition_2 INPUT FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_1 CASE_INSENSITIVE_TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Left<openparen><at>Value<openparen>fme_basename<closeparen><comma>2<closeparen>,TestFilter) IN NL<comma>NM<comma>NN<comma>NO<comma>NR<comma>NS<comma>NT<comma>NU<comma>NW<comma>NX<comma>NY<comma>NZ ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "1" FEATURE_TABLE_SHIM_SUPPORT Yes PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT OUTPUT PASSED FEATURE_TYPE TestFilter_group<space>2 OUTPUT FAILED FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_2
+FACTORY_DEF * TeeFactory FACTORY_NAME TestFilter_<lt>UNFILTERED<gt> INPUT FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_2 OUTPUT FEATURE_TYPE TestFilter_<lt>UNFILTERED<gt>
+FACTORY_DEF * TeeFactory   FACTORY_NAME "TestFilter group<space>1 Splitter"   INPUT FEATURE_TYPE TestFilter_group<space>1   OUTPUT FEATURE_TYPE TestFilter_group<space>1_0_0GX+aigRQpA=   OUTPUT FEATURE_TYPE TestFilter_group<space>1_1_0Ikcw3FpRDo=
+FACTORY_DEF * TeeFactory   FACTORY_NAME "TestFilter <lt>UNFILTERED<gt> Transformer Output Nuker"   INPUT FEATURE_TYPE TestFilter_<lt>UNFILTERED<gt>
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} SpatialFilterFactory    FACTORY_NAME SpatialFilter    INPUT BASE FEATURE_TYPE TestFilter_group<space>1_1_0Ikcw3FpRDo=    INPUT CANDIDATE FEATURE_TYPE TestFilter_group<space>2    PREDICATE "INTERSECTS"    USE_BOUNDING_BOX NO    MULTIPLE_BASES YES    MERGE_BASE_ATTR YES    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "CANDIDATE_IF_CONFLICT"    BASE_ATTR_PREFIX "<Unused>"    PREDICATE_ATTR "_predicate"    BOOLEAN_OPERATOR OR    REJECT_INVALID_GEOM Yes    REJECT_INVALID_PREDICATES Yes    REJECT_RASTERS No    ALLOW_NULLS Yes    CUSTOM_MULTI_HANDLING Yes    DIMENSION 2    FLUSH_WHEN_GROUPS_CHANGE No    CURVE_BOUNDARY_RULE ENDPOINTS_MOD2    OUTPUT PASSED FEATURE_TYPE SpatialFilter_PASSED    OUTPUT REJECTED FEATURE_TYPE SpatialFilter_<REJECTED>
+DEFAULT_MACRO _WB_BYPASS_TERMINATION No
+FACTORY_DEF * TeeFactory FACTORY_NAME SpatialFilter_<Rejected> INPUT FEATURE_TYPE SpatialFilter_<REJECTED>  OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED, SpatialFilter<space>output<space>a<space><lt>Rejected<gt><space>feature.<space><space>To<space>continue<space>translation<space>when<space>features<space>are<space>rejected<comma><space>change<space><apos>Workspace<space>Parameters<apos><space><gt><space>Translation<space><gt><space><apos>Rejected<space>Feature<space>Handling<apos><space>to<space><apos>Continue<space>Translation<apos>)
+# -------------------------------------------------------------------------
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME AttributeCreator    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE SpatialFilter_PASSED    INPUT  FEATURE_TYPE TestFilter_group<space>1_0_0GX+aigRQpA=    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "fileName" "SET_TO" "<at>Value<openparen>fme_basename<closeparen>" }      ATTR_ACTION { "" "filePath" "SET_TO" "<at>Value<openparen>fme_dataset<closeparen>" }    OUTPUT OUTPUT FEATURE_TYPE AttributeCreator_OUTPUT
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * RoutingFactory FACTORY_NAME "Destination Feature Type Routing Correlator"   COMMAND_PARM_EVALUATION SINGLE_PASS   INPUT FEATURE_TYPE *    ROUTE FME_GENERIC AttributeCreator_OUTPUT TO CSV2 __GO_TO_FINAL_OUTPUT_ROUTER__ multi_writer_id,0,<at>SupplyAttributes<openparen>ENCODED<comma>__wb_out_feat_type__<comma>groups<closeparen> GEOMETRY   FEATURE_TYPE_ATTRIBUTE __wb_out_feat_type__   OUTPUT ROUTED FEATURE_TYPE *    OUTPUT NOT_ROUTED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 [FME_GetAttribute fme_template_feature_type] 818060 818061 fme_warn")
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "Final Output Nuker"   INPUT FEATURE_TYPE __nuke_me__
+
+# -------------------------------------------------------------------------
+CSV2_1_DEF groups   csv_existing_file_handling   Yes   csv_write_field_names        firstrow   fileName                     string   filePath                     string

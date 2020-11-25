@@ -21,6 +21,19 @@ def copyFiles(src, dest, file_name_regex='*.t*', delete_dest_before_copy=True):
         shutil.copy(file_path, new_path)
 
 
+# regex - file name regex
+def moveFiles(src, dest, regex=()):
+    files = os.listdir(src)
+    for file in files:
+        if not regex:
+            shutil.move(os.path.join(src, file), dest)
+        else:
+            for reg in regex:
+                if file.startswith(reg):
+                    shutil.move(os.path.join(src, file), dest)
+                    break
+
+
 def deleteDirectory(path):
     try:
         shutil.rmtree(path, ignore_errors=True)
