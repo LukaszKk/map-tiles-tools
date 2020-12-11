@@ -12,10 +12,7 @@ def getFilesString(directory):
     return " ".join(files)
 
 
-def copyFiles(src, dest, file_name_regex='*.t*', delete_dest_before_copy=True):
-    if delete_dest_before_copy:
-        deleteDirectory(dest)
-    makeDirectory(dest)
+def copyFiles(src, dest, file_name_regex='*.t*'):
     for file_path in glob.glob(os.path.join(src, '**', file_name_regex), recursive=True):
         new_path = os.path.join(dest, os.path.basename(file_path))
         shutil.copy(file_path, new_path)
