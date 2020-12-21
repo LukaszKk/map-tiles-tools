@@ -25,7 +25,7 @@ class PathProvider:
     group2_csv = input_data_path + "group2.csv"
     group3_csv = input_data_path + "group3.csv"
 
-    def __init__(self, output_path_suffix):
+    def __init__(self, output_path_suffix=''):
         self.output_path = self.output_path + output_path_suffix
         self.log_dir = self.log_dir + output_path_suffix
 

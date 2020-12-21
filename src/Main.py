@@ -10,13 +10,18 @@ from PathProvider import PathProvider
 from CSVReader import CSVReader
 
 
-def single_execute(group, input_dir, zoom, use_profile):
+def singleProfileRun(input_dir, zoom):
+    path_provider = PathProvider()
+    es = ExecutorService(path_provider)
+
+    es.profileMergeSingleRun(input_dir)
+    es.basicTile(zoom)
+
+
+def singleExecute(group, input_dir, zoom, use_profile):
     path_provider = PathProvider(str(group) + "\\")
     data = CSVReader.read_group(group)
     es = ExecutorService(path_provider, data)
-
-    Io.makeDirectories(path_provider.log_dir)
-    logger_service = LoggerService(path_provider)
 
     if use_profile:
         es.profileMerge(input_dir)
@@ -24,7 +29,7 @@ def single_execute(group, input_dir, zoom, use_profile):
         es.basicMerge(input_dir)
     es.basicTile(zoom)
 
-    logger_service.close()
+    return path_provider.output_tiles_path
 
 
 def main(argv=None):
@@ -42,12 +47,19 @@ def main(argv=None):
         if opt == '-z':
             zoom = arg
 
+    Io.makeDirectories(PathProvider.log_dir)
+    logger_service = LoggerService()
+
     with NoDaemonProcessPool(mp.cpu_count()) as p:
-        p.starmap(single_execute, [(1, input_dir, zoom, use_profile),
-                                   (2, input_dir, zoom, use_profile),
-                                   (3, input_dir, zoom, use_profile), ])
+        src_paths = p.starmap(singleExecute, [(1, input_dir, zoom, use_profile),
+                                              (2, input_dir, zoom, use_profile),
+                                              (3, input_dir, zoom, use_profile), ])
         p.close()
         p.join()
+
+    Io.mergeTiles(src_paths, PathProvider().output_tiles_path, zoom)
+
+    logger_service.close()
 
 
 if __name__ == '__main__':

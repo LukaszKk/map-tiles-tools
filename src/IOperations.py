@@ -1,6 +1,7 @@
 import glob
 import os
 import shutil
+from pathlib import Path
 
 
 def getFilesList(directory, file_ext='*.tif'):
@@ -12,18 +13,15 @@ def getFilesString(directory):
     return " ".join(files)
 
 
-def copyFiles(src, dest, file_name_regex='*.t*'):
-    for file_path in glob.glob(os.path.join(src, '**', file_name_regex), recursive=True):
-        new_path = os.path.join(dest, os.path.basename(file_path))
-        shutil.copy(file_path, new_path)
-
-
-def copyAllFiles(src, dest, file_names, file_name_regex='*.t*'):
+def copyFiles(src, dest, file_names=(), file_name_regex='*.t*'):
     file_names_without_ext = [os.path.splitext(name)[0] for name in file_names]
+
     for file_path in glob.glob(os.path.join(src, '**', file_name_regex), recursive=True):
         file_name = os.path.basename(file_path)
         file_name_without_ext = os.path.splitext(file_name)[0]
-        if file_name_without_ext in file_names_without_ext:
+
+        if len(file_names_without_ext) == 0 or \
+                file_name_without_ext in file_names_without_ext:
             new_path = os.path.join(dest, file_name)
             shutil.copy(file_path, new_path)
 
@@ -60,3 +58,23 @@ def makeDirectories(path):
         os.makedirs(path)
     except FileExistsError:
         pass
+
+
+def mergeTiles(src_paths, dest, zoom):
+    makeDirectories(dest)
+
+    for path in src_paths:
+        for subdir, dirs, files in os.walk(path + str(zoom)):
+            if len(files) != 0:
+                for file in files:
+                    file_path = os.path.join(subdir, file)
+                    subdir_from_tiles = os.path.join(Path(subdir).parent.name, Path(subdir).name)
+                    makeDirectories(dest + subdir_from_tiles)
+
+                    file_dest_path = os.path.join(dest, subdir_from_tiles, file)
+                    if os.path.isfile(file_dest_path):
+                        if os.path.getsize(file_dest_path) < os.path.getsize(file_path):
+                            print(file_path)
+                            shutil.copyfile(file_path, file_dest_path)
+                    else:
+                        shutil.copy(file_path, file_dest_path)
