@@ -9,6 +9,9 @@ from PIL import ImageChops
 from PathProvider import PathProvider
 
 
+# Unused. Compare 2 images
+
+
 def root_mean_square_diff(img1, img2):
     dif = ImageChops.difference(img1, img2).histogram()
     return math.sqrt(functools.reduce(operator.add, map(lambda h, i: h * (i ** 2), dif, range(256))) / (

@@ -18,6 +18,16 @@ def copyFiles(src, dest, file_name_regex='*.t*'):
         shutil.copy(file_path, new_path)
 
 
+def copyAllFiles(src, dest, file_names, file_name_regex='*.t*'):
+    file_names_without_ext = [os.path.splitext(name)[0] for name in file_names]
+    for file_path in glob.glob(os.path.join(src, '**', file_name_regex), recursive=True):
+        file_name = os.path.basename(file_path)
+        file_name_without_ext = os.path.splitext(file_name)[0]
+        if file_name_without_ext in file_names_without_ext:
+            new_path = os.path.join(dest, file_name)
+            shutil.copy(file_path, new_path)
+
+
 # regex - file name regex
 def moveFiles(src, dest, regex=()):
     files = os.listdir(src)
@@ -45,8 +55,8 @@ def deleteFile(path):
         pass
 
 
-def makeDirectory(path):
+def makeDirectories(path):
     try:
-        os.mkdir(path)
+        os.makedirs(path)
     except FileExistsError:
         pass

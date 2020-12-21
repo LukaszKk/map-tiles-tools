@@ -8,16 +8,16 @@ from Logger import Logger
 
 class LoggerService:
 
-    init_time = 0
-    delay = 600
-
-    def __init__(self):
+    def __init__(self, path_provider, delay=600):
         self.logger = None
-        self.pool = mp.Pool(mp.cpu_count())
-        self.pool.apply_async(self.run)
+        self.init_time = 0
+        self.delay = delay
 
-    def run(self):
-        self.logger = Logger().create_logger()
+        self.pool = mp.Pool(mp.cpu_count())
+        self.pool.map_async(self.run, (path_provider, ))
+
+    def run(self, path_provider):
+        self.logger = Logger().create_logger(path_provider)
         self.init_time = time.time()
         while True:
             self.log()
