@@ -1,5 +1,7 @@
 import multiprocessing as mp
 import IOperations as Io
+import psutil
+import ray
 
 from ProcessService import ProcessService
 from NoDaemonProcessPool import NoDaemonProcessPool
@@ -27,22 +29,34 @@ class ExecutorService:
         Io.deleteDirectory(path_provider.output_data_path)
         Io.deleteDirectory(path_provider.output_merged_path)
 
-    def __groupRun(self):
-        count = Io.getFilesCount(PathProvider.groups_dir)
-        params = [(i, self.input_dir, self.zoom, self.use_profile) for i in range(1, count + 1)]
-        with NoDaemonProcessPool(mp.cpu_count()) as p:
-            path_providers = p.starmap(GroupExecutor.singleExecute, params)
-            p.close()
-            p.join()
-
+    def mergeTiles(self, path_providers):
         src_paths = [provider.output_tiles_path for provider in path_providers]
         Io.mergeTiles(src_paths, PathProvider().output_tiles_path, self.zoom)
 
         for provider in path_providers:
             Io.deleteDirectory(provider.output_path)
 
+    def __groupRunMultiprocessing(self):
+        count = Io.getFilesCount(PathProvider.groups_dir)
+        params = [(i, self.input_dir, self.zoom, self.use_profile)
+                  for i in range(1, count + 1)]
+        with NoDaemonProcessPool(mp.cpu_count()) as p:
+            path_providers = p.starmap(GroupExecutor.singleExecute, params)
+            p.close()
+            p.join()
+        self.mergeTiles(path_providers)
+
+    def __groupRunRay(self):
+        ray.init(num_cpus=mp.cpu_count())
+        count = Io.getFilesCount(PathProvider.groups_dir)
+        path_providers = ray.get([GroupExecutor.rayExecute.remote(i, self.input_dir, self.zoom, self.use_profile)
+                                  for i in range(1, count + 1)])
+        self.mergeTiles(path_providers)
+
     def execute(self, method):
         if method == 'single':
             self.__singleRun()
-        elif method == 'group':
-            self.__groupRun()
+        elif method == 'groupM':
+            self.__groupRunMultiprocessing()
+        elif method == 'groupRay':
+            self.__groupRunRay()

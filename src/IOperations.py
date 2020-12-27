@@ -66,6 +66,7 @@ def getFilesCount(path):
 
 
 def mergeTiles(src_paths, dest, zoom):
+    deleteDirectory(dest)
     makeDirectories(dest)
 
     for path in src_paths:

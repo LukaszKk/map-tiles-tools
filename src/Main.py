@@ -26,7 +26,7 @@ def main(argv=None):
     logger_service = LoggerService()
 
     es = ExecutorService(input_dir, zoom, use_profile)
-    es.execute('group')
+    es.execute('groupRay')
 
     logger_service.close()
 

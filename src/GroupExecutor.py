@@ -1,3 +1,5 @@
+import ray
+
 from CSVReader import CSVReader
 from ProcessService import ProcessService
 from PathProvider import PathProvider
@@ -18,3 +20,8 @@ class GroupExecutor:
         ps.basicTile(zoom)
 
         return path_provider
+
+    @staticmethod
+    @ray.remote
+    def rayExecute(group_nr, input_dir, zoom, use_profile):
+        return GroupExecutor.singleExecute(group_nr, input_dir, zoom, use_profile)
