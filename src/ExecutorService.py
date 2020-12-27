@@ -1,10 +1,10 @@
 import multiprocessing as mp
 import IOperations as Io
 
-from CSVReader import CSVReader
 from ProcessService import ProcessService
 from NoDaemonProcessPool import NoDaemonProcessPool
 from PathProvider import PathProvider
+from GroupExecutor import GroupExecutor
 
 
 class ExecutorService:
@@ -13,19 +13,6 @@ class ExecutorService:
         self.input_dir = input_dir
         self.zoom = zoom
         self.use_profile = use_profile
-
-    def __singleExecute(self, group_nr):
-        path_provider = PathProvider(str(group_nr) + "\\")
-        data = CSVReader.read_group(group_nr)
-        ps = ProcessService(path_provider, data)
-
-        if self.use_profile:
-            ps.profileMerge(self.input_dir)
-        else:
-            ps.basicMerge(self.input_dir)
-        ps.basicTile(self.zoom)
-
-        return path_provider.output_tiles_path
 
     def __singleRun(self):
         path_provider = PathProvider()
@@ -37,15 +24,22 @@ class ExecutorService:
             ps.basicMerge(self.input_dir)
         ps.basicTile(self.zoom)
 
+        Io.deleteDirectory(path_provider.output_data_path)
+        Io.deleteDirectory(path_provider.output_merged_path)
+
     def __groupRun(self):
         count = Io.getFilesCount(PathProvider.groups_dir)
-        params = [(i, ) for i in range(1, count)]
+        params = [(i, self.input_dir, self.zoom, self.use_profile) for i in range(1, count + 1)]
         with NoDaemonProcessPool(mp.cpu_count()) as p:
-            src_paths = p.starmap(self.__singleExecute, params)
+            path_providers = p.starmap(GroupExecutor.singleExecute, params)
             p.close()
             p.join()
 
+        src_paths = [provider.output_tiles_path for provider in path_providers]
         Io.mergeTiles(src_paths, PathProvider().output_tiles_path, self.zoom)
+
+        for provider in path_providers:
+            Io.deleteDirectory(provider.output_path)
 
     def execute(self, method):
         if method == 'single':

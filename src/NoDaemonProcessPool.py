@@ -2,7 +2,7 @@ import multiprocessing.pool
 
 
 class NoDaemonProcess(multiprocessing.Process):
-    # make 'daemon' attribute always return False
+
     @property
     def daemon(self):
         return False
