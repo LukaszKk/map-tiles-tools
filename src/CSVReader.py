@@ -11,13 +11,7 @@ class CSVReader:
     # returns list of file names
     @staticmethod
     def read_group(x):
-        file = ''
-        if x == 1:
-            file = PathProvider.group1_csv
-        elif x == 2:
-            file = PathProvider.group2_csv
-        elif x == 3:
-            file = PathProvider.group3_csv
+        file = PathProvider.groups_dir + 'group' + str(x) + '.csv'
 
         column1, column2 = [], []
         with open(file, newline='') as csv_file:

@@ -1,6 +1,7 @@
 import glob
 import os
 import shutil
+from PIL import Image
 from pathlib import Path
 
 
@@ -60,6 +61,10 @@ def makeDirectories(path):
         pass
 
 
+def getFilesCount(path):
+    return len(os.listdir(path))
+
+
 def mergeTiles(src_paths, dest, zoom):
     makeDirectories(dest)
 
@@ -73,8 +78,19 @@ def mergeTiles(src_paths, dest, zoom):
 
                     file_dest_path = os.path.join(dest, subdir_from_tiles, file)
                     if os.path.isfile(file_dest_path):
-                        if os.path.getsize(file_dest_path) < os.path.getsize(file_path):
-                            print(file_path)
+                        im = Image.open(file_path)
+                        im_dest = Image.open(file_dest_path)
+                        if __countNonBlack(im_dest) < __countNonBlack(im):
                             shutil.copyfile(file_path, file_dest_path)
                     else:
                         shutil.copy(file_path, file_dest_path)
+
+
+def __countNonBlack(img):
+    bbox = img.getbbox()
+    if not bbox: return 0
+    return sum(img.crop(bbox)
+               .point(lambda x: 255 if x else 0)
+               .convert("L")
+               .point(bool)
+               .getdata())

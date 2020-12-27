@@ -17,13 +17,10 @@ class PathProvider:
     input_50k_incomplete = input_data_path + '50kIncomplete\\'
     input_50kTmp = input_data_path + '50kTmp\\'
     input_250k = input_data_path + '250k\\'
+    groups_dir = input_data_path + 'groups\\'
 
     input_icc = input_path + 'OS_Map_uncoated_FOGRA29_GCR_bas.icc'
     output_icc = input_path + 'sRGB_v4_ICC_preference.icc'
-
-    group1_csv = input_data_path + "group1.csv"
-    group2_csv = input_data_path + "group2.csv"
-    group3_csv = input_data_path + "group3.csv"
 
     def __init__(self, output_path_suffix=''):
         self.output_path = self.output_path + output_path_suffix
