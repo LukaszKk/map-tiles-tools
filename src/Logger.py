@@ -1,5 +1,4 @@
 import logging.handlers
-import multiprocessing as mp
 
 from PathProvider import PathProvider
 
@@ -9,15 +8,19 @@ class Logger:
     FILE = PathProvider.log_dir + 'logfile.log'
     FORMATTER = logging.Formatter('%(asctime)s [%(levelname)s] %(message)s')
 
-    @staticmethod
-    def create_logger():
-        logger = mp.get_logger()
-        logger.setLevel(logging.DEBUG)
+    def __init__(self):
+        self.logger = None
+
+    def create_logger(self):
+        if self.logger is not None:
+            return self.logger
+        self.logger = logging.getLogger(Logger.__name__)
 
         handler = logging.handlers.RotatingFileHandler(filename=Logger.FILE,
                                                        backupCount=8)
         handler.doRollover()
         handler.setFormatter(Logger.FORMATTER)
-        logger.addHandler(handler)
+        self.logger.addHandler(handler)
+        self.logger.setLevel(logging.DEBUG)
 
-        return logger
+        return self.logger

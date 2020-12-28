@@ -36,6 +36,15 @@ class ExecutorService:
         for provider in path_providers:
             Io.deleteDirectory(provider.output_path)
 
+    def __groupRunMultithreading(self):
+        count = Io.getFilesCount(PathProvider.groups_dir)
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            futures = [executor.submit(GroupExecutor.singleExecute,
+                                       i, self.input_dir, self.zoom, self.use_profile)
+                       for i in range(1, count + 1)]
+            path_providers = [future.result() for future in futures]
+        self.mergeTiles(path_providers)
+
     def __groupRunMultiprocessing(self):
         count = Io.getFilesCount(PathProvider.groups_dir)
         params = [(i, self.input_dir, self.zoom, self.use_profile)
@@ -44,15 +53,6 @@ class ExecutorService:
             path_providers = p.starmap(GroupExecutor.singleExecute, params)
             p.close()
             p.join()
-        self.mergeTiles(path_providers)
-
-    def __groupRunMultithreading(self):
-        count = Io.getFilesCount(PathProvider.groups_dir)
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-            futures = [executor.submit(GroupExecutor.singleExecute,
-                                       i, self.input_dir, self.zoom, self.use_profile)
-                       for i in range(1, count + 1)]
-            path_providers = [future.result() for future in futures]
         self.mergeTiles(path_providers)
 
     def __groupRunRay(self):
@@ -65,9 +65,9 @@ class ExecutorService:
     def execute(self, method):
         if method == 'single':
             self.__singleRun()
-        elif method == 'multiprocessing':
-            self.__groupRunMultiprocessing()
         elif method == 'multithreading':
             self.__groupRunMultithreading()
+        elif method == 'multiprocessing':
+            self.__groupRunMultiprocessing()
         elif method == 'ray':
             self.__groupRunRay()

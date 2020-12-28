@@ -1,47 +1,44 @@
 import time
 import datetime
 import psutil
-import multiprocessing as mp
+import threading
 
 from Logger import Logger
 
 
 class LoggerService:
 
-    def __init__(self, delay=600):
+    def __init__(self, interval=600):
         self.logger = None
         self.init_time = 0
-        self.delay = delay
+        self.interval = interval
 
-        self.pool = mp.Pool(mp.cpu_count())
-        self.pool.apply_async(self.run)
+        self.logger = Logger().create_logger()
+        self.lock = threading.Lock()
+        self.thread = threading.Thread(target=self.run)
+
+        self.init_time = time.time()
+        self.thread.start()
 
     def run(self):
-        self.logger = Logger().create_logger()
-        self.init_time = time.time()
         while True:
             self.log()
-            time.sleep(self.delay)
+            time.sleep(self.interval)
 
     def log(self):
-        if self.logger is None:
-            return
         time_passed = int(time.time() - self.init_time)
         time_delta = str(datetime.timedelta(seconds=time_passed))
         cpu_percent = psutil.cpu_percent()
         ram = psutil.virtual_memory()
         self.logger.debug('Time running: ' + time_delta)
         self.logger.debug('CPU: {}%'.format(cpu_percent))
-        self.logger.debug('RAM: {}\n'.format(ram))
+        self.logger.debug('RAM: {}%\n'.format(ram.percent))
 
     def log_message(self, message):
-        if self.logger is None:
-            return
-        self.logger.info(message)
+        self.logger.debug(message)
 
     def close(self):
-        self.pool.close()
-        self.pool.terminate()
+        self.thread.join(10)
         self.log()
 
     def __getstate__(self):
