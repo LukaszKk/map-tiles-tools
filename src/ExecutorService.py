@@ -1,7 +1,8 @@
 import multiprocessing as mp
 import IOperations as Io
-import psutil
 import ray
+import gevent
+import concurrent.futures
 
 from ProcessService import ProcessService
 from NoDaemonProcessPool import NoDaemonProcessPool
@@ -46,6 +47,15 @@ class ExecutorService:
             p.join()
         self.mergeTiles(path_providers)
 
+    def __groupRunMultithreading(self):
+        count = Io.getFilesCount(PathProvider.groups_dir)
+        with concurrent.futures.ThreadPoolExecutor() as executor:
+            futures = [executor.submit(GroupExecutor.singleExecute,
+                                       i, self.input_dir, self.zoom, self.use_profile)
+                       for i in range(1, count + 1)]
+            path_providers = [future.result() for future in futures]
+        self.mergeTiles(path_providers)
+
     def __groupRunRay(self):
         ray.init(num_cpus=mp.cpu_count())
         count = Io.getFilesCount(PathProvider.groups_dir)
@@ -53,10 +63,23 @@ class ExecutorService:
                                   for i in range(1, count + 1)])
         self.mergeTiles(path_providers)
 
+    def __groupRunGevent(self):
+        count = Io.getFilesCount(PathProvider.groups_dir)
+        jobs = [gevent.spawn(GroupExecutor.singleExecute(i, self.input_dir, self.zoom, self.use_profile))
+                for i in range(1, count + 1)]
+        gevent.joinall(jobs)
+        path_providers = [job.value for job in jobs]
+        self.mergeTiles(path_providers)
+
     def execute(self, method):
         if method == 'single':
             self.__singleRun()
-        elif method == 'groupM':
+        elif method == 'multiprocessing':
             self.__groupRunMultiprocessing()
-        elif method == 'groupRay':
+        elif method == 'multithreading':
+            self.__groupRunMultithreading()
+        elif method == 'ray':
             self.__groupRunRay()
+        elif method == 'gevent':
+            # not working
+            self.__groupRunGevent()
