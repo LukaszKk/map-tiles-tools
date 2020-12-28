@@ -29,10 +29,10 @@ class LoggerService:
         time_passed = int(time.time() - self.init_time)
         time_delta = str(datetime.timedelta(seconds=time_passed))
         cpu_percent = psutil.cpu_percent()
-        ram_percent = psutil.virtual_memory().percent
+        ram = psutil.virtual_memory()
         self.logger.debug('Time running: ' + time_delta)
-        self.logger.debug('CPU: {}'.format(cpu_percent))
-        self.logger.debug('RAM used: {}\n'.format(ram_percent))
+        self.logger.debug('CPU: {}%'.format(cpu_percent))
+        self.logger.debug('RAM: {}\n'.format(ram))
 
     def log_message(self, message):
         if self.logger is None:
@@ -40,9 +40,9 @@ class LoggerService:
         self.logger.info(message)
 
     def close(self):
-        self.log()
         self.pool.close()
         self.pool.terminate()
+        self.log()
 
     def __getstate__(self):
         self_dict = self.__dict__.copy()

@@ -1,7 +1,6 @@
 import multiprocessing as mp
 import IOperations as Io
 import ray
-import gevent
 import concurrent.futures
 
 from ProcessService import ProcessService
@@ -63,14 +62,6 @@ class ExecutorService:
                                   for i in range(1, count + 1)])
         self.mergeTiles(path_providers)
 
-    def __groupRunGevent(self):
-        count = Io.getFilesCount(PathProvider.groups_dir)
-        jobs = [gevent.spawn(GroupExecutor.singleExecute(i, self.input_dir, self.zoom, self.use_profile))
-                for i in range(1, count + 1)]
-        gevent.joinall(jobs)
-        path_providers = [job.value for job in jobs]
-        self.mergeTiles(path_providers)
-
     def execute(self, method):
         if method == 'single':
             self.__singleRun()
@@ -80,6 +71,3 @@ class ExecutorService:
             self.__groupRunMultithreading()
         elif method == 'ray':
             self.__groupRunRay()
-        elif method == 'gevent':
-            # not working
-            self.__groupRunGevent()

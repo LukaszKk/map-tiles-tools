@@ -23,11 +23,10 @@ def main(argv=None):
             zoom = arg
 
     Io.makeDirectories(PathProvider.log_dir)
+
     logger_service = LoggerService()
-
     es = ExecutorService(input_dir, zoom, use_profile)
-    es.execute('multithreading')
-
+    es.execute('async')
     logger_service.close()
 
 
