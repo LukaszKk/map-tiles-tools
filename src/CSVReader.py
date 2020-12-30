@@ -10,8 +10,8 @@ class CSVReader:
 
     # returns list of file names
     @staticmethod
-    def read_group(x):
-        file = PathProvider.groups_dir + 'group' + str(x) + '.csv'
+    def read_group(directory, x):
+        file = directory + 'group' + str(x) + '.csv'
 
         column1, column2 = [], []
         with open(file, newline='') as csv_file:

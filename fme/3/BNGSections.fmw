@@ -1,9 +1,9 @@
 #! <?xml version="1.0" encoding="UTF-8" ?>
 #! <WORKSPACE
 #    Command-line to run this workspace:
-#        "C:\Program Files\FME\fme.exe" C:\Users\obliczenia\map-tiles-tools\fme\BNGSections.fmw
+#        "C:\Program Files\FME\fme.exe" C:\Users\obliczenia\map-tiles-tools\fme\3\BNGSections.fmw
 #              --SourceDataset_GEOTIFF "C:\Users\obliczenia\map-tiles-tools\input\data\50k with tfw\data\**\*.tif"
-#              --DestDataset_CSV2 "C:\Users\obliczenia\map-tiles-tools\input\data\groups\7"
+#              --DestDataset_CSV2 "C:\Users\obliczenia\map-tiles-tools\input\data\groups\3"
 #    
 #!   ATTR_TYPE_ENCODING="SDF"
 #!   BEGIN_PYTHON=""
@@ -12,14 +12,14 @@
 #!   DESCRIPTION=""
 #!   DESTINATION="NONE"
 #!   DESTINATION_ROUTING_FILE=""
-#!   DOC_EXTENTS="5795.55 4553.97"
-#!   DOC_TOP_LEFT="-870.634 -3890.22"
+#!   DOC_EXTENTS="5771.55 2421.15"
+#!   DOC_TOP_LEFT="-870.634 -1757.39"
 #!   END_PYTHON=""
 #!   END_TCL=""
 #!   EXPLICIT_BOOKMARK_ORDER="false"
 #!   FME_BUILD_NUM="20202"
-#!   FME_DOCUMENT_GUID="2a62aa2f-5536-468e-8386-bc9221bb9b36"
-#!   FME_DOCUMENT_PRIORGUID="d36f1ac2-8d9d-419a-923f-39a90f31f0ab,158ddb3f-225f-4f08-b5f6-84f6975ee5d5,860f247c-ff3b-422f-ac9a-bf72509bcea0"
+#!   FME_DOCUMENT_GUID="4be10d85-e9e9-403d-a96d-606c2cf949a4"
+#!   FME_DOCUMENT_PRIORGUID="d36f1ac2-8d9d-419a-923f-39a90f31f0ab,158ddb3f-225f-4f08-b5f6-84f6975ee5d5"
 #!   FME_GEOMETRY_HANDLING="Enhanced"
 #!   FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
 #!   FME_REPROJECTION_ENGINE="FME"
@@ -28,7 +28,7 @@
 #!   HISTORY=""
 #!   IGNORE_READER_FAILURE="No"
 #!   LAST_SAVE_BUILD="FME(R) 2020.0.0.1 (20200316 - Build 20202 - WIN64)"
-#!   LAST_SAVE_DATE="2020-12-30T16:05:32"
+#!   LAST_SAVE_DATE="2020-12-30T15:50:52"
 #!   LOG_FILE=""
 #!   LOG_MAX_RECORDED_FEATURES="200"
 #!   MARKDOWN_DESCRIPTION=""
@@ -47,10 +47,10 @@
 #!   TITLE=""
 #!   USAGE=""
 #!   USE_MARKDOWN=""
-#!   VIEW_POSITION="-1035.17 648.444"
+#!   VIEW_POSITION="-515.63 431.254"
 #!   WARN_INVALID_XFORM_PARAM="Yes"
 #!   WORKSPACE_VERSION="1"
-#!   ZOOM_SCALE="80"
+#!   ZOOM_SCALE="100"
 #! >
 #! <DATASETS>
 #! <DATASET
@@ -66,7 +66,7 @@
 #!   WRITE_DEFS="true"
 #!   DEFLINE_TEMPLATE=""
 #!   DEFLINE_ATTRS="true"
-#!   EXPOSABLE_ATTRS="geotiff_subdataset_description char(255) multi_reader_type char(50) geotiff_tifftag_software char(255) fme_text_string char(50) geotiff_byte_order char(7) fme_primary_axis float geotiff_photometric_interpretation char(10) fme_rotation float geotiff_number_of_bits_per_cell decimal(1,0) geotiff_pyramid_level{}.num_columns integer fme_fill_color char(50) multi_reader_id integer fme_start_angle float fme_text_size float geotiff_pyramid_level{}.num_rows integer geotiff_tifftag_xresolution float geotiff_private_keys{}.id integer fme_type char(50) fme_sweep_angle float fme_dataset char(50) geotiff_tifftag_minsamplevalue integer fme_feature_type char(50) fme_color char(50) geotiff_subdataset_name char(255) multi_reader_keyword char(50) geotiff_tifftag_artist char(255) geotiff_tifftag_hostcomputer char(255) geotiff_private_keys{}.value char(255) geotiff_pyramid_num_levels integer fme_geometry char(50) geotiff_type char(255) multi_reader_full_id integer geotiff_tifftag_copyright char(255) geotiff_tifftag_yresolution float geotiff_tifftag_imagedescription char(255) geotiff_compression_method char(9) geotiff_area_or_point char(255) fme_secondary_axis float geotiff_tifftag_resolutionunit decimal(1,0) geotiff_tifftag_datetime datetime geotiff_tifftag_maxsamplevalue integer geotiff_private_keys{}.type char(6) geotiff_tifftag_documentname char(255) fme_basename char(50) geotiff_interleaving_type char(3)"
+#!   EXPOSABLE_ATTRS="geotiff_subdataset_description char(255) multi_reader_type char(50) geotiff_tifftag_software char(255) fme_text_string char(50) geotiff_byte_order char(7) fme_primary_axis float geotiff_photometric_interpretation char(10) fme_rotation float geotiff_number_of_bits_per_cell decimal(1,0) geotiff_pyramid_level{}.num_columns integer fme_fill_color char(50) multi_reader_id integer fme_start_angle float fme_text_size float geotiff_pyramid_level{}.num_rows integer geotiff_tifftag_xresolution float geotiff_private_keys{}.id integer fme_type char(50) fme_sweep_angle float geotiff_tifftag_minsamplevalue integer fme_dataset char(50) fme_feature_type char(50) fme_color char(50) geotiff_subdataset_name char(255) multi_reader_keyword char(50) geotiff_tifftag_artist char(255) geotiff_tifftag_hostcomputer char(255) geotiff_private_keys{}.value char(255) geotiff_pyramid_num_levels integer fme_geometry char(50) geotiff_type char(255) multi_reader_full_id integer geotiff_tifftag_copyright char(255) geotiff_tifftag_yresolution float geotiff_tifftag_imagedescription char(255) geotiff_compression_method char(9) geotiff_area_or_point char(255) fme_secondary_axis float geotiff_tifftag_resolutionunit decimal(1,0) geotiff_tifftag_datetime datetime geotiff_tifftag_maxsamplevalue integer geotiff_private_keys{}.type char(6) geotiff_tifftag_documentname char(255) fme_basename char(50) geotiff_interleaving_type char(3)"
 #!   DEFLINE_PARMS=""
 #!   ATTR_INDEX_TYPES=""
 #!   ATTR_NAME_INVALID_CHARS=""
@@ -828,113 +828,9 @@
 #!   IS_EDITABLE="true"
 #!   IDENTIFIER="42"
 #!   FEAT_GEOMTYPE="All"
-#!   POSITION="4450.896345213454 -1280.1383342178149"
-#!   BOUNDING_RECT="4450.896345213454 -1280.1383342178149 430 71"
+#!   POSITION="4446.9194691946941 -1280.1383342178149"
+#!   BOUNDING_RECT="4446.9194691946941 -1280.1383342178149 430 71"
 #!   ORDER="500000000000014"
-#!   COLLAPSED="false"
-#!   KEYWORD="CSV2_1"
-#!   PARMS_EDITED="true"
-#!   ENABLED="true"
-#!   SCHEMA_ATTRIBUTE_SOURCE="1"
-#! >
-#!     <FEAT_ATTRIBUTE ATTR_NAME="fileName" ATTR_TYPE="string" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
-#!     <FEAT_ATTRIBUTE ATTR_NAME="filePath" ATTR_TYPE="string" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
-#!     <FEAT_ATTRIBUTE ATTR_NAME="fme_basename" ATTR_TYPE="string"  EXPOSABLE_ATTR="true" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
-#!     <FEAT_ATTRIBUTE ATTR_NAME="fme_dataset" ATTR_TYPE="string"  EXPOSABLE_ATTR="true" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
-#!     <DEFLINE_PARM PARM_NAME="csv_dataset_group" PARM_VALUE=""/>
-#!     <DEFLINE_PARM PARM_NAME="csv_existing_file_handling" PARM_VALUE="Yes"/>
-#!     <DEFLINE_PARM PARM_NAME="csv_fields_group" PARM_VALUE=""/>
-#!     <DEFLINE_PARM PARM_NAME="csv_write_field_names" PARM_VALUE="firstrow"/>
-#! </FEATURE_TYPE>
-#! <FEATURE_TYPE
-#!   IS_SOURCE="false"
-#!   NODE_NAME="group4"
-#!   FEATURE_TYPE_NAME=""
-#!   FEATURE_TYPE_NAME_QUALIFIER=""
-#!   IS_EDITABLE="true"
-#!   IDENTIFIER="57"
-#!   FEAT_GEOMTYPE="All"
-#!   POSITION="4470.9194691946941 -1945.7683822700044"
-#!   BOUNDING_RECT="4470.9194691946941 -1945.7683822700044 454 71"
-#!   ORDER="500000000000014"
-#!   COLLAPSED="false"
-#!   KEYWORD="CSV2_1"
-#!   PARMS_EDITED="true"
-#!   ENABLED="true"
-#!   SCHEMA_ATTRIBUTE_SOURCE="1"
-#! >
-#!     <FEAT_ATTRIBUTE ATTR_NAME="fileName" ATTR_TYPE="string" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
-#!     <FEAT_ATTRIBUTE ATTR_NAME="filePath" ATTR_TYPE="string" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
-#!     <FEAT_ATTRIBUTE ATTR_NAME="fme_basename" ATTR_TYPE="string"  EXPOSABLE_ATTR="true" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
-#!     <FEAT_ATTRIBUTE ATTR_NAME="fme_dataset" ATTR_TYPE="string"  EXPOSABLE_ATTR="true" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
-#!     <DEFLINE_PARM PARM_NAME="csv_dataset_group" PARM_VALUE=""/>
-#!     <DEFLINE_PARM PARM_NAME="csv_existing_file_handling" PARM_VALUE="Yes"/>
-#!     <DEFLINE_PARM PARM_NAME="csv_fields_group" PARM_VALUE=""/>
-#!     <DEFLINE_PARM PARM_NAME="csv_write_field_names" PARM_VALUE="firstrow"/>
-#! </FEATURE_TYPE>
-#! <FEATURE_TYPE
-#!   IS_SOURCE="false"
-#!   NODE_NAME="group5"
-#!   FEATURE_TYPE_NAME=""
-#!   FEATURE_TYPE_NAME_QUALIFIER=""
-#!   IS_EDITABLE="true"
-#!   IDENTIFIER="59"
-#!   FEAT_GEOMTYPE="All"
-#!   POSITION="4470.9194691946941 -2455.1484760709427"
-#!   BOUNDING_RECT="4470.9194691946941 -2455.1484760709427 454 71"
-#!   ORDER="500000000000014"
-#!   COLLAPSED="false"
-#!   KEYWORD="CSV2_1"
-#!   PARMS_EDITED="true"
-#!   ENABLED="true"
-#!   SCHEMA_ATTRIBUTE_SOURCE="1"
-#! >
-#!     <FEAT_ATTRIBUTE ATTR_NAME="fileName" ATTR_TYPE="string" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
-#!     <FEAT_ATTRIBUTE ATTR_NAME="filePath" ATTR_TYPE="string" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
-#!     <FEAT_ATTRIBUTE ATTR_NAME="fme_basename" ATTR_TYPE="string"  EXPOSABLE_ATTR="true" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
-#!     <FEAT_ATTRIBUTE ATTR_NAME="fme_dataset" ATTR_TYPE="string"  EXPOSABLE_ATTR="true" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
-#!     <DEFLINE_PARM PARM_NAME="csv_dataset_group" PARM_VALUE=""/>
-#!     <DEFLINE_PARM PARM_NAME="csv_existing_file_handling" PARM_VALUE="Yes"/>
-#!     <DEFLINE_PARM PARM_NAME="csv_fields_group" PARM_VALUE=""/>
-#!     <DEFLINE_PARM PARM_NAME="csv_write_field_names" PARM_VALUE="firstrow"/>
-#! </FEATURE_TYPE>
-#! <FEATURE_TYPE
-#!   IS_SOURCE="false"
-#!   NODE_NAME="group6"
-#!   FEATURE_TYPE_NAME=""
-#!   FEATURE_TYPE_NAME_QUALIFIER=""
-#!   IS_EDITABLE="true"
-#!   IDENTIFIER="61"
-#!   FEAT_GEOMTYPE="All"
-#!   POSITION="4470.919469194695 -2942.6571312888736"
-#!   BOUNDING_RECT="4470.919469194695 -2942.6571312888736 454 71"
-#!   ORDER="500000000000024"
-#!   COLLAPSED="false"
-#!   KEYWORD="CSV2_1"
-#!   PARMS_EDITED="true"
-#!   ENABLED="true"
-#!   SCHEMA_ATTRIBUTE_SOURCE="1"
-#! >
-#!     <FEAT_ATTRIBUTE ATTR_NAME="fileName" ATTR_TYPE="string" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
-#!     <FEAT_ATTRIBUTE ATTR_NAME="filePath" ATTR_TYPE="string" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
-#!     <FEAT_ATTRIBUTE ATTR_NAME="fme_basename" ATTR_TYPE="string"  EXPOSABLE_ATTR="true" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
-#!     <FEAT_ATTRIBUTE ATTR_NAME="fme_dataset" ATTR_TYPE="string"  EXPOSABLE_ATTR="true" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
-#!     <DEFLINE_PARM PARM_NAME="csv_dataset_group" PARM_VALUE=""/>
-#!     <DEFLINE_PARM PARM_NAME="csv_existing_file_handling" PARM_VALUE="Yes"/>
-#!     <DEFLINE_PARM PARM_NAME="csv_fields_group" PARM_VALUE=""/>
-#!     <DEFLINE_PARM PARM_NAME="csv_write_field_names" PARM_VALUE="firstrow"/>
-#! </FEATURE_TYPE>
-#! <FEATURE_TYPE
-#!   IS_SOURCE="false"
-#!   NODE_NAME="group7"
-#!   FEATURE_TYPE_NAME=""
-#!   FEATURE_TYPE_NAME_QUALIFIER=""
-#!   IS_EDITABLE="true"
-#!   IDENTIFIER="65"
-#!   FEAT_GEOMTYPE="All"
-#!   POSITION="4446.919469194695 -3478.5929317061432"
-#!   BOUNDING_RECT="4446.919469194695 -3478.5929317061432 430 71"
-#!   ORDER="500000000000024"
 #!   COLLAPSED="false"
 #!   KEYWORD="CSV2_1"
 #!   PARMS_EDITED="true"
@@ -963,7 +859,7 @@
 #! <DATASET
 #!   NAME="CSV2_1"
 #!   OVERRIDE="-CSV2_1_DATASET"
-#!   DATASET="CSV2_1/7"
+#!   DATASET="CSV2_1/3"
 #! />
 #! </WRITER_DATASETS>
 #! </FMESERVER>
@@ -975,7 +871,7 @@
 #! />
 #! <GLOBAL_PARAMETER
 #!   GUI_LINE="GUI DIRNAME DestDataset_CSV2 Destination CSV (Comma Separated Value) Folder:"
-#!   DEFAULT_VALUE="C:\Users\obliczenia\map-tiles-tools\input\data\groups\7"
+#!   DEFAULT_VALUE="C:\Users\obliczenia\map-tiles-tools\input\data\groups\3"
 #!   IS_STAND_ALONE="false"
 #! />
 #! </GLOBAL_PARAMETERS>
@@ -1080,30 +976,15 @@
 #!     <FEAT_COLLAPSED COLLAPSED="2"/>
 #!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="2" />
 #!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="2" />
-#!     <OUTPUT_FEAT NAME="group&lt;space&gt;4"/>
+#!     <OUTPUT_FEAT NAME="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
 #!     <FEAT_COLLAPSED COLLAPSED="3"/>
 #!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="3" />
 #!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="3" />
-#!     <OUTPUT_FEAT NAME="group&lt;space&gt;5"/>
-#!     <FEAT_COLLAPSED COLLAPSED="4"/>
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="4" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="4" />
-#!     <OUTPUT_FEAT NAME="group&lt;space&gt;6"/>
-#!     <FEAT_COLLAPSED COLLAPSED="5"/>
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="5" />
-#!     <OUTPUT_FEAT NAME="group&lt;space&gt;7"/>
-#!     <FEAT_COLLAPSED COLLAPSED="6"/>
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="6" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="6" />
-#!     <OUTPUT_FEAT NAME="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="7" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="7" />
 #!     <XFORM_PARM PARM_NAME="ADVANCED_GROUP" PARM_VALUE=""/>
 #!     <XFORM_PARM PARM_NAME="DEFAULT_VALUE" PARM_VALUE="&lt;lt&gt;UNFILTERED&lt;gt&gt;"/>
 #!     <XFORM_PARM PARM_NAME="PRESERVE_FEATURE_ORDER" PARM_VALUE="Per Output Port"/>
 #!     <XFORM_PARM PARM_NAME="TESTLISTGRP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;1&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,CASE_INSENSITIVE_TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Left&lt;lt&gt;openparen&lt;gt&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;fme_basename&lt;lt&gt;closeparen&lt;gt&gt;&lt;lt&gt;comma&lt;gt&gt;2&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;IN&lt;space&gt;HP&lt;lt&gt;comma&lt;gt&gt;HT&lt;lt&gt;comma&lt;gt&gt;HU&quot;,group&lt;space&gt;1,&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;1&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,CASE_INSENSITIVE_TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Left&lt;lt&gt;openparen&lt;gt&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;fme_basename&lt;lt&gt;closeparen&lt;gt&gt;&lt;lt&gt;comma&lt;gt&gt;2&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;IN&lt;space&gt;HW&lt;lt&gt;comma&lt;gt&gt;HX&lt;lt&gt;comma&lt;gt&gt;HY&lt;lt&gt;comma&lt;gt&gt;HZ&lt;lt&gt;comma&lt;gt&gt;NA&lt;lt&gt;comma&lt;gt&gt;NB&lt;lt&gt;comma&lt;gt&gt;NC&lt;lt&gt;comma&lt;gt&gt;ND&quot;,group&lt;space&gt;2,&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;1&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,CASE_INSENSITIVE_TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Left&lt;lt&gt;openparen&lt;gt&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;fme_basename&lt;lt&gt;closeparen&lt;gt&gt;&lt;lt&gt;comma&lt;gt&gt;2&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;IN&lt;space&gt;NF&lt;lt&gt;comma&lt;gt&gt;NG&lt;lt&gt;comma&lt;gt&gt;NH&lt;lt&gt;comma&lt;gt&gt;NJ&lt;lt&gt;comma&lt;gt&gt;NK&lt;lt&gt;comma&lt;gt&gt;NL&lt;lt&gt;comma&lt;gt&gt;NM&lt;lt&gt;comma&lt;gt&gt;NN&lt;lt&gt;comma&lt;gt&gt;NO&quot;,group&lt;space&gt;3,&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;1&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,CASE_INSENSITIVE_TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Left&lt;lt&gt;openparen&lt;gt&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;fme_basename&lt;lt&gt;closeparen&lt;gt&gt;&lt;lt&gt;comma&lt;gt&gt;2&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;IN&lt;space&gt;NR&lt;lt&gt;comma&lt;gt&gt;NS&lt;lt&gt;comma&lt;gt&gt;NT&lt;lt&gt;comma&lt;gt&gt;NU&lt;lt&gt;comma&lt;gt&gt;NW&lt;lt&gt;comma&lt;gt&gt;NX&lt;lt&gt;comma&lt;gt&gt;NY&lt;lt&gt;comma&lt;gt&gt;NZ&lt;lt&gt;comma&lt;gt&gt;OV&quot;,group&lt;space&gt;4,&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;1&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Left&lt;lt&gt;openparen&lt;gt&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;fme_basename&lt;lt&gt;closeparen&lt;gt&gt;&lt;lt&gt;comma&lt;gt&gt;2&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;IN&lt;space&gt;SC&lt;lt&gt;comma&lt;gt&gt;SD&lt;lt&gt;comma&lt;gt&gt;SE&lt;lt&gt;comma&lt;gt&gt;TA&lt;lt&gt;comma&lt;gt&gt;SH&lt;lt&gt;comma&lt;gt&gt;SJ&lt;lt&gt;comma&lt;gt&gt;SK&lt;lt&gt;comma&lt;gt&gt;TF&lt;lt&gt;comma&lt;gt&gt;TG&quot;,group&lt;space&gt;5,&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;1&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Left&lt;lt&gt;openparen&lt;gt&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;fme_basename&lt;lt&gt;closeparen&lt;gt&gt;&lt;lt&gt;comma&lt;gt&gt;2&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;IN&lt;space&gt;SM&lt;lt&gt;comma&lt;gt&gt;SN&lt;lt&gt;comma&lt;gt&gt;SO&lt;lt&gt;comma&lt;gt&gt;SP&lt;lt&gt;comma&lt;gt&gt;TL&lt;lt&gt;comma&lt;gt&gt;TM&lt;lt&gt;comma&lt;gt&gt;SR&lt;lt&gt;comma&lt;gt&gt;SS&lt;lt&gt;comma&lt;gt&gt;ST&lt;lt&gt;comma&lt;gt&gt;SU&lt;lt&gt;comma&lt;gt&gt;TQ&lt;lt&gt;comma&lt;gt&gt;TR&quot;,group&lt;space&gt;6,&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;1&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Left&lt;lt&gt;openparen&lt;gt&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;fme_basename&lt;lt&gt;closeparen&lt;gt&gt;&lt;lt&gt;comma&lt;gt&gt;2&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;IN&lt;space&gt;SV&lt;lt&gt;comma&lt;gt&gt;SW&lt;lt&gt;comma&lt;gt&gt;SX&lt;lt&gt;comma&lt;gt&gt;SY&lt;lt&gt;comma&lt;gt&gt;SZ&lt;lt&gt;comma&lt;gt&gt;TV&quot;,group&lt;space&gt;7"/>
+#!     <XFORM_PARM PARM_NAME="TEST_LIST" PARM_VALUE="&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;1&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,CASE_INSENSITIVE_TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Left&lt;lt&gt;openparen&lt;gt&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;fme_basename&lt;lt&gt;closeparen&lt;gt&gt;&lt;lt&gt;comma&lt;gt&gt;2&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;IN&lt;space&gt;HP&lt;lt&gt;comma&lt;gt&gt;HT&lt;lt&gt;comma&lt;gt&gt;HU&lt;lt&gt;comma&lt;gt&gt;HW&lt;lt&gt;comma&lt;gt&gt;HX&lt;lt&gt;comma&lt;gt&gt;HY&lt;lt&gt;comma&lt;gt&gt;HZ&lt;lt&gt;comma&lt;gt&gt;NA&lt;lt&gt;comma&lt;gt&gt;NB&lt;lt&gt;comma&lt;gt&gt;NC&lt;lt&gt;comma&lt;gt&gt;ND&lt;lt&gt;comma&lt;gt&gt;NF&lt;lt&gt;comma&lt;gt&gt;NG&lt;lt&gt;comma&lt;gt&gt;NH&lt;lt&gt;comma&lt;gt&gt;NJ&lt;lt&gt;comma&lt;gt&gt;NK&quot;,group&lt;space&gt;1,&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;1&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,CASE_INSENSITIVE_TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Left&lt;lt&gt;openparen&lt;gt&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;fme_basename&lt;lt&gt;closeparen&lt;gt&gt;&lt;lt&gt;comma&lt;gt&gt;2&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;IN&lt;space&gt;NL&lt;lt&gt;comma&lt;gt&gt;NM&lt;lt&gt;comma&lt;gt&gt;NN&lt;lt&gt;comma&lt;gt&gt;NO&lt;lt&gt;comma&lt;gt&gt;NR&lt;lt&gt;comma&lt;gt&gt;NS&lt;lt&gt;comma&lt;gt&gt;NT&lt;lt&gt;comma&lt;gt&gt;NU&lt;lt&gt;comma&lt;gt&gt;NW&lt;lt&gt;comma&lt;gt&gt;NX&lt;lt&gt;comma&lt;gt&gt;NY&lt;lt&gt;comma&lt;gt&gt;NZ&lt;lt&gt;comma&lt;gt&gt;OV&quot;,group&lt;space&gt;2,&quot;BOOL_OP,OR,COMPOSITE_TEST,&quot;&quot;&quot;&quot;&quot;&quot;1&quot;&quot;&quot;&quot;&quot;&quot;,TEST_CLAUSE,TEST&lt;space&gt;&lt;lt&gt;at&lt;gt&gt;Left&lt;lt&gt;openparen&lt;gt&gt;&lt;lt&gt;at&lt;gt&gt;Value&lt;lt&gt;openparen&lt;gt&gt;fme_basename&lt;lt&gt;closeparen&lt;gt&gt;&lt;lt&gt;comma&lt;gt&gt;2&lt;lt&gt;closeparen&lt;gt&gt;&lt;space&gt;IN&lt;space&gt;SC&lt;lt&gt;comma&lt;gt&gt;SD&lt;lt&gt;comma&lt;gt&gt;SE&lt;lt&gt;comma&lt;gt&gt;SH&lt;lt&gt;comma&lt;gt&gt;SJ&lt;lt&gt;comma&lt;gt&gt;SK&lt;lt&gt;comma&lt;gt&gt;SM&lt;lt&gt;comma&lt;gt&gt;SN&lt;lt&gt;comma&lt;gt&gt;SO&lt;lt&gt;comma&lt;gt&gt;SP&lt;lt&gt;comma&lt;gt&gt;SR&lt;lt&gt;comma&lt;gt&gt;SS&lt;lt&gt;comma&lt;gt&gt;ST&lt;lt&gt;comma&lt;gt&gt;SU&lt;lt&gt;comma&lt;gt&gt;SV&lt;lt&gt;comma&lt;gt&gt;SW&lt;lt&gt;comma&lt;gt&gt;SX&lt;lt&gt;comma&lt;gt&gt;SY&lt;lt&gt;comma&lt;gt&gt;SZ&lt;lt&gt;comma&lt;gt&gt;TA&lt;lt&gt;comma&lt;gt&gt;TF&lt;lt&gt;comma&lt;gt&gt;TG&lt;lt&gt;comma&lt;gt&gt;TL&lt;lt&gt;comma&lt;gt&gt;TM&lt;lt&gt;comma&lt;gt&gt;TQ&lt;lt&gt;comma&lt;gt&gt;TR&lt;lt&gt;comma&lt;gt&gt;TV&quot;,group&lt;space&gt;3"/>
 #!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="TestFilter"/>
 #! </TRANSFORMER>
@@ -1154,8 +1035,8 @@
 #!   IDENTIFIER="24"
 #!   TYPE="Inspector"
 #!   VERSION="5"
-#!   POSITION="4450.896345213454 -149.87834378343786"
-#!   BOUNDING_RECT="4450.896345213454 -149.87834378343786 454 71"
+#!   POSITION="4265.6676566765664 -372.50312503125031"
+#!   BOUNDING_RECT="4265.6676566765664 -372.50312503125031 454 71"
 #!   ORDER="500000000000020"
 #!   PARMS_EDITED="true"
 #!   ENABLED="true"
@@ -1355,8 +1236,8 @@
 #!   IDENTIFIER="49"
 #!   TYPE="Inspector"
 #!   VERSION="5"
-#!   POSITION="4446.9194691946941 -978.57277503500131"
-#!   BOUNDING_RECT="4446.9194691946941 -978.57277503500131 430 71"
+#!   POSITION="4265.6676566765664 -1033.2608219154702"
+#!   BOUNDING_RECT="4265.6676566765664 -1033.2608219154702 430 71"
 #!   ORDER="500000000000020"
 #!   PARMS_EDITED="true"
 #!   ENABLED="true"
@@ -1383,8 +1264,8 @@
 #!   IDENTIFIER="50"
 #!   TYPE="Inspector"
 #!   VERSION="5"
-#!   POSITION="4450.896345213454 -1635.6105954132051"
-#!   BOUNDING_RECT="4450.896345213454 -1635.6105954132051 430 71"
+#!   POSITION="4265.6676566765664 -1686.3923532307836"
+#!   BOUNDING_RECT="4265.6676566765664 -1686.3923532307836 430 71"
 #!   ORDER="500000000000020"
 #!   PARMS_EDITED="true"
 #!   ENABLED="true"
@@ -1406,406 +1287,6 @@
 #!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
 #!     <XFORM_PARM PARM_NAME="VECTOR_GROUP" PARM_VALUE=""/>
 #!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Inspector_3"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#!   IDENTIFIER="46"
-#!   TYPE="SpatialFilter"
-#!   VERSION="11"
-#!   POSITION="2559.4005940059405 -1980.1464760509414"
-#!   BOUNDING_RECT="2559.4005940059405 -1980.1464760509414 430 71"
-#!   ORDER="500000000000005"
-#!   PARMS_EDITED="true"
-#!   ENABLED="true"
-#!   LAST_PARM_EDIT="20202"
-#! >
-#!     <OUTPUT_FEAT NAME="PASSED"/>
-#!     <FEAT_COLLAPSED COLLAPSED="0"/>
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="_predicate" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <OUTPUT_FEAT NAME="FAILED"/>
-#!     <FEAT_COLLAPSED COLLAPSED="1"/>
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
-#!     <FEAT_COLLAPSED COLLAPSED="2"/>
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="2" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="2" />
-#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
-#!     <XFORM_PARM PARM_NAME="AGGREGATE_HANDLING" PARM_VALUE="Yes"/>
-#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="YES"/>
-#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Filter"/>
-#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Candidate"/>
-#!     <XFORM_PARM PARM_NAME="ATTR_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="BASE_TYPE" PARM_VALUE="Multiple Filters"/>
-#!     <XFORM_PARM PARM_NAME="CURVE_BOUNDARY_RULE_PARAM" PARM_VALUE="Default Rule"/>
-#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="GROUP_BY_MODE" PARM_VALUE="No"/>
-#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="PASS_CRITERIA" PARM_VALUE="Pass Against One Filter"/>
-#!     <XFORM_PARM PARM_NAME="PREDATTR" PARM_VALUE="_predicate"/>
-#!     <XFORM_PARM PARM_NAME="PREDICATES" PARM_VALUE="INTERSECTS TOUCHES"/>
-#!     <XFORM_PARM PARM_NAME="TESTS_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="USE_BOUNDING_BOX" PARM_VALUE="No"/>
-#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SpatialFilter_4"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#!   IDENTIFIER="47"
-#!   TYPE="SpatialFilter"
-#!   VERSION="11"
-#!   POSITION="2559.4005940059405 -2489.5267763267238"
-#!   BOUNDING_RECT="2559.4005940059405 -2489.5267763267238 430 71"
-#!   ORDER="500000000000005"
-#!   PARMS_EDITED="true"
-#!   ENABLED="true"
-#!   LAST_PARM_EDIT="20202"
-#! >
-#!     <OUTPUT_FEAT NAME="PASSED"/>
-#!     <FEAT_COLLAPSED COLLAPSED="0"/>
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="_predicate" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <OUTPUT_FEAT NAME="FAILED"/>
-#!     <FEAT_COLLAPSED COLLAPSED="1"/>
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
-#!     <FEAT_COLLAPSED COLLAPSED="2"/>
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="2" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="2" />
-#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
-#!     <XFORM_PARM PARM_NAME="AGGREGATE_HANDLING" PARM_VALUE="Yes"/>
-#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="YES"/>
-#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Filter"/>
-#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Candidate"/>
-#!     <XFORM_PARM PARM_NAME="ATTR_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="BASE_TYPE" PARM_VALUE="Multiple Filters"/>
-#!     <XFORM_PARM PARM_NAME="CURVE_BOUNDARY_RULE_PARAM" PARM_VALUE="Default Rule"/>
-#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="GROUP_BY_MODE" PARM_VALUE="No"/>
-#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="PASS_CRITERIA" PARM_VALUE="Pass Against One Filter"/>
-#!     <XFORM_PARM PARM_NAME="PREDATTR" PARM_VALUE="_predicate"/>
-#!     <XFORM_PARM PARM_NAME="PREDICATES" PARM_VALUE="INTERSECTS TOUCHES"/>
-#!     <XFORM_PARM PARM_NAME="TESTS_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="USE_BOUNDING_BOX" PARM_VALUE="No"/>
-#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SpatialFilter_5"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#!   IDENTIFIER="53"
-#!   TYPE="SpatialFilter"
-#!   VERSION="11"
-#!   POSITION="2559.4005940059405 -2983.2854940452789"
-#!   BOUNDING_RECT="2559.4005940059405 -2983.2854940452789 430 71"
-#!   ORDER="500000000000005"
-#!   PARMS_EDITED="true"
-#!   ENABLED="true"
-#!   LAST_PARM_EDIT="20202"
-#! >
-#!     <OUTPUT_FEAT NAME="PASSED"/>
-#!     <FEAT_COLLAPSED COLLAPSED="0"/>
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="_predicate" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <OUTPUT_FEAT NAME="FAILED"/>
-#!     <FEAT_COLLAPSED COLLAPSED="1"/>
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
-#!     <FEAT_COLLAPSED COLLAPSED="2"/>
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="2" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="2" />
-#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
-#!     <XFORM_PARM PARM_NAME="AGGREGATE_HANDLING" PARM_VALUE="Yes"/>
-#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="YES"/>
-#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Filter"/>
-#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Candidate"/>
-#!     <XFORM_PARM PARM_NAME="ATTR_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="BASE_TYPE" PARM_VALUE="Multiple Filters"/>
-#!     <XFORM_PARM PARM_NAME="CURVE_BOUNDARY_RULE_PARAM" PARM_VALUE="Default Rule"/>
-#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="GROUP_BY_MODE" PARM_VALUE="No"/>
-#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="PASS_CRITERIA" PARM_VALUE="Pass Against One Filter"/>
-#!     <XFORM_PARM PARM_NAME="PREDATTR" PARM_VALUE="_predicate"/>
-#!     <XFORM_PARM PARM_NAME="PREDICATES" PARM_VALUE="INTERSECTS TOUCHES"/>
-#!     <XFORM_PARM PARM_NAME="TESTS_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="USE_BOUNDING_BOX" PARM_VALUE="No"/>
-#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SpatialFilter_6"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#!   IDENTIFIER="54"
-#!   TYPE="AttributeCreator"
-#!   VERSION="9"
-#!   POSITION="3587.5358753587516 -2113.7683822700046"
-#!   BOUNDING_RECT="3587.5358753587516 -2113.7683822700046 454 71"
-#!   ORDER="500000000000015"
-#!   PARMS_EDITED="true"
-#!   ENABLED="true"
-#!   LAST_PARM_EDIT="20202"
-#! >
-#!     <OUTPUT_FEAT NAME="OUTPUT"/>
-#!     <FEAT_COLLAPSED COLLAPSED="0"/>
-#!     <XFORM_ATTR ATTR_NAME="fileName" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="filePath" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="_predicate" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; fileName SET_TO &lt;at&gt;Value&lt;openparen&gt;fme_basename&lt;closeparen&gt;  filePath SET_TO &lt;at&gt;Value&lt;openparen&gt;fme_dataset&lt;closeparen&gt;"/>
-#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
-#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
-#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_4"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#!   IDENTIFIER="55"
-#!   TYPE="AttributeCreator"
-#!   VERSION="9"
-#!   POSITION="3587.5358753587516 -2623.1484760709427"
-#!   BOUNDING_RECT="3587.5358753587516 -2623.1484760709427 454 71"
-#!   ORDER="500000000000015"
-#!   PARMS_EDITED="true"
-#!   ENABLED="true"
-#!   LAST_PARM_EDIT="20202"
-#! >
-#!     <OUTPUT_FEAT NAME="OUTPUT"/>
-#!     <FEAT_COLLAPSED COLLAPSED="0"/>
-#!     <XFORM_ATTR ATTR_NAME="fileName" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="filePath" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="_predicate" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; fileName SET_TO &lt;at&gt;Value&lt;openparen&gt;fme_basename&lt;closeparen&gt;  filePath SET_TO &lt;at&gt;Value&lt;openparen&gt;fme_dataset&lt;closeparen&gt;"/>
-#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
-#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
-#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_5"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#!   IDENTIFIER="56"
-#!   TYPE="AttributeCreator"
-#!   VERSION="9"
-#!   POSITION="3587.5358753587516 -3110.6571312888736"
-#!   BOUNDING_RECT="3587.5358753587516 -3110.6571312888736 454 71"
-#!   ORDER="500000000000015"
-#!   PARMS_EDITED="true"
-#!   ENABLED="true"
-#!   LAST_PARM_EDIT="20202"
-#! >
-#!     <OUTPUT_FEAT NAME="OUTPUT"/>
-#!     <FEAT_COLLAPSED COLLAPSED="0"/>
-#!     <XFORM_ATTR ATTR_NAME="fileName" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="filePath" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="_predicate" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; fileName SET_TO &lt;at&gt;Value&lt;openparen&gt;fme_basename&lt;closeparen&gt;  filePath SET_TO &lt;at&gt;Value&lt;openparen&gt;fme_dataset&lt;closeparen&gt;"/>
-#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
-#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
-#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_6"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#!   IDENTIFIER="58"
-#!   TYPE="Inspector"
-#!   VERSION="5"
-#!   POSITION="4470.9194691946941 -2280.1464760509416"
-#!   BOUNDING_RECT="4470.9194691946941 -2280.1464760509416 430 71"
-#!   ORDER="500000000000020"
-#!   PARMS_EDITED="true"
-#!   ENABLED="true"
-#!   LAST_PARM_EDIT="20202"
-#! >
-#!     <XFORM_PARM PARM_NAME="AREA_COLOR" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="PEN_COLOR" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="POINTCLOUD_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="RASTER_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="RASTER_NUM_COLS" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="RASTER_NUM_ROWS" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="RASTER_START_COL" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="RASTER_START_ROW" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="RASTER_VISUALIZATION_OPTION" PARM_VALUE="No Reduction"/>
-#!     <XFORM_PARM PARM_NAME="TACKATTRS" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="THINNER_INTERVAL" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="THINNER_MAX_NUM_POINTS" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="THINNER_TYPE_DISPLAY" PARM_VALUE="No Thinning"/>
-#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="VECTOR_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Inspector_4"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#!   IDENTIFIER="60"
-#!   TYPE="Inspector"
-#!   VERSION="5"
-#!   POSITION="4470.919469194695 -2789.5267763267238"
-#!   BOUNDING_RECT="4470.919469194695 -2789.5267763267238 430 71"
-#!   ORDER="500000000000020"
-#!   PARMS_EDITED="true"
-#!   ENABLED="true"
-#!   LAST_PARM_EDIT="20202"
-#! >
-#!     <XFORM_PARM PARM_NAME="AREA_COLOR" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="PEN_COLOR" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="POINTCLOUD_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="RASTER_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="RASTER_NUM_COLS" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="RASTER_NUM_ROWS" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="RASTER_START_COL" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="RASTER_START_ROW" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="RASTER_VISUALIZATION_OPTION" PARM_VALUE="No Reduction"/>
-#!     <XFORM_PARM PARM_NAME="TACKATTRS" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="THINNER_INTERVAL" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="THINNER_MAX_NUM_POINTS" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="THINNER_TYPE_DISPLAY" PARM_VALUE="No Thinning"/>
-#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="VECTOR_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Inspector_5"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#!   IDENTIFIER="62"
-#!   TYPE="Inspector"
-#!   VERSION="5"
-#!   POSITION="4470.919469194695 -3283.2854940452789"
-#!   BOUNDING_RECT="4470.919469194695 -3283.2854940452789 430 71"
-#!   ORDER="500000000000020"
-#!   PARMS_EDITED="true"
-#!   ENABLED="true"
-#!   LAST_PARM_EDIT="20202"
-#! >
-#!     <XFORM_PARM PARM_NAME="AREA_COLOR" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="PEN_COLOR" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="POINTCLOUD_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="RASTER_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="RASTER_NUM_COLS" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="RASTER_NUM_ROWS" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="RASTER_START_COL" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="RASTER_START_ROW" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="RASTER_VISUALIZATION_OPTION" PARM_VALUE="No Reduction"/>
-#!     <XFORM_PARM PARM_NAME="TACKATTRS" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="THINNER_INTERVAL" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="THINNER_MAX_NUM_POINTS" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="THINNER_TYPE_DISPLAY" PARM_VALUE="No Thinning"/>
-#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="VECTOR_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Inspector_6"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#!   IDENTIFIER="63"
-#!   TYPE="SpatialFilter"
-#!   VERSION="11"
-#!   POSITION="2559.4005940059405 -3519.2212944625485"
-#!   BOUNDING_RECT="2559.4005940059405 -3519.2212944625485 430 71"
-#!   ORDER="500000000000005"
-#!   PARMS_EDITED="true"
-#!   ENABLED="true"
-#!   LAST_PARM_EDIT="20202"
-#! >
-#!     <OUTPUT_FEAT NAME="PASSED"/>
-#!     <FEAT_COLLAPSED COLLAPSED="0"/>
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="_predicate" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <OUTPUT_FEAT NAME="FAILED"/>
-#!     <FEAT_COLLAPSED COLLAPSED="1"/>
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="1" />
-#!     <OUTPUT_FEAT NAME="&lt;REJECTED&gt;"/>
-#!     <FEAT_COLLAPSED COLLAPSED="2"/>
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="2" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="2" />
-#!     <XFORM_ATTR ATTR_NAME="fme_rejection_code" IS_USER_CREATED="false" FEAT_INDEX="2" />
-#!     <XFORM_PARM PARM_NAME="AGGREGATE_HANDLING" PARM_VALUE="Yes"/>
-#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_GROUP" PARM_VALUE="YES"/>
-#!     <XFORM_PARM PARM_NAME="ATTR_ACCUM_MODE" PARM_VALUE="Merge Filter"/>
-#!     <XFORM_PARM PARM_NAME="ATTR_CONFLICT_RES" PARM_VALUE="Use Candidate"/>
-#!     <XFORM_PARM PARM_NAME="ATTR_PREFIX" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="BASE_TYPE" PARM_VALUE="Multiple Filters"/>
-#!     <XFORM_PARM PARM_NAME="CURVE_BOUNDARY_RULE_PARAM" PARM_VALUE="Default Rule"/>
-#!     <XFORM_PARM PARM_NAME="GROUP_BY" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="GROUP_BY_MODE" PARM_VALUE="No"/>
-#!     <XFORM_PARM PARM_NAME="PARAMETERS_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="PASS_CRITERIA" PARM_VALUE="Pass Against One Filter"/>
-#!     <XFORM_PARM PARM_NAME="PREDATTR" PARM_VALUE="_predicate"/>
-#!     <XFORM_PARM PARM_NAME="PREDICATES" PARM_VALUE="INTERSECTS TOUCHES"/>
-#!     <XFORM_PARM PARM_NAME="TESTS_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="USE_BOUNDING_BOX" PARM_VALUE="No"/>
-#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="SpatialFilter_7"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#!   IDENTIFIER="64"
-#!   TYPE="AttributeCreator"
-#!   VERSION="9"
-#!   POSITION="3587.5358753587516 -3646.5929317061432"
-#!   BOUNDING_RECT="3587.5358753587516 -3646.5929317061432 454 71"
-#!   ORDER="500000000000015"
-#!   PARMS_EDITED="true"
-#!   ENABLED="true"
-#!   LAST_PARM_EDIT="20202"
-#! >
-#!     <OUTPUT_FEAT NAME="OUTPUT"/>
-#!     <FEAT_COLLAPSED COLLAPSED="0"/>
-#!     <XFORM_ATTR ATTR_NAME="fileName" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="filePath" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="fme_basename" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="fme_dataset" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_ATTR ATTR_NAME="_predicate" IS_USER_CREATED="false" FEAT_INDEX="0" />
-#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_GRP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="ATTRIBUTE_HANDLING" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="ATTR_TABLE" PARM_VALUE="&quot;&quot; fileName SET_TO &lt;at&gt;Value&lt;openparen&gt;fme_basename&lt;closeparen&gt;  filePath SET_TO &lt;at&gt;Value&lt;openparen&gt;fme_dataset&lt;closeparen&gt;"/>
-#!     <XFORM_PARM PARM_NAME="MULTI_FEATURE_MODE" PARM_VALUE="NO"/>
-#!     <XFORM_PARM PARM_NAME="NULL_ATTR_MODE_DISPLAY" PARM_VALUE="No Substitution"/>
-#!     <XFORM_PARM PARM_NAME="NULL_ATTR_VALUE" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="NUM_PRIOR_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="NUM_SUBSEQUENT_FEATURES" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="AttributeCreator_7"/>
-#! </TRANSFORMER>
-#! <TRANSFORMER
-#!   IDENTIFIER="66"
-#!   TYPE="Inspector"
-#!   VERSION="5"
-#!   POSITION="4446.919469194695 -3819.2212944625485"
-#!   BOUNDING_RECT="4446.919469194695 -3819.2212944625485 430 71"
-#!   ORDER="500000000000020"
-#!   PARMS_EDITED="true"
-#!   ENABLED="true"
-#!   LAST_PARM_EDIT="20202"
-#! >
-#!     <XFORM_PARM PARM_NAME="AREA_COLOR" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="PEN_COLOR" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="POINTCLOUD_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="RASTER_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="RASTER_NUM_COLS" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="RASTER_NUM_ROWS" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="RASTER_START_COL" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="RASTER_START_ROW" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="RASTER_VISUALIZATION_OPTION" PARM_VALUE="No Reduction"/>
-#!     <XFORM_PARM PARM_NAME="TACKATTRS" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="THINNER_INTERVAL" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="THINNER_MAX_NUM_POINTS" PARM_VALUE="&lt;Unused&gt;"/>
-#!     <XFORM_PARM PARM_NAME="THINNER_TYPE_DISPLAY" PARM_VALUE="No Thinning"/>
-#!     <XFORM_PARM PARM_NAME="TRANSFORMER_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="VECTOR_GROUP" PARM_VALUE=""/>
-#!     <XFORM_PARM PARM_NAME="XFORMER_NAME" PARM_VALUE="Inspector_7"/>
 #! </TRANSFORMER>
 #! </TRANSFORMERS>
 #! <FEAT_LINKS>
@@ -2020,186 +1501,6 @@
 #!   EXTRA_POINTS=""
 #! />
 #! <FEAT_LINK
-#!   IDENTIFIER="75"
-#!   SOURCE_NODE="46"
-#!   TARGET_NODE="54"
-#!   SOURCE_PORT_DESC="fo 0 PASSED"
-#!   TARGET_PORT_DESC="fi 0 "
-#!   ENABLED="true"
-#!   EXECUTION_IDX="0"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="76"
-#!   SOURCE_NODE="47"
-#!   TARGET_NODE="55"
-#!   SOURCE_PORT_DESC="fo 0 PASSED"
-#!   TARGET_PORT_DESC="fi 0 "
-#!   ENABLED="true"
-#!   EXECUTION_IDX="0"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="78"
-#!   SOURCE_NODE="53"
-#!   TARGET_NODE="56"
-#!   SOURCE_PORT_DESC="fo 0 PASSED"
-#!   TARGET_PORT_DESC="fi 0 "
-#!   ENABLED="true"
-#!   EXECUTION_IDX="0"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="73"
-#!   SOURCE_NODE="54"
-#!   TARGET_NODE="57"
-#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
-#!   TARGET_PORT_DESC="-1"
-#!   ENABLED="true"
-#!   EXECUTION_IDX="0"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="74"
-#!   SOURCE_NODE="54"
-#!   TARGET_NODE="58"
-#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
-#!   TARGET_PORT_DESC="fi 0 "
-#!   ENABLED="true"
-#!   EXECUTION_IDX="1"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="72"
-#!   SOURCE_NODE="55"
-#!   TARGET_NODE="60"
-#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
-#!   TARGET_PORT_DESC="fi 0 "
-#!   ENABLED="true"
-#!   EXECUTION_IDX="0"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="71"
-#!   SOURCE_NODE="55"
-#!   TARGET_NODE="59"
-#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
-#!   TARGET_PORT_DESC="-1"
-#!   ENABLED="true"
-#!   EXECUTION_IDX="1"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="70"
-#!   SOURCE_NODE="56"
-#!   TARGET_NODE="62"
-#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
-#!   TARGET_PORT_DESC="fi 0 "
-#!   ENABLED="true"
-#!   EXECUTION_IDX="0"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="69"
-#!   SOURCE_NODE="56"
-#!   TARGET_NODE="61"
-#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
-#!   TARGET_PORT_DESC="-1"
-#!   ENABLED="true"
-#!   EXECUTION_IDX="1"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="77"
-#!   SOURCE_NODE="63"
-#!   TARGET_NODE="64"
-#!   SOURCE_PORT_DESC="fo 0 PASSED"
-#!   TARGET_PORT_DESC="fi 0 "
-#!   ENABLED="true"
-#!   EXECUTION_IDX="0"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="67"
-#!   SOURCE_NODE="64"
-#!   TARGET_NODE="65"
-#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
-#!   TARGET_PORT_DESC="-1"
-#!   ENABLED="true"
-#!   EXECUTION_IDX="0"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="68"
-#!   SOURCE_NODE="64"
-#!   TARGET_NODE="66"
-#!   SOURCE_PORT_DESC="fo 0 OUTPUT"
-#!   TARGET_PORT_DESC="fi 0 "
-#!   ENABLED="true"
-#!   EXECUTION_IDX="1"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
 #!   IDENTIFIER="14"
 #!   SOURCE_NODE="7"
 #!   TARGET_NODE="12"
@@ -2304,246 +1605,6 @@
 #!   LINK_STYLE_NAME="&lt;Default&gt;"
 #!   EXTRA_POINTS="2396 -337"
 #! />
-#! <FEAT_LINK
-#!   IDENTIFIER="84"
-#!   SOURCE_NODE="7"
-#!   TARGET_NODE="46"
-#!   SOURCE_PORT_DESC="fo 2 group&lt;lt&gt;space&lt;gt&gt;3"
-#!   TARGET_PORT_DESC="fi 1 Candidate"
-#!   ENABLED="true"
-#!   EXECUTION_IDX="3"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="79"
-#!   SOURCE_NODE="7"
-#!   TARGET_NODE="54"
-#!   SOURCE_PORT_DESC="fo 3 group&lt;lt&gt;space&lt;gt&gt;4"
-#!   TARGET_PORT_DESC="fi 0 "
-#!   ENABLED="true"
-#!   EXECUTION_IDX="0"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="83"
-#!   SOURCE_NODE="7"
-#!   TARGET_NODE="46"
-#!   SOURCE_PORT_DESC="fo 3 group&lt;lt&gt;space&lt;gt&gt;4"
-#!   TARGET_PORT_DESC="fi 0 Filter"
-#!   ENABLED="true"
-#!   EXECUTION_IDX="1"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="87"
-#!   SOURCE_NODE="7"
-#!   TARGET_NODE="47"
-#!   SOURCE_PORT_DESC="fo 3 group&lt;lt&gt;space&lt;gt&gt;4"
-#!   TARGET_PORT_DESC="fi 1 Candidate"
-#!   ENABLED="true"
-#!   EXECUTION_IDX="2"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="94"
-#!   SOURCE_NODE="7"
-#!   TARGET_NODE="31"
-#!   SOURCE_PORT_DESC="fo 3 group&lt;lt&gt;space&lt;gt&gt;4"
-#!   TARGET_PORT_DESC="fi 1 Candidate"
-#!   ENABLED="true"
-#!   EXECUTION_IDX="3"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="80"
-#!   SOURCE_NODE="7"
-#!   TARGET_NODE="55"
-#!   SOURCE_PORT_DESC="fo 4 group&lt;lt&gt;space&lt;gt&gt;5"
-#!   TARGET_PORT_DESC="fi 0 "
-#!   ENABLED="true"
-#!   EXECUTION_IDX="0"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="85"
-#!   SOURCE_NODE="7"
-#!   TARGET_NODE="46"
-#!   SOURCE_PORT_DESC="fo 4 group&lt;lt&gt;space&lt;gt&gt;5"
-#!   TARGET_PORT_DESC="fi 1 Candidate"
-#!   ENABLED="true"
-#!   EXECUTION_IDX="1"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="86"
-#!   SOURCE_NODE="7"
-#!   TARGET_NODE="47"
-#!   SOURCE_PORT_DESC="fo 4 group&lt;lt&gt;space&lt;gt&gt;5"
-#!   TARGET_PORT_DESC="fi 0 Filter"
-#!   ENABLED="true"
-#!   EXECUTION_IDX="2"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="90"
-#!   SOURCE_NODE="7"
-#!   TARGET_NODE="53"
-#!   SOURCE_PORT_DESC="fo 4 group&lt;lt&gt;space&lt;gt&gt;5"
-#!   TARGET_PORT_DESC="fi 1 Candidate"
-#!   ENABLED="true"
-#!   EXECUTION_IDX="3"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="81"
-#!   SOURCE_NODE="7"
-#!   TARGET_NODE="56"
-#!   SOURCE_PORT_DESC="fo 5 group&lt;lt&gt;space&lt;gt&gt;6"
-#!   TARGET_PORT_DESC="fi 0 "
-#!   ENABLED="true"
-#!   EXECUTION_IDX="0"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="88"
-#!   SOURCE_NODE="7"
-#!   TARGET_NODE="47"
-#!   SOURCE_PORT_DESC="fo 5 group&lt;lt&gt;space&lt;gt&gt;6"
-#!   TARGET_PORT_DESC="fi 1 Candidate"
-#!   ENABLED="true"
-#!   EXECUTION_IDX="1"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="89"
-#!   SOURCE_NODE="7"
-#!   TARGET_NODE="53"
-#!   SOURCE_PORT_DESC="fo 5 group&lt;lt&gt;space&lt;gt&gt;6"
-#!   TARGET_PORT_DESC="fi 0 Filter"
-#!   ENABLED="true"
-#!   EXECUTION_IDX="2"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="93"
-#!   SOURCE_NODE="7"
-#!   TARGET_NODE="63"
-#!   SOURCE_PORT_DESC="fo 5 group&lt;lt&gt;space&lt;gt&gt;6"
-#!   TARGET_PORT_DESC="fi 1 Candidate"
-#!   ENABLED="true"
-#!   EXECUTION_IDX="3"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="82"
-#!   SOURCE_NODE="7"
-#!   TARGET_NODE="64"
-#!   SOURCE_PORT_DESC="fo 6 group&lt;lt&gt;space&lt;gt&gt;7"
-#!   TARGET_PORT_DESC="fi 0 "
-#!   ENABLED="true"
-#!   EXECUTION_IDX="0"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="91"
-#!   SOURCE_NODE="7"
-#!   TARGET_NODE="53"
-#!   SOURCE_PORT_DESC="fo 6 group&lt;lt&gt;space&lt;gt&gt;7"
-#!   TARGET_PORT_DESC="fi 1 Candidate"
-#!   ENABLED="true"
-#!   EXECUTION_IDX="1"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
-#! <FEAT_LINK
-#!   IDENTIFIER="92"
-#!   SOURCE_NODE="7"
-#!   TARGET_NODE="63"
-#!   SOURCE_PORT_DESC="fo 6 group&lt;lt&gt;space&lt;gt&gt;7"
-#!   TARGET_PORT_DESC="fi 0 Filter"
-#!   ENABLED="true"
-#!   EXECUTION_IDX="2"
-#!   HIDDEN="false"
-#!   COLOUR="0.82352941176470584,0.82352941176470584,0.82352941176470584,1"
-#!   PEN_WIDTH="4"
-#!   PEN_STYLE="1"
-#!   LINK_STYLE_NAME="&lt;Default&gt;"
-#!   EXTRA_POINTS=""
-#! />
 #! </FEAT_LINKS>
 #! <BREAKPOINTS>
 #! </BREAKPOINTS>
@@ -2559,7 +1620,7 @@ FME_PYTHON_VERSION 37
 GUI IGNORE SourceDataset_GEOTIFF_1,GEOTIFF_IN_APPLY_GCPS_GEOTIFF_1,GEOTIFF_IN_GCP_INTERPOLATION_METHOD_GEOTIFF_1,GEOTIFF_IN_USE_SEARCH_ENVELOPE_GEOTIFF_1,GEOTIFF_IN_SEARCH_ENVELOPE_MINX_GEOTIFF_1,GEOTIFF_IN_SEARCH_ENVELOPE_MINY_GEOTIFF_1,GEOTIFF_IN_SEARCH_ENVELOPE_MAXX_GEOTIFF_1,GEOTIFF_IN_SEARCH_ENVELOPE_MAXY_GEOTIFF_1,GEOTIFF_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_GEOTIFF_1,GEOTIFF_IN_CLIP_TO_ENVELOPE_GEOTIFF_1,GEOTIFF_IN_GEOTIFF_RDR_ADV_PARM_GROUP_GEOTIFF_1,GEOTIFF_IN_PYRAMID_LEVEL_GEOTIFF_1,GEOTIFF_IN_PREFER_FILE_CS_UNITS_GEOTIFF_1,GEOTIFF_IN_READ_OFFSETS_IN_CS_UNITS_GEOTIFF_1,GEOTIFF_IN_IGNORE_RASTER_TYPE_KEY_GEOTIFF_1,GEOTIFF_IN_NETWORK_AUTHENTICATION_GEOTIFF_1,DestDataset_CSV2_1,CSV2_OUT_DATASET_GROUP_CSV2_1,CSV2_OUT_EXTENSION_CSV2_1,CSV2_OUT_FIELDS_GROUP_CSV2_1,CSV2_OUT_DELIMITER_CSV2_1,CSV2_OUT_ENCODING_GROUP_CSV2_1,CSV2_OUT_ENCODING_CSV2_1,CSV2_OUT_WRITE_BOM_FOR_UNICODE_CSV2_1,CSV2_OUT_ADVANCED_GROUP_CSV2_1,CSV2_OUT_QUALIFY_FIELD_NAMES_CSV2_1,CSV2_OUT_QUALIFY_FIELD_VALUES_CSV2_1,CSV2_OUT_UNQUALIFIED_FIELD_VALUE_HANDLING_CSV2_1,CSV2_OUT_FIELD_QUALIFIER_CHARACTER_CSV2_1,CSV2_OUT_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_1,CSV2_OUT_ROW_TERMINATION_CSV2_1,CSV2_OUT_WRITE_SCHEMA_FILE_CSV2_1,CSV2_OUT_EXISTING_SCHEMA_FILE_HANDLING_CSV2_1
 DEFAULT_MACRO SourceDataset_GEOTIFF C:\Users\obliczenia\map-tiles-tools\input\data\50k with tfw\data\**\*.tif
 GUI MULTIFILE SourceDataset_GEOTIFF GeoTIFF_Files(*.tif;*.tiff;*.itiff;*.ovr)|*.tif;*.tiff;*.itiff;*.ovr|Compressed_Files(*.bz2;*.gz)|*.bz2;*.gz|Archive_Files(*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx)|*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx|All_Files(*)|* Source GeoTIFF File(s):
-DEFAULT_MACRO DestDataset_CSV2 C:\Users\obliczenia\map-tiles-tools\input\data\groups\7
+DEFAULT_MACRO DestDataset_CSV2 C:\Users\obliczenia\map-tiles-tools\input\data\groups\3
 GUI DIRNAME DestDataset_CSV2 Destination CSV (Comma Separated Value) Folder:
 INCLUDE [ if {{$(SourceDataset_GEOTIFF)} == {}} { puts_real {Parameter 'SourceDataset_GEOTIFF' must be given a value.}; exit 1; }; ]
 INCLUDE [ if {{$(DestDataset_CSV2)} == {}} { puts_real {Parameter 'DestDataset_CSV2' must be given a value.}; exit 1; }; ]
@@ -2810,104 +1871,16 @@ DEFAULT_MACRO _WB_BYPASS_TERMINATION No
 FACTORY_DEF * TeeFactory FACTORY_NAME RasterExtentsCoercer_<Rejected> INPUT FEATURE_TYPE RasterExtentsCoercer_<REJECTED>  OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED, RasterExtentsCoercer<space>output<space>a<space><lt>Rejected<gt><space>feature.<space><space>To<space>continue<space>translation<space>when<space>features<space>are<space>rejected<comma><space>change<space><apos>Workspace<space>Parameters<apos><space><gt><space>Translation<space><gt><space><apos>Rejected<space>Feature<space>Handling<apos><space>to<space><apos>Continue<space>Translation<apos>)
 # -------------------------------------------------------------------------
 FACTORY_DEF * TeeFactory    FACTORY_NAME TestFilter    INPUT  FEATURE_TYPE RasterExtentsCoercer_EXTENTS    OUTPUT FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_0
-FACTORY_DEF * TestFactory FACTORY_NAME TestFilter_Condition_1 INPUT FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_0 CASE_INSENSITIVE_TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Left<openparen><at>Value<openparen>fme_basename<closeparen><comma>2<closeparen>,TestFilter) IN HP<comma>HT<comma>HU ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "1" FEATURE_TABLE_SHIM_SUPPORT Yes PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT OUTPUT PASSED FEATURE_TYPE TestFilter_group<space>1 OUTPUT FAILED FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_1
-FACTORY_DEF * TestFactory FACTORY_NAME TestFilter_Condition_2 INPUT FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_1 CASE_INSENSITIVE_TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Left<openparen><at>Value<openparen>fme_basename<closeparen><comma>2<closeparen>,TestFilter) IN HW<comma>HX<comma>HY<comma>HZ<comma>NA<comma>NB<comma>NC<comma>ND ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "1" FEATURE_TABLE_SHIM_SUPPORT Yes PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT OUTPUT PASSED FEATURE_TYPE TestFilter_group<space>2 OUTPUT FAILED FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_2
-FACTORY_DEF * TestFactory FACTORY_NAME TestFilter_Condition_3 INPUT FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_2 CASE_INSENSITIVE_TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Left<openparen><at>Value<openparen>fme_basename<closeparen><comma>2<closeparen>,TestFilter) IN NF<comma>NG<comma>NH<comma>NJ<comma>NK<comma>NL<comma>NM<comma>NN<comma>NO ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "1" FEATURE_TABLE_SHIM_SUPPORT Yes PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT OUTPUT PASSED FEATURE_TYPE TestFilter_group<space>3 OUTPUT FAILED FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_3
-FACTORY_DEF * TestFactory FACTORY_NAME TestFilter_Condition_4 INPUT FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_3 CASE_INSENSITIVE_TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Left<openparen><at>Value<openparen>fme_basename<closeparen><comma>2<closeparen>,TestFilter) IN NR<comma>NS<comma>NT<comma>NU<comma>NW<comma>NX<comma>NY<comma>NZ<comma>OV ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "1" FEATURE_TABLE_SHIM_SUPPORT Yes PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT OUTPUT PASSED FEATURE_TYPE TestFilter_group<space>4 OUTPUT FAILED FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_4
-FACTORY_DEF * TestFactory FACTORY_NAME TestFilter_Condition_5 INPUT FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_4 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Left<openparen><at>Value<openparen>fme_basename<closeparen><comma>2<closeparen>,TestFilter) IN SC<comma>SD<comma>SE<comma>TA<comma>SH<comma>SJ<comma>SK<comma>TF<comma>TG ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "1" FEATURE_TABLE_SHIM_SUPPORT Yes PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT OUTPUT PASSED FEATURE_TYPE TestFilter_group<space>5 OUTPUT FAILED FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_5
-FACTORY_DEF * TestFactory FACTORY_NAME TestFilter_Condition_6 INPUT FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_5 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Left<openparen><at>Value<openparen>fme_basename<closeparen><comma>2<closeparen>,TestFilter) IN SM<comma>SN<comma>SO<comma>SP<comma>TL<comma>TM<comma>SR<comma>SS<comma>ST<comma>SU<comma>TQ<comma>TR ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "1" FEATURE_TABLE_SHIM_SUPPORT Yes PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT OUTPUT PASSED FEATURE_TYPE TestFilter_group<space>6 OUTPUT FAILED FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_6
-FACTORY_DEF * TestFactory FACTORY_NAME TestFilter_Condition_7 INPUT FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_6 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Left<openparen><at>Value<openparen>fme_basename<closeparen><comma>2<closeparen>,TestFilter) IN SV<comma>SW<comma>SX<comma>SY<comma>SZ<comma>TV ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "1" FEATURE_TABLE_SHIM_SUPPORT Yes PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT OUTPUT PASSED FEATURE_TYPE TestFilter_group<space>7 OUTPUT FAILED FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_7
-FACTORY_DEF * TeeFactory FACTORY_NAME TestFilter_<lt>UNFILTERED<gt> INPUT FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_7 OUTPUT FEATURE_TYPE TestFilter_<lt>UNFILTERED<gt>
+FACTORY_DEF * TestFactory FACTORY_NAME TestFilter_Condition_1 INPUT FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_0 CASE_INSENSITIVE_TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Left<openparen><at>Value<openparen>fme_basename<closeparen><comma>2<closeparen>,TestFilter) IN HP<comma>HT<comma>HU<comma>HW<comma>HX<comma>HY<comma>HZ<comma>NA<comma>NB<comma>NC<comma>ND<comma>NF<comma>NG<comma>NH<comma>NJ<comma>NK ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "1" FEATURE_TABLE_SHIM_SUPPORT Yes PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT OUTPUT PASSED FEATURE_TYPE TestFilter_group<space>1 OUTPUT FAILED FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_1
+FACTORY_DEF * TestFactory FACTORY_NAME TestFilter_Condition_2 INPUT FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_1 CASE_INSENSITIVE_TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Left<openparen><at>Value<openparen>fme_basename<closeparen><comma>2<closeparen>,TestFilter) IN NL<comma>NM<comma>NN<comma>NO<comma>NR<comma>NS<comma>NT<comma>NU<comma>NW<comma>NX<comma>NY<comma>NZ<comma>OV ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "1" FEATURE_TABLE_SHIM_SUPPORT Yes PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT OUTPUT PASSED FEATURE_TYPE TestFilter_group<space>2 OUTPUT FAILED FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_2
+FACTORY_DEF * TestFactory FACTORY_NAME TestFilter_Condition_3 INPUT FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_2 TEST @EvaluateExpression(FDIV,STRING_ENCODED,<at>Left<openparen><at>Value<openparen>fme_basename<closeparen><comma>2<closeparen>,TestFilter) IN SC<comma>SD<comma>SE<comma>SH<comma>SJ<comma>SK<comma>SM<comma>SN<comma>SO<comma>SP<comma>SR<comma>SS<comma>ST<comma>SU<comma>SV<comma>SW<comma>SX<comma>SY<comma>SZ<comma>TA<comma>TF<comma>TG<comma>TL<comma>TM<comma>TQ<comma>TR<comma>TV ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR "1" FEATURE_TABLE_SHIM_SUPPORT Yes PRESERVE_FEATURE_ORDER PER_OUTPUT_PORT OUTPUT PASSED FEATURE_TYPE TestFilter_group<space>3 OUTPUT FAILED FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_3
+FACTORY_DEF * TeeFactory FACTORY_NAME TestFilter_<lt>UNFILTERED<gt> INPUT FEATURE_TYPE TestFilter_TESTFILTERINPUTLINE_3 OUTPUT FEATURE_TYPE TestFilter_<lt>UNFILTERED<gt>
 FACTORY_DEF * TeeFactory   FACTORY_NAME "TestFilter group<space>1 Splitter"   INPUT FEATURE_TYPE TestFilter_group<space>1   OUTPUT FEATURE_TYPE TestFilter_group<space>1_0_0GX+aigRQpA=   OUTPUT FEATURE_TYPE TestFilter_group<space>1_1_0Ikcw3FpRDo=   OUTPUT FEATURE_TYPE TestFilter_group<space>1_2_IKUHxUp6bFU=
 FACTORY_DEF * TeeFactory   FACTORY_NAME "TestFilter group<space>2 Splitter"   INPUT FEATURE_TYPE TestFilter_group<space>2   OUTPUT FEATURE_TYPE TestFilter_group<space>2_0_qBRKgq92NoY=   OUTPUT FEATURE_TYPE TestFilter_group<space>2_1_eF9d9ozZApo=   OUTPUT FEATURE_TYPE TestFilter_group<space>2_2_BC+vpw1r6bg=   OUTPUT FEATURE_TYPE TestFilter_group<space>2_3_x6BynMUtB5M=
-FACTORY_DEF * TeeFactory   FACTORY_NAME "TestFilter group<space>3 Splitter"   INPUT FEATURE_TYPE TestFilter_group<space>3   OUTPUT FEATURE_TYPE TestFilter_group<space>3_0_kJ0YNnd7CKM=   OUTPUT FEATURE_TYPE TestFilter_group<space>3_1_qlbCVwNH8k0=   OUTPUT FEATURE_TYPE TestFilter_group<space>3_2_S+kcPyD+lJ8=   OUTPUT FEATURE_TYPE TestFilter_group<space>3_3_rI79a9e71og=
-FACTORY_DEF * TeeFactory   FACTORY_NAME "TestFilter group<space>4 Splitter"   INPUT FEATURE_TYPE TestFilter_group<space>4   OUTPUT FEATURE_TYPE TestFilter_group<space>4_0_avxGPiAIPt0=   OUTPUT FEATURE_TYPE TestFilter_group<space>4_1_1Vyel2g8D2s=   OUTPUT FEATURE_TYPE TestFilter_group<space>4_2_n8aTCPCKDBQ=   OUTPUT FEATURE_TYPE TestFilter_group<space>4_3_wTTk+QrlH0E=
-FACTORY_DEF * TeeFactory   FACTORY_NAME "TestFilter group<space>5 Splitter"   INPUT FEATURE_TYPE TestFilter_group<space>5   OUTPUT FEATURE_TYPE TestFilter_group<space>5_0_2mdZhPO12ao=   OUTPUT FEATURE_TYPE TestFilter_group<space>5_1_DgPS4kYVPro=   OUTPUT FEATURE_TYPE TestFilter_group<space>5_2_FS1FzZT0rvs=   OUTPUT FEATURE_TYPE TestFilter_group<space>5_3_7y+sYZUmzKs=
-FACTORY_DEF * TeeFactory   FACTORY_NAME "TestFilter group<space>6 Splitter"   INPUT FEATURE_TYPE TestFilter_group<space>6   OUTPUT FEATURE_TYPE TestFilter_group<space>6_0_9/EePFoTwYY=   OUTPUT FEATURE_TYPE TestFilter_group<space>6_1_p9dKfNOZ7bQ=   OUTPUT FEATURE_TYPE TestFilter_group<space>6_2_Yunr8dfcbz4=   OUTPUT FEATURE_TYPE TestFilter_group<space>6_3_aFSgqLsEIPk=
-FACTORY_DEF * TeeFactory   FACTORY_NAME "TestFilter group<space>7 Splitter"   INPUT FEATURE_TYPE TestFilter_group<space>7   OUTPUT FEATURE_TYPE TestFilter_group<space>7_0_KjenJEOK4IA=   OUTPUT FEATURE_TYPE TestFilter_group<space>7_1_HIxh7s07iBc=   OUTPUT FEATURE_TYPE TestFilter_group<space>7_2_xLez3o8D9Qg=
+FACTORY_DEF * TeeFactory   FACTORY_NAME "TestFilter group<space>3 Splitter"   INPUT FEATURE_TYPE TestFilter_group<space>3   OUTPUT FEATURE_TYPE TestFilter_group<space>3_0_kJ0YNnd7CKM=   OUTPUT FEATURE_TYPE TestFilter_group<space>3_1_qlbCVwNH8k0=   OUTPUT FEATURE_TYPE TestFilter_group<space>3_2_S+kcPyD+lJ8=
 FACTORY_DEF * TeeFactory   FACTORY_NAME "TestFilter <lt>UNFILTERED<gt> Transformer Output Nuker"   INPUT FEATURE_TYPE TestFilter_<lt>UNFILTERED<gt>
 # -------------------------------------------------------------------------
-FACTORY_DEF {*} SpatialFilterFactory    FACTORY_NAME SpatialFilter_7    INPUT BASE FEATURE_TYPE TestFilter_group<space>7_2_xLez3o8D9Qg=    INPUT CANDIDATE FEATURE_TYPE TestFilter_group<space>6_3_aFSgqLsEIPk=    PREDICATE "INTERSECTS TOUCHES"    USE_BOUNDING_BOX NO    MULTIPLE_BASES YES    MERGE_BASE_ATTR YES    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "CANDIDATE_IF_CONFLICT"    BASE_ATTR_PREFIX "<Unused>"    PREDICATE_ATTR "_predicate"    BOOLEAN_OPERATOR OR    REJECT_INVALID_GEOM Yes    REJECT_INVALID_PREDICATES Yes    REJECT_RASTERS No    ALLOW_NULLS Yes    CUSTOM_MULTI_HANDLING Yes    DIMENSION 2    FLUSH_WHEN_GROUPS_CHANGE No    CURVE_BOUNDARY_RULE ENDPOINTS_MOD2    OUTPUT PASSED FEATURE_TYPE SpatialFilter_7_PASSED    OUTPUT REJECTED FEATURE_TYPE SpatialFilter_7_<REJECTED>
-DEFAULT_MACRO _WB_BYPASS_TERMINATION No
-FACTORY_DEF * TeeFactory FACTORY_NAME SpatialFilter_7_<Rejected> INPUT FEATURE_TYPE SpatialFilter_7_<REJECTED>  OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED, SpatialFilter_7<space>output<space>a<space><lt>Rejected<gt><space>feature.<space><space>To<space>continue<space>translation<space>when<space>features<space>are<space>rejected<comma><space>change<space><apos>Workspace<space>Parameters<apos><space><gt><space>Translation<space><gt><space><apos>Rejected<space>Feature<space>Handling<apos><space>to<space><apos>Continue<space>Translation<apos>)
-# -------------------------------------------------------------------------
-FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME AttributeCreator_7    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE SpatialFilter_7_PASSED    INPUT  FEATURE_TYPE TestFilter_group<space>7_0_KjenJEOK4IA=    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "fileName" "SET_TO" "<at>Value<openparen>fme_basename<closeparen>" }      ATTR_ACTION { "" "filePath" "SET_TO" "<at>Value<openparen>fme_dataset<closeparen>" }    OUTPUT OUTPUT FEATURE_TYPE AttributeCreator_7_OUTPUT
-FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeCreator_7 OUTPUT Splitter"   INPUT FEATURE_TYPE AttributeCreator_7_OUTPUT   OUTPUT FEATURE_TYPE AttributeCreator_7_OUTPUT_0_eW3hXzBg3Uo=   OUTPUT FEATURE_TYPE AttributeCreator_7_OUTPUT_1_XxImEnY5Tyw=
-# -------------------------------------------------------------------------
-# Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
-DEFAULT_MACRO WORKSPACE_TEMP_DIR
-INCLUDE [    set safeName "[regsub -all {[^a-zA-Z0-9]} {Inspector_7} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";    puts "MACRO SAFE_FFS_NAME $safeName"; ]
-FACTORY_DEF {*} InspectorFactory    FACTORY_NAME Inspector_7_Prepper    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE AttributeCreator_7_OUTPUT_1_XxImEnY5Tyw=    GROUP_ATTRIBUTE __inspector_feature_type_attr__    GROUP_BY {  }    GROUP_ATTRIBUTE_PREFIX { Inspector_7 }    RASTER_REDUCTION NoReduction    POINT_CLOUD_REDUCTION NO_THINNING    OUTPUT RESULT FEATURE_TYPE __viewme__
-# Now route all the features into the recorder, changing their
-# feature type to the transformer name so that they view nicely
-DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
-DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
-# [PR#45549] The Data Inspector will limit the maximum number of features
-# it reads on WIN32, so we will correspondingly limit the number of
-# features we record here using the MAX_FEATURES_TO_RECORD directive.
-FACTORY_DEF * RecorderFactory    FACTORY_NAME Inspector_7_Recorder    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT FEATURE_TYPE __viewme__       _wb_termination_feature Yes       @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__       @FeatureType(@Value(__inspector_feature_type_attr__))       @RemoveAttributes(__inspector_feature_type_attr__)    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    STORE_SCANNED_SCHEMA YES    NORMALIZE_LIST_ATTRIBUTES_ON_SCHEMA YES    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA fileName,varchar<openparen>50<closeparen>,filePath,varchar<openparen>50<closeparen>,fme_basename,varchar<openparen>50<closeparen>,fme_dataset,varchar<openparen>50<closeparen>,_predicate,varchar<openparen>200<closeparen>    MODE RECORD    STORE_SCANNED_METADATA    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
-# -------------------------------------------------------------------------
-FACTORY_DEF {*} SpatialFilterFactory    FACTORY_NAME SpatialFilter_6    INPUT BASE FEATURE_TYPE TestFilter_group<space>6_2_Yunr8dfcbz4=    INPUT CANDIDATE FEATURE_TYPE TestFilter_group<space>5_3_7y+sYZUmzKs=    INPUT CANDIDATE FEATURE_TYPE TestFilter_group<space>7_1_HIxh7s07iBc=    PREDICATE "INTERSECTS TOUCHES"    USE_BOUNDING_BOX NO    MULTIPLE_BASES YES    MERGE_BASE_ATTR YES    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "CANDIDATE_IF_CONFLICT"    BASE_ATTR_PREFIX "<Unused>"    PREDICATE_ATTR "_predicate"    BOOLEAN_OPERATOR OR    REJECT_INVALID_GEOM Yes    REJECT_INVALID_PREDICATES Yes    REJECT_RASTERS No    ALLOW_NULLS Yes    CUSTOM_MULTI_HANDLING Yes    DIMENSION 2    FLUSH_WHEN_GROUPS_CHANGE No    CURVE_BOUNDARY_RULE ENDPOINTS_MOD2    OUTPUT PASSED FEATURE_TYPE SpatialFilter_6_PASSED    OUTPUT REJECTED FEATURE_TYPE SpatialFilter_6_<REJECTED>
-DEFAULT_MACRO _WB_BYPASS_TERMINATION No
-FACTORY_DEF * TeeFactory FACTORY_NAME SpatialFilter_6_<Rejected> INPUT FEATURE_TYPE SpatialFilter_6_<REJECTED>  OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED, SpatialFilter_6<space>output<space>a<space><lt>Rejected<gt><space>feature.<space><space>To<space>continue<space>translation<space>when<space>features<space>are<space>rejected<comma><space>change<space><apos>Workspace<space>Parameters<apos><space><gt><space>Translation<space><gt><space><apos>Rejected<space>Feature<space>Handling<apos><space>to<space><apos>Continue<space>Translation<apos>)
-# -------------------------------------------------------------------------
-FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME AttributeCreator_6    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE SpatialFilter_6_PASSED    INPUT  FEATURE_TYPE TestFilter_group<space>6_0_9/EePFoTwYY=    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "fileName" "SET_TO" "<at>Value<openparen>fme_basename<closeparen>" }      ATTR_ACTION { "" "filePath" "SET_TO" "<at>Value<openparen>fme_dataset<closeparen>" }    OUTPUT OUTPUT FEATURE_TYPE AttributeCreator_6_OUTPUT
-FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeCreator_6 OUTPUT Splitter"   INPUT FEATURE_TYPE AttributeCreator_6_OUTPUT   OUTPUT FEATURE_TYPE AttributeCreator_6_OUTPUT_0_GyCla7I1Rxg=   OUTPUT FEATURE_TYPE AttributeCreator_6_OUTPUT_1_kG9yipENWGo=
-# -------------------------------------------------------------------------
-# Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
-DEFAULT_MACRO WORKSPACE_TEMP_DIR
-INCLUDE [    set safeName "[regsub -all {[^a-zA-Z0-9]} {Inspector_6} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";    puts "MACRO SAFE_FFS_NAME $safeName"; ]
-FACTORY_DEF {*} InspectorFactory    FACTORY_NAME Inspector_6_Prepper    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE AttributeCreator_6_OUTPUT_0_GyCla7I1Rxg=    GROUP_ATTRIBUTE __inspector_feature_type_attr__    GROUP_BY {  }    GROUP_ATTRIBUTE_PREFIX { Inspector_6 }    RASTER_REDUCTION NoReduction    POINT_CLOUD_REDUCTION NO_THINNING    OUTPUT RESULT FEATURE_TYPE __viewme__
-# Now route all the features into the recorder, changing their
-# feature type to the transformer name so that they view nicely
-DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
-DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
-# [PR#45549] The Data Inspector will limit the maximum number of features
-# it reads on WIN32, so we will correspondingly limit the number of
-# features we record here using the MAX_FEATURES_TO_RECORD directive.
-FACTORY_DEF * RecorderFactory    FACTORY_NAME Inspector_6_Recorder    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT FEATURE_TYPE __viewme__       _wb_termination_feature Yes       @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__       @FeatureType(@Value(__inspector_feature_type_attr__))       @RemoveAttributes(__inspector_feature_type_attr__)    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    STORE_SCANNED_SCHEMA YES    NORMALIZE_LIST_ATTRIBUTES_ON_SCHEMA YES    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA fileName,varchar<openparen>50<closeparen>,filePath,varchar<openparen>50<closeparen>,fme_basename,varchar<openparen>50<closeparen>,fme_dataset,varchar<openparen>50<closeparen>,_predicate,varchar<openparen>200<closeparen>    MODE RECORD    STORE_SCANNED_METADATA    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
-# -------------------------------------------------------------------------
-FACTORY_DEF {*} SpatialFilterFactory    FACTORY_NAME SpatialFilter_5    INPUT BASE FEATURE_TYPE TestFilter_group<space>5_2_FS1FzZT0rvs=    INPUT CANDIDATE FEATURE_TYPE TestFilter_group<space>4_2_n8aTCPCKDBQ=    INPUT CANDIDATE FEATURE_TYPE TestFilter_group<space>6_1_p9dKfNOZ7bQ=    PREDICATE "INTERSECTS TOUCHES"    USE_BOUNDING_BOX NO    MULTIPLE_BASES YES    MERGE_BASE_ATTR YES    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "CANDIDATE_IF_CONFLICT"    BASE_ATTR_PREFIX "<Unused>"    PREDICATE_ATTR "_predicate"    BOOLEAN_OPERATOR OR    REJECT_INVALID_GEOM Yes    REJECT_INVALID_PREDICATES Yes    REJECT_RASTERS No    ALLOW_NULLS Yes    CUSTOM_MULTI_HANDLING Yes    DIMENSION 2    FLUSH_WHEN_GROUPS_CHANGE No    CURVE_BOUNDARY_RULE ENDPOINTS_MOD2    OUTPUT PASSED FEATURE_TYPE SpatialFilter_5_PASSED    OUTPUT REJECTED FEATURE_TYPE SpatialFilter_5_<REJECTED>
-DEFAULT_MACRO _WB_BYPASS_TERMINATION No
-FACTORY_DEF * TeeFactory FACTORY_NAME SpatialFilter_5_<Rejected> INPUT FEATURE_TYPE SpatialFilter_5_<REJECTED>  OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED, SpatialFilter_5<space>output<space>a<space><lt>Rejected<gt><space>feature.<space><space>To<space>continue<space>translation<space>when<space>features<space>are<space>rejected<comma><space>change<space><apos>Workspace<space>Parameters<apos><space><gt><space>Translation<space><gt><space><apos>Rejected<space>Feature<space>Handling<apos><space>to<space><apos>Continue<space>Translation<apos>)
-# -------------------------------------------------------------------------
-FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME AttributeCreator_5    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE SpatialFilter_5_PASSED    INPUT  FEATURE_TYPE TestFilter_group<space>5_0_2mdZhPO12ao=    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "fileName" "SET_TO" "<at>Value<openparen>fme_basename<closeparen>" }      ATTR_ACTION { "" "filePath" "SET_TO" "<at>Value<openparen>fme_dataset<closeparen>" }    OUTPUT OUTPUT FEATURE_TYPE AttributeCreator_5_OUTPUT
-FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeCreator_5 OUTPUT Splitter"   INPUT FEATURE_TYPE AttributeCreator_5_OUTPUT   OUTPUT FEATURE_TYPE AttributeCreator_5_OUTPUT_0_FzMqF8JOTj8=   OUTPUT FEATURE_TYPE AttributeCreator_5_OUTPUT_1_lbcjWHeNkKI=
-# -------------------------------------------------------------------------
-# Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
-DEFAULT_MACRO WORKSPACE_TEMP_DIR
-INCLUDE [    set safeName "[regsub -all {[^a-zA-Z0-9]} {Inspector_5} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";    puts "MACRO SAFE_FFS_NAME $safeName"; ]
-FACTORY_DEF {*} InspectorFactory    FACTORY_NAME Inspector_5_Prepper    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE AttributeCreator_5_OUTPUT_0_FzMqF8JOTj8=    GROUP_ATTRIBUTE __inspector_feature_type_attr__    GROUP_BY {  }    GROUP_ATTRIBUTE_PREFIX { Inspector_5 }    RASTER_REDUCTION NoReduction    POINT_CLOUD_REDUCTION NO_THINNING    OUTPUT RESULT FEATURE_TYPE __viewme__
-# Now route all the features into the recorder, changing their
-# feature type to the transformer name so that they view nicely
-DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
-DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
-# [PR#45549] The Data Inspector will limit the maximum number of features
-# it reads on WIN32, so we will correspondingly limit the number of
-# features we record here using the MAX_FEATURES_TO_RECORD directive.
-FACTORY_DEF * RecorderFactory    FACTORY_NAME Inspector_5_Recorder    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT FEATURE_TYPE __viewme__       _wb_termination_feature Yes       @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__       @FeatureType(@Value(__inspector_feature_type_attr__))       @RemoveAttributes(__inspector_feature_type_attr__)    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    STORE_SCANNED_SCHEMA YES    NORMALIZE_LIST_ATTRIBUTES_ON_SCHEMA YES    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA fileName,varchar<openparen>50<closeparen>,filePath,varchar<openparen>50<closeparen>,fme_basename,varchar<openparen>50<closeparen>,fme_dataset,varchar<openparen>50<closeparen>,_predicate,varchar<openparen>200<closeparen>    MODE RECORD    STORE_SCANNED_METADATA    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
-# -------------------------------------------------------------------------
-FACTORY_DEF {*} SpatialFilterFactory    FACTORY_NAME SpatialFilter_4    INPUT BASE FEATURE_TYPE TestFilter_group<space>4_1_1Vyel2g8D2s=    INPUT CANDIDATE FEATURE_TYPE TestFilter_group<space>3_3_rI79a9e71og=    INPUT CANDIDATE FEATURE_TYPE TestFilter_group<space>5_1_DgPS4kYVPro=    PREDICATE "INTERSECTS TOUCHES"    USE_BOUNDING_BOX NO    MULTIPLE_BASES YES    MERGE_BASE_ATTR YES    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "CANDIDATE_IF_CONFLICT"    BASE_ATTR_PREFIX "<Unused>"    PREDICATE_ATTR "_predicate"    BOOLEAN_OPERATOR OR    REJECT_INVALID_GEOM Yes    REJECT_INVALID_PREDICATES Yes    REJECT_RASTERS No    ALLOW_NULLS Yes    CUSTOM_MULTI_HANDLING Yes    DIMENSION 2    FLUSH_WHEN_GROUPS_CHANGE No    CURVE_BOUNDARY_RULE ENDPOINTS_MOD2    OUTPUT PASSED FEATURE_TYPE SpatialFilter_4_PASSED    OUTPUT REJECTED FEATURE_TYPE SpatialFilter_4_<REJECTED>
-DEFAULT_MACRO _WB_BYPASS_TERMINATION No
-FACTORY_DEF * TeeFactory FACTORY_NAME SpatialFilter_4_<Rejected> INPUT FEATURE_TYPE SpatialFilter_4_<REJECTED>  OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED, SpatialFilter_4<space>output<space>a<space><lt>Rejected<gt><space>feature.<space><space>To<space>continue<space>translation<space>when<space>features<space>are<space>rejected<comma><space>change<space><apos>Workspace<space>Parameters<apos><space><gt><space>Translation<space><gt><space><apos>Rejected<space>Feature<space>Handling<apos><space>to<space><apos>Continue<space>Translation<apos>)
-# -------------------------------------------------------------------------
-FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME AttributeCreator_4    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE SpatialFilter_4_PASSED    INPUT  FEATURE_TYPE TestFilter_group<space>4_0_avxGPiAIPt0=    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "fileName" "SET_TO" "<at>Value<openparen>fme_basename<closeparen>" }      ATTR_ACTION { "" "filePath" "SET_TO" "<at>Value<openparen>fme_dataset<closeparen>" }    OUTPUT OUTPUT FEATURE_TYPE AttributeCreator_4_OUTPUT
-FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeCreator_4 OUTPUT Splitter"   INPUT FEATURE_TYPE AttributeCreator_4_OUTPUT   OUTPUT FEATURE_TYPE AttributeCreator_4_OUTPUT_0_TCAKbWChfSA=   OUTPUT FEATURE_TYPE AttributeCreator_4_OUTPUT_1_1q4Gwa/O8yk=
-# -------------------------------------------------------------------------
-# Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
-DEFAULT_MACRO WORKSPACE_TEMP_DIR
-INCLUDE [    set safeName "[regsub -all {[^a-zA-Z0-9]} {Inspector_4} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";    puts "MACRO SAFE_FFS_NAME $safeName"; ]
-FACTORY_DEF {*} InspectorFactory    FACTORY_NAME Inspector_4_Prepper    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE AttributeCreator_4_OUTPUT_1_1q4Gwa/O8yk=    GROUP_ATTRIBUTE __inspector_feature_type_attr__    GROUP_BY {  }    GROUP_ATTRIBUTE_PREFIX { Inspector_4 }    RASTER_REDUCTION NoReduction    POINT_CLOUD_REDUCTION NO_THINNING    OUTPUT RESULT FEATURE_TYPE __viewme__
-# Now route all the features into the recorder, changing their
-# feature type to the transformer name so that they view nicely
-DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
-DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
-# [PR#45549] The Data Inspector will limit the maximum number of features
-# it reads on WIN32, so we will correspondingly limit the number of
-# features we record here using the MAX_FEATURES_TO_RECORD directive.
-FACTORY_DEF * RecorderFactory    FACTORY_NAME Inspector_4_Recorder    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT FEATURE_TYPE __viewme__       _wb_termination_feature Yes       @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__       @FeatureType(@Value(__inspector_feature_type_attr__))       @RemoveAttributes(__inspector_feature_type_attr__)    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    STORE_SCANNED_SCHEMA YES    NORMALIZE_LIST_ATTRIBUTES_ON_SCHEMA YES    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA fileName,varchar<openparen>50<closeparen>,filePath,varchar<openparen>50<closeparen>,fme_basename,varchar<openparen>50<closeparen>,fme_dataset,varchar<openparen>50<closeparen>,_predicate,varchar<openparen>200<closeparen>    MODE RECORD    STORE_SCANNED_METADATA    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
-# -------------------------------------------------------------------------
-FACTORY_DEF {*} SpatialFilterFactory    FACTORY_NAME SpatialFilter_3    INPUT BASE FEATURE_TYPE TestFilter_group<space>3_0_kJ0YNnd7CKM=    INPUT CANDIDATE FEATURE_TYPE TestFilter_group<space>2_3_x6BynMUtB5M=    INPUT CANDIDATE FEATURE_TYPE TestFilter_group<space>4_3_wTTk+QrlH0E=    PREDICATE "INTERSECTS TOUCHES"    USE_BOUNDING_BOX NO    MULTIPLE_BASES YES    MERGE_BASE_ATTR YES    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "CANDIDATE_IF_CONFLICT"    BASE_ATTR_PREFIX "<Unused>"    PREDICATE_ATTR "_predicate"    BOOLEAN_OPERATOR OR    REJECT_INVALID_GEOM Yes    REJECT_INVALID_PREDICATES Yes    REJECT_RASTERS No    ALLOW_NULLS Yes    CUSTOM_MULTI_HANDLING Yes    DIMENSION 2    FLUSH_WHEN_GROUPS_CHANGE No    CURVE_BOUNDARY_RULE ENDPOINTS_MOD2    OUTPUT PASSED FEATURE_TYPE SpatialFilter_3_PASSED    OUTPUT REJECTED FEATURE_TYPE SpatialFilter_3_<REJECTED>
+FACTORY_DEF {*} SpatialFilterFactory    FACTORY_NAME SpatialFilter_3    INPUT BASE FEATURE_TYPE TestFilter_group<space>3_0_kJ0YNnd7CKM=    INPUT CANDIDATE FEATURE_TYPE TestFilter_group<space>2_3_x6BynMUtB5M=    PREDICATE "INTERSECTS TOUCHES"    USE_BOUNDING_BOX NO    MULTIPLE_BASES YES    MERGE_BASE_ATTR YES    ATTR_ACCUM_MODE "HANDLE_CONFLICT"    ATTR_CONFLICT_RES "CANDIDATE_IF_CONFLICT"    BASE_ATTR_PREFIX "<Unused>"    PREDICATE_ATTR "_predicate"    BOOLEAN_OPERATOR OR    REJECT_INVALID_GEOM Yes    REJECT_INVALID_PREDICATES Yes    REJECT_RASTERS No    ALLOW_NULLS Yes    CUSTOM_MULTI_HANDLING Yes    DIMENSION 2    FLUSH_WHEN_GROUPS_CHANGE No    CURVE_BOUNDARY_RULE ENDPOINTS_MOD2    OUTPUT PASSED FEATURE_TYPE SpatialFilter_3_PASSED    OUTPUT REJECTED FEATURE_TYPE SpatialFilter_3_<REJECTED>
 DEFAULT_MACRO _WB_BYPASS_TERMINATION No
 FACTORY_DEF * TeeFactory FACTORY_NAME SpatialFilter_3_<Rejected> INPUT FEATURE_TYPE SpatialFilter_3_<REJECTED>  OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED, SpatialFilter_3<space>output<space>a<space><lt>Rejected<gt><space>feature.<space><space>To<space>continue<space>translation<space>when<space>features<space>are<space>rejected<comma><space>change<space><apos>Workspace<space>Parameters<apos><space><gt><space>Translation<space><gt><space><apos>Rejected<space>Feature<space>Handling<apos><space>to<space><apos>Continue<space>Translation<apos>)
 # -------------------------------------------------------------------------
@@ -2951,7 +1924,7 @@ FACTORY_DEF {*} SpatialFilterFactory    FACTORY_NAME SpatialFilter    INPUT BASE
 DEFAULT_MACRO _WB_BYPASS_TERMINATION No
 FACTORY_DEF * TeeFactory FACTORY_NAME SpatialFilter_<Rejected> INPUT FEATURE_TYPE SpatialFilter_<REJECTED>  OUTPUT FAILED FEATURE_TYPE * @Abort(ENCODED, SpatialFilter<space>output<space>a<space><lt>Rejected<gt><space>feature.<space><space>To<space>continue<space>translation<space>when<space>features<space>are<space>rejected<comma><space>change<space><apos>Workspace<space>Parameters<apos><space><gt><space>Translation<space><gt><space><apos>Rejected<space>Feature<space>Handling<apos><space>to<space><apos>Continue<space>Translation<apos>)
 # -------------------------------------------------------------------------
-FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME AttributeCreator    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE TestFilter_group<space>1_0_0GX+aigRQpA=    INPUT  FEATURE_TYPE SpatialFilter_PASSED    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "fileName" "SET_TO" "<at>Value<openparen>fme_basename<closeparen>" }      ATTR_ACTION { "" "filePath" "SET_TO" "<at>Value<openparen>fme_dataset<closeparen>" }    OUTPUT OUTPUT FEATURE_TYPE AttributeCreator_OUTPUT
+FACTORY_DEF {*} AttrSetFactory    FACTORY_NAME AttributeCreator    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT  FEATURE_TYPE SpatialFilter_PASSED    INPUT  FEATURE_TYPE TestFilter_group<space>1_0_0GX+aigRQpA=    MULTI_FEATURE_MODE NO    NULL_ATTR_MODE NO_OP     ATTRSET_CREATE_DIRECTIVES _PROPAGATE_MISSING_FDIV     ATTR_ACTION { "" "fileName" "SET_TO" "<at>Value<openparen>fme_basename<closeparen>" }      ATTR_ACTION { "" "filePath" "SET_TO" "<at>Value<openparen>fme_dataset<closeparen>" }    OUTPUT OUTPUT FEATURE_TYPE AttributeCreator_OUTPUT
 FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeCreator OUTPUT Splitter"   INPUT FEATURE_TYPE AttributeCreator_OUTPUT   OUTPUT FEATURE_TYPE AttributeCreator_OUTPUT_0_lQ+3mj5tm0E=   OUTPUT FEATURE_TYPE AttributeCreator_OUTPUT_1_Et/p63Aqn4M=
 # -------------------------------------------------------------------------
 # Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
@@ -2968,7 +1941,7 @@ DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
 FACTORY_DEF * RecorderFactory    FACTORY_NAME Inspector_Recorder    COMMAND_PARM_EVALUATION SINGLE_PASS    INPUT FEATURE_TYPE __viewme__       _wb_termination_feature Yes       @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__       @FeatureType(@Value(__inspector_feature_type_attr__))       @RemoveAttributes(__inspector_feature_type_attr__)    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    STORE_SCANNED_SCHEMA YES    NORMALIZE_LIST_ATTRIBUTES_ON_SCHEMA YES    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA fileName,varchar<openparen>50<closeparen>,filePath,varchar<openparen>50<closeparen>,fme_basename,varchar<openparen>50<closeparen>,fme_dataset,varchar<openparen>50<closeparen>,_predicate,varchar<openparen>200<closeparen>    MODE RECORD    STORE_SCANNED_METADATA    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
 # -------------------------------------------------------------------------
 
-FACTORY_DEF * RoutingFactory FACTORY_NAME "Destination Feature Type Routing Correlator"   COMMAND_PARM_EVALUATION SINGLE_PASS   INPUT FEATURE_TYPE *    ROUTE FME_GENERIC AttributeCreator_OUTPUT_0_lQ+3mj5tm0E= TO CSV2 __GO_TO_FINAL_OUTPUT_ROUTER__ multi_writer_id,0,<at>SupplyAttributes<openparen>ENCODED<comma>__wb_out_feat_type__<comma>group1<closeparen> GEOMETRY    ROUTE FME_GENERIC AttributeCreator_2_OUTPUT_0_j0uI5yR3ojs= TO CSV2 __GO_TO_FINAL_OUTPUT_ROUTER__ multi_writer_id,0,<at>SupplyAttributes<openparen>ENCODED<comma>__wb_out_feat_type__<comma>group2<closeparen> GEOMETRY    ROUTE FME_GENERIC AttributeCreator_3_OUTPUT_0_5wmj1QTDBCM= TO CSV2 __GO_TO_FINAL_OUTPUT_ROUTER__ multi_writer_id,0,<at>SupplyAttributes<openparen>ENCODED<comma>__wb_out_feat_type__<comma>group3<closeparen> GEOMETRY    ROUTE FME_GENERIC AttributeCreator_4_OUTPUT_0_TCAKbWChfSA= TO CSV2 __GO_TO_FINAL_OUTPUT_ROUTER__ multi_writer_id,0,<at>SupplyAttributes<openparen>ENCODED<comma>__wb_out_feat_type__<comma>group4<closeparen> GEOMETRY    ROUTE FME_GENERIC AttributeCreator_5_OUTPUT_1_lbcjWHeNkKI= TO CSV2 __GO_TO_FINAL_OUTPUT_ROUTER__ multi_writer_id,0,<at>SupplyAttributes<openparen>ENCODED<comma>__wb_out_feat_type__<comma>group5<closeparen> GEOMETRY    ROUTE FME_GENERIC AttributeCreator_6_OUTPUT_1_kG9yipENWGo= TO CSV2 __GO_TO_FINAL_OUTPUT_ROUTER__ multi_writer_id,0,<at>SupplyAttributes<openparen>ENCODED<comma>__wb_out_feat_type__<comma>group6<closeparen> GEOMETRY    ROUTE FME_GENERIC AttributeCreator_7_OUTPUT_0_eW3hXzBg3Uo= TO CSV2 __GO_TO_FINAL_OUTPUT_ROUTER__ multi_writer_id,0,<at>SupplyAttributes<openparen>ENCODED<comma>__wb_out_feat_type__<comma>group7<closeparen> GEOMETRY   FEATURE_TYPE_ATTRIBUTE __wb_out_feat_type__   OUTPUT ROUTED FEATURE_TYPE *    OUTPUT NOT_ROUTED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 [FME_GetAttribute fme_template_feature_type] 818060 818061 fme_warn")
+FACTORY_DEF * RoutingFactory FACTORY_NAME "Destination Feature Type Routing Correlator"   COMMAND_PARM_EVALUATION SINGLE_PASS   INPUT FEATURE_TYPE *    ROUTE FME_GENERIC AttributeCreator_OUTPUT_0_lQ+3mj5tm0E= TO CSV2 __GO_TO_FINAL_OUTPUT_ROUTER__ multi_writer_id,0,<at>SupplyAttributes<openparen>ENCODED<comma>__wb_out_feat_type__<comma>group1<closeparen> GEOMETRY    ROUTE FME_GENERIC AttributeCreator_2_OUTPUT_0_j0uI5yR3ojs= TO CSV2 __GO_TO_FINAL_OUTPUT_ROUTER__ multi_writer_id,0,<at>SupplyAttributes<openparen>ENCODED<comma>__wb_out_feat_type__<comma>group2<closeparen> GEOMETRY    ROUTE FME_GENERIC AttributeCreator_3_OUTPUT_0_5wmj1QTDBCM= TO CSV2 __GO_TO_FINAL_OUTPUT_ROUTER__ multi_writer_id,0,<at>SupplyAttributes<openparen>ENCODED<comma>__wb_out_feat_type__<comma>group3<closeparen> GEOMETRY   FEATURE_TYPE_ATTRIBUTE __wb_out_feat_type__   OUTPUT ROUTED FEATURE_TYPE *    OUTPUT NOT_ROUTED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 [FME_GetAttribute fme_template_feature_type] 818060 818061 fme_warn")
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * TeeFactory   FACTORY_NAME "Final Output Nuker"   INPUT FEATURE_TYPE __nuke_me__
@@ -2981,14 +1954,6 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME VisualizerCleaner   INPUT FEATURE_TYPE 
 # -------------------------------------------------------------------------
 CSV2_1_DEF group3   csv_existing_file_handling   Yes   csv_write_field_names        firstrow   fileName                     string   filePath                     string
 # -------------------------------------------------------------------------
-CSV2_1_DEF group4   csv_existing_file_handling   Yes   csv_write_field_names        firstrow   fileName                     string   filePath                     string
-# -------------------------------------------------------------------------
 CSV2_1_DEF group1   csv_existing_file_handling   Yes   csv_write_field_names        firstrow   fileName                     string   filePath                     string
 # -------------------------------------------------------------------------
-CSV2_1_DEF group6   csv_existing_file_handling   Yes   csv_write_field_names        firstrow   fileName                     string   filePath                     string
-# -------------------------------------------------------------------------
-CSV2_1_DEF group7   csv_existing_file_handling   Yes   csv_write_field_names        firstrow   fileName                     string   filePath                     string
-# -------------------------------------------------------------------------
 CSV2_1_DEF group2   csv_existing_file_handling   Yes   csv_write_field_names        firstrow   fileName                     string   filePath                     string
-# -------------------------------------------------------------------------
-CSV2_1_DEF group5   csv_existing_file_handling   Yes   csv_write_field_names        firstrow   fileName                     string   filePath                     string

@@ -11,7 +11,8 @@ from GroupExecutor import GroupExecutor
 
 class ExecutorService:
 
-    def __init__(self, input_dir, zoom, use_profile):
+    def __init__(self, groups_dir, input_dir, zoom, use_profile):
+        self.groups_dir = groups_dir
         self.input_dir = input_dir
         self.zoom = zoom
         self.use_profile = use_profile
@@ -39,15 +40,16 @@ class ExecutorService:
     def __groupRunMultithreading(self):
         count = Io.getFilesCount(PathProvider.groups_dir)
         with concurrent.futures.ThreadPoolExecutor() as executor:
-            futures = [executor.submit(GroupExecutor.singleExecute,
-                                       i, self.input_dir, self.zoom, self.use_profile)
-                       for i in range(1, count + 1)]
+            futures = [executor.submit(
+                GroupExecutor.singleExecute, self.groups_dir, i, self.input_dir,
+                self.zoom, self.use_profile)
+                for i in range(1, count + 1)]
             path_providers = [future.result() for future in futures]
         self.mergeTiles(path_providers)
 
     def __groupRunMultiprocessing(self):
         count = Io.getFilesCount(PathProvider.groups_dir)
-        params = [(i, self.input_dir, self.zoom, self.use_profile)
+        params = [(self.groups_dir, i, self.input_dir, self.zoom, self.use_profile)
                   for i in range(1, count + 1)]
         with NoDaemonProcessPool(mp.cpu_count()) as p:
             path_providers = p.starmap(GroupExecutor.singleExecute, params)
@@ -58,8 +60,9 @@ class ExecutorService:
     def __groupRunRay(self):
         ray.init(num_cpus=mp.cpu_count())
         count = Io.getFilesCount(PathProvider.groups_dir)
-        path_providers = ray.get([GroupExecutor.rayExecute.remote(i, self.input_dir, self.zoom, self.use_profile)
-                                  for i in range(1, count + 1)])
+        path_providers = ray.get([GroupExecutor.rayExecute.remote(
+            self.groups_dir, i, self.input_dir, self.zoom, self.use_profile)
+            for i in range(1, count + 1)])
         self.mergeTiles(path_providers)
 
     def execute(self, method):

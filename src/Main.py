@@ -24,9 +24,12 @@ def main(argv=None):
 
     Io.makeDirectories(PathProvider.log_dir)
 
-    logger_service = LoggerService(interval=8, backup_count=15)
-    es = ExecutorService(input_dir, zoom, use_profile)
-    es.execute('ray')
+    groups = 3.1
+    logger_service = LoggerService(groups, interval=8, backup_count=15)
+
+    logger_service.start()
+    es = ExecutorService(groups, input_dir, zoom, use_profile)
+    es.execute('multiprocessing')
     logger_service.close()
 
 
