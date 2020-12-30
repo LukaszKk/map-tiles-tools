@@ -1,9 +1,9 @@
 #! <?xml version="1.0" encoding="UTF-8" ?>
 #! <WORKSPACE
 #    Command-line to run this workspace:
-#        "C:\Program Files\FME\fme.exe" C:\Users\obliczenia\map-tiles-tools\fme\BNGSections.fmw
-#              --SourceDataset_GEOTIFF "C:\Users\obliczenia\map-tiles-tools\input\data\50k with tfw\data\**\*.tif"
-#              --DestDataset_CSV2 "C:\Users\obliczenia\map-tiles-tools\input\data\groups\7"
+#        "C:\Program Files\FME\fme.exe" C:\Users\obliczenia\map-tiles-tools\fme\7\BNGSections.fmw
+#              --SourceDataset_GEOTIFF "C:\Users\obliczenia\map-tiles-tools\input\data\250k\**\*.tif"
+#              --DestDataset_CSV2 "C:\Users\obliczenia\map-tiles-tools\input\data\groups\7-250"
 #    
 #!   ATTR_TYPE_ENCODING="SDF"
 #!   BEGIN_PYTHON=""
@@ -18,8 +18,8 @@
 #!   END_TCL=""
 #!   EXPLICIT_BOOKMARK_ORDER="false"
 #!   FME_BUILD_NUM="20202"
-#!   FME_DOCUMENT_GUID="2a62aa2f-5536-468e-8386-bc9221bb9b36"
-#!   FME_DOCUMENT_PRIORGUID="d36f1ac2-8d9d-419a-923f-39a90f31f0ab,158ddb3f-225f-4f08-b5f6-84f6975ee5d5,860f247c-ff3b-422f-ac9a-bf72509bcea0"
+#!   FME_DOCUMENT_GUID="3940851f-f9ed-4806-8589-bd9558686644"
+#!   FME_DOCUMENT_PRIORGUID="d36f1ac2-8d9d-419a-923f-39a90f31f0ab,158ddb3f-225f-4f08-b5f6-84f6975ee5d5,860f247c-ff3b-422f-ac9a-bf72509bcea0,2a62aa2f-5536-468e-8386-bc9221bb9b36"
 #!   FME_GEOMETRY_HANDLING="Enhanced"
 #!   FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
 #!   FME_REPROJECTION_ENGINE="FME"
@@ -28,7 +28,7 @@
 #!   HISTORY=""
 #!   IGNORE_READER_FAILURE="No"
 #!   LAST_SAVE_BUILD="FME(R) 2020.0.0.1 (20200316 - Build 20202 - WIN64)"
-#!   LAST_SAVE_DATE="2020-12-30T16:05:32"
+#!   LAST_SAVE_DATE="2020-12-30T18:01:21"
 #!   LOG_FILE=""
 #!   LOG_MAX_RECORDED_FEATURES="200"
 #!   MARKDOWN_DESCRIPTION=""
@@ -47,7 +47,7 @@
 #!   TITLE=""
 #!   USAGE=""
 #!   USE_MARKDOWN=""
-#!   VIEW_POSITION="-1035.17 648.444"
+#!   VIEW_POSITION="-1031.26 644.538"
 #!   WARN_INVALID_XFORM_PARAM="Yes"
 #!   WORKSPACE_VERSION="1"
 #!   ZOOM_SCALE="80"
@@ -66,7 +66,7 @@
 #!   WRITE_DEFS="true"
 #!   DEFLINE_TEMPLATE=""
 #!   DEFLINE_ATTRS="true"
-#!   EXPOSABLE_ATTRS="geotiff_subdataset_description char(255) multi_reader_type char(50) geotiff_tifftag_software char(255) fme_text_string char(50) geotiff_byte_order char(7) fme_primary_axis float geotiff_photometric_interpretation char(10) fme_rotation float geotiff_number_of_bits_per_cell decimal(1,0) geotiff_pyramid_level{}.num_columns integer fme_fill_color char(50) multi_reader_id integer fme_start_angle float fme_text_size float geotiff_pyramid_level{}.num_rows integer geotiff_tifftag_xresolution float geotiff_private_keys{}.id integer fme_type char(50) fme_sweep_angle float fme_dataset char(50) geotiff_tifftag_minsamplevalue integer fme_feature_type char(50) fme_color char(50) geotiff_subdataset_name char(255) multi_reader_keyword char(50) geotiff_tifftag_artist char(255) geotiff_tifftag_hostcomputer char(255) geotiff_private_keys{}.value char(255) geotiff_pyramid_num_levels integer fme_geometry char(50) geotiff_type char(255) multi_reader_full_id integer geotiff_tifftag_copyright char(255) geotiff_tifftag_yresolution float geotiff_tifftag_imagedescription char(255) geotiff_compression_method char(9) geotiff_area_or_point char(255) fme_secondary_axis float geotiff_tifftag_resolutionunit decimal(1,0) geotiff_tifftag_datetime datetime geotiff_tifftag_maxsamplevalue integer geotiff_private_keys{}.type char(6) geotiff_tifftag_documentname char(255) fme_basename char(50) geotiff_interleaving_type char(3)"
+#!   EXPOSABLE_ATTRS="geotiff_private_keys{}.id integer fme_text_string char(50) fme_rotation float geotiff_pyramid_level{}.num_columns integer fme_color char(50) geotiff_number_of_bits_per_cell decimal(1,0) fme_type char(50) fme_secondary_axis float fme_text_size float geotiff_tifftag_maxsamplevalue integer fme_primary_axis float geotiff_tifftag_artist char(255) geotiff_pyramid_level{}.num_rows integer geotiff_photometric_interpretation char(10) geotiff_byte_order char(7) fme_geometry char(50) multi_reader_keyword char(50) fme_start_angle float geotiff_tifftag_software char(255) geotiff_private_keys{}.type char(6) geotiff_pyramid_num_levels integer geotiff_tifftag_yresolution float multi_reader_type char(50) multi_reader_id integer fme_basename char(50) fme_feature_type char(50) fme_fill_color char(50) geotiff_compression_method char(9) geotiff_tifftag_hostcomputer char(255) geotiff_subdataset_name char(255) geotiff_private_keys{}.value char(255) geotiff_tifftag_imagedescription char(255) geotiff_tifftag_minsamplevalue integer geotiff_tifftag_documentname char(255) geotiff_area_or_point char(255) multi_reader_full_id integer geotiff_tifftag_resolutionunit decimal(1,0) geotiff_tifftag_xresolution float geotiff_subdataset_description char(255) fme_sweep_angle float fme_dataset char(50) geotiff_tifftag_copyright char(255) geotiff_type char(255) geotiff_interleaving_type char(3) geotiff_tifftag_datetime datetime"
 #!   DEFLINE_PARMS=""
 #!   ATTR_INDEX_TYPES=""
 #!   ATTR_NAME_INVALID_CHARS=""
@@ -133,7 +133,7 @@
 #!   WRITE_DEFS="true"
 #!   DEFLINE_TEMPLATE="csv_existing_file_handling Yes csv_write_field_names firstrow"
 #!   DEFLINE_ATTRS="true"
-#!   EXPOSABLE_ATTRS="csv_type string fme_fill_color string fme_color string fme_type string fme_geometry string fme_dataset string fme_feature_type string fme_basename string fme_rotation string fme_start_angle string fme_text_string string fme_primary_axis string fme_secondary_axis string fme_sweep_angle string fme_text_size string"
+#!   EXPOSABLE_ATTRS="fme_basename string fme_secondary_axis string fme_type string fme_geometry string csv_type string fme_color string fme_feature_type string fme_fill_color string fme_text_string string fme_text_size string fme_sweep_angle string fme_dataset string fme_rotation string fme_start_angle string fme_primary_axis string"
 #!   DEFLINE_PARMS="&quot;GUI OPTIONAL NAMEDGROUP csv_dataset_group csv_existing_file_handling Dataset&quot; &quot;&quot; &quot;GUI CHOICE csv_existing_file_handling Yes%No Overwrite Existing File&quot; Yes &quot;GUI OPTIONAL NAMEDGROUP csv_fields_group csv_write_field_names Fields&quot; &quot;&quot; &quot;GUI LOOKUP_CHOICE csv_write_field_names If&lt;space&gt;Writing&lt;space&gt;First&lt;space&gt;Row,firstrow%Yes,yes%No,no Write Field Names Row&quot; firstrow "
 #!   ATTR_INDEX_TYPES=""
 #!   ATTR_NAME_INVALID_CHARS="&quot;*{}$"
@@ -963,19 +963,19 @@
 #! <DATASET
 #!   NAME="CSV2_1"
 #!   OVERRIDE="-CSV2_1_DATASET"
-#!   DATASET="CSV2_1/7"
+#!   DATASET="CSV2_1/7-250"
 #! />
 #! </WRITER_DATASETS>
 #! </FMESERVER>
 #! <GLOBAL_PARAMETERS>
 #! <GLOBAL_PARAMETER
 #!   GUI_LINE="GUI MULTIFILE SourceDataset_GEOTIFF GeoTIFF_Files(*.tif;*.tiff;*.itiff;*.ovr)|*.tif;*.tiff;*.itiff;*.ovr|Compressed_Files(*.bz2;*.gz)|*.bz2;*.gz|Archive_Files(*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx)|*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx|All_Files(*)|* Source GeoTIFF File(s):"
-#!   DEFAULT_VALUE="C:\Users\obliczenia\map-tiles-tools\input\data\50k with tfw\data\**\*.tif"
+#!   DEFAULT_VALUE="C:\Users\obliczenia\map-tiles-tools\input\data\250k\**\*.tif"
 #!   IS_STAND_ALONE="false"
 #! />
 #! <GLOBAL_PARAMETER
 #!   GUI_LINE="GUI DIRNAME DestDataset_CSV2 Destination CSV (Comma Separated Value) Folder:"
-#!   DEFAULT_VALUE="C:\Users\obliczenia\map-tiles-tools\input\data\groups\7"
+#!   DEFAULT_VALUE="C:\Users\obliczenia\map-tiles-tools\input\data\groups\7-250"
 #!   IS_STAND_ALONE="false"
 #! />
 #! </GLOBAL_PARAMETERS>
@@ -2557,9 +2557,9 @@
 
 FME_PYTHON_VERSION 37
 GUI IGNORE SourceDataset_GEOTIFF_1,GEOTIFF_IN_APPLY_GCPS_GEOTIFF_1,GEOTIFF_IN_GCP_INTERPOLATION_METHOD_GEOTIFF_1,GEOTIFF_IN_USE_SEARCH_ENVELOPE_GEOTIFF_1,GEOTIFF_IN_SEARCH_ENVELOPE_MINX_GEOTIFF_1,GEOTIFF_IN_SEARCH_ENVELOPE_MINY_GEOTIFF_1,GEOTIFF_IN_SEARCH_ENVELOPE_MAXX_GEOTIFF_1,GEOTIFF_IN_SEARCH_ENVELOPE_MAXY_GEOTIFF_1,GEOTIFF_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_GEOTIFF_1,GEOTIFF_IN_CLIP_TO_ENVELOPE_GEOTIFF_1,GEOTIFF_IN_GEOTIFF_RDR_ADV_PARM_GROUP_GEOTIFF_1,GEOTIFF_IN_PYRAMID_LEVEL_GEOTIFF_1,GEOTIFF_IN_PREFER_FILE_CS_UNITS_GEOTIFF_1,GEOTIFF_IN_READ_OFFSETS_IN_CS_UNITS_GEOTIFF_1,GEOTIFF_IN_IGNORE_RASTER_TYPE_KEY_GEOTIFF_1,GEOTIFF_IN_NETWORK_AUTHENTICATION_GEOTIFF_1,DestDataset_CSV2_1,CSV2_OUT_DATASET_GROUP_CSV2_1,CSV2_OUT_EXTENSION_CSV2_1,CSV2_OUT_FIELDS_GROUP_CSV2_1,CSV2_OUT_DELIMITER_CSV2_1,CSV2_OUT_ENCODING_GROUP_CSV2_1,CSV2_OUT_ENCODING_CSV2_1,CSV2_OUT_WRITE_BOM_FOR_UNICODE_CSV2_1,CSV2_OUT_ADVANCED_GROUP_CSV2_1,CSV2_OUT_QUALIFY_FIELD_NAMES_CSV2_1,CSV2_OUT_QUALIFY_FIELD_VALUES_CSV2_1,CSV2_OUT_UNQUALIFIED_FIELD_VALUE_HANDLING_CSV2_1,CSV2_OUT_FIELD_QUALIFIER_CHARACTER_CSV2_1,CSV2_OUT_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_1,CSV2_OUT_ROW_TERMINATION_CSV2_1,CSV2_OUT_WRITE_SCHEMA_FILE_CSV2_1,CSV2_OUT_EXISTING_SCHEMA_FILE_HANDLING_CSV2_1
-DEFAULT_MACRO SourceDataset_GEOTIFF C:\Users\obliczenia\map-tiles-tools\input\data\50k with tfw\data\**\*.tif
+DEFAULT_MACRO SourceDataset_GEOTIFF C:\Users\obliczenia\map-tiles-tools\input\data\250k\**\*.tif
 GUI MULTIFILE SourceDataset_GEOTIFF GeoTIFF_Files(*.tif;*.tiff;*.itiff;*.ovr)|*.tif;*.tiff;*.itiff;*.ovr|Compressed_Files(*.bz2;*.gz)|*.bz2;*.gz|Archive_Files(*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx)|*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx|All_Files(*)|* Source GeoTIFF File(s):
-DEFAULT_MACRO DestDataset_CSV2 C:\Users\obliczenia\map-tiles-tools\input\data\groups\7
+DEFAULT_MACRO DestDataset_CSV2 C:\Users\obliczenia\map-tiles-tools\input\data\groups\7-250
 GUI DIRNAME DestDataset_CSV2 Destination CSV (Comma Separated Value) Folder:
 INCLUDE [ if {{$(SourceDataset_GEOTIFF)} == {}} { puts_real {Parameter 'SourceDataset_GEOTIFF' must be given a value.}; exit 1; }; ]
 INCLUDE [ if {{$(DestDataset_CSV2)} == {}} { puts_real {Parameter 'DestDataset_CSV2' must be given a value.}; exit 1; }; ]
@@ -2758,7 +2758,7 @@ DEFAULT_MACRO DATASET_KEYWORD_GEOTIFF_1 GEOTIFF_1
 DEFAULT_MACRO DATASET_KEYWORD_CSV2_1 CSV2_1
 # -------------------------------------------------------------------------
 
-GEOTIFF_1_READER_META_ATTRIBUTES fme_basename fme_dataset fme_feature_type
+GEOTIFF_1_READER_META_ATTRIBUTES fme_basename fme_feature_type fme_dataset
 
 # -------------------------------------------------------------------------
 
@@ -2979,16 +2979,16 @@ DEFAULT_MACRO FME_LAUNCH_VIEWER_APP NO
 FACTORY_DEF * CreationFactory    FACTORY_NAME VisualizerProcessor   CREATE_AT_END   OUTPUT FEATURE_TYPE __NUKEME__   @TCL("if {{$(FME_LAUNCH_VIEWER_APP)} == {YES}} {  if [file exists {$(WORKSPACE_TEMP_DIR)}] {set files [glob -nocomplain -directory  {$(WORKSPACE_TEMP_DIR)} -tails *.ffs];   if {[llength $files] == 1} {    set theFile {$(WORKSPACE_TEMP_DIR)/};   append theFile [lindex $files 0];   eval FME_Execute System \173\042$(FME_HOME_UNIX)/fmedatainspector\042 --visualizer --single-application --delete-on-close --no-source-prompt -f FFS \042$theFile\042 & \175;  } elseif { [llength $files] == 0 } {  catch { file delete -force {$(WORKSPACE_TEMP_DIR)} };  } else {  set filesNoExt {}; set lastfile {}; foreach {fileName} [lsort $files] { set fileNoExt [string trimright $fileName {.ffs}]; if [regexp {(.*)_[0-9]*$} $fileNoExt wholething fileNoExtBase] {  if { $fileNoExtBase == $lastfile } { continue } }; set lastfile $fileNoExt; lappend filesNoExt $fileNoExt };  eval FME_Execute System \173\042$(FME_HOME_UNIX)/fmedatainspector\042 --visualizer --single-application --delete-on-close --no-source-prompt -d {$(WORKSPACE_TEMP_DIR)} -a ffs -f FFS $filesNoExt & \175; }; }; }; ")
 FACTORY_DEF * TeeFactory    FACTORY_NAME VisualizerCleaner   INPUT FEATURE_TYPE __NUKEME__
 # -------------------------------------------------------------------------
-CSV2_1_DEF group3   csv_existing_file_handling   Yes   csv_write_field_names        firstrow   fileName                     string   filePath                     string
+CSV2_1_DEF group2   csv_existing_file_handling   Yes   csv_write_field_names        firstrow   fileName                     string   filePath                     string
 # -------------------------------------------------------------------------
 CSV2_1_DEF group4   csv_existing_file_handling   Yes   csv_write_field_names        firstrow   fileName                     string   filePath                     string
+# -------------------------------------------------------------------------
+CSV2_1_DEF group3   csv_existing_file_handling   Yes   csv_write_field_names        firstrow   fileName                     string   filePath                     string
+# -------------------------------------------------------------------------
+CSV2_1_DEF group7   csv_existing_file_handling   Yes   csv_write_field_names        firstrow   fileName                     string   filePath                     string
 # -------------------------------------------------------------------------
 CSV2_1_DEF group1   csv_existing_file_handling   Yes   csv_write_field_names        firstrow   fileName                     string   filePath                     string
 # -------------------------------------------------------------------------
 CSV2_1_DEF group6   csv_existing_file_handling   Yes   csv_write_field_names        firstrow   fileName                     string   filePath                     string
-# -------------------------------------------------------------------------
-CSV2_1_DEF group7   csv_existing_file_handling   Yes   csv_write_field_names        firstrow   fileName                     string   filePath                     string
-# -------------------------------------------------------------------------
-CSV2_1_DEF group2   csv_existing_file_handling   Yes   csv_write_field_names        firstrow   fileName                     string   filePath                     string
 # -------------------------------------------------------------------------
 CSV2_1_DEF group5   csv_existing_file_handling   Yes   csv_write_field_names        firstrow   fileName                     string   filePath                     string

@@ -25,4 +25,4 @@ class GroupExecutor:
     @staticmethod
     @ray.remote
     def rayExecute(groups_dir, group_nr, input_dir, zoom, use_profile):
-        return GroupExecutor.singleExecute(group_nr, input_dir, zoom, use_profile)
+        return GroupExecutor.singleExecute(groups_dir, group_nr, input_dir, zoom, use_profile)

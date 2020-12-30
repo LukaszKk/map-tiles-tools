@@ -12,7 +12,7 @@ class ProcessService:
     def basicMerge(self, input_dir):
         Io.deleteDirectory(self.path_provider.output_data_path)
         Io.makeDirectories(self.path_provider.output_data_path)
-        Io.copyFiles(src=input_dir, dest=self.path_provider,
+        Io.copyFiles(src=input_dir, dest=self.path_provider.output_data_path,
                      file_names=self.file_names)
 
         print('Merging...')
