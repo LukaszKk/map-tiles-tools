@@ -24,7 +24,7 @@ def main(argv=None):
 
     Io.makeDirectories(PathProvider.log_dir)
 
-    logger_service = LoggerService()
+    logger_service = LoggerService(interval=8, backup_count=15)
     es = ExecutorService(input_dir, zoom, use_profile)
     es.execute('ray')
     logger_service.close()

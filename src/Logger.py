@@ -11,13 +11,13 @@ class Logger:
     def __init__(self):
         self.logger = None
 
-    def create_logger(self):
+    def create_logger(self, backup_count):
         if self.logger is not None:
             return self.logger
         self.logger = logging.getLogger(Logger.__name__)
 
         handler = logging.handlers.RotatingFileHandler(filename=Logger.FILE,
-                                                       backupCount=8)
+                                                       backupCount=backup_count)
         handler.doRollover()
         handler.setFormatter(Logger.FORMATTER)
         self.logger.addHandler(handler)
