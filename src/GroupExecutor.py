@@ -10,7 +10,6 @@ class GroupExecutor:
     @staticmethod
     def singleExecute(groups_dir, group_nr, input_dir, zoom, use_profile):
         path_provider = PathProvider(str(group_nr) + "\\")
-        groups_dir = PathProvider.groups_dir + str(groups_dir) + "\\"
         data = CSVReader.read_group(groups_dir, group_nr)
         ps = ProcessService(path_provider, data)
 

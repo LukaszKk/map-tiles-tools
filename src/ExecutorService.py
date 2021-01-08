@@ -11,8 +11,8 @@ from GroupExecutor import GroupExecutor
 
 class ExecutorService:
 
-    def __init__(self, groups_dir, input_dir, zoom, use_profile):
-        self.groups_dir = groups_dir
+    def __init__(self, groups, input_dir, zoom, use_profile):
+        self.groups_dir = PathProvider.groups_dir + str(groups) + "\\"
         self.input_dir = input_dir
         self.zoom = zoom
         self.use_profile = use_profile
@@ -31,6 +31,7 @@ class ExecutorService:
         Io.deleteDirectory(path_provider.output_merged_path)
 
     def mergeTiles(self, path_providers):
+        print("Merging tiles...")
         src_paths = [provider.output_tiles_path for provider in path_providers]
         Io.mergeTiles(src_paths, PathProvider().output_tiles_path, self.zoom)
 
@@ -38,7 +39,7 @@ class ExecutorService:
             Io.deleteDirectory(provider.output_path)
 
     def __groupRunMultithreading(self):
-        count = Io.getFilesCount(PathProvider.groups_dir)
+        count = Io.getFilesCount(self.groups_dir)
         with concurrent.futures.ThreadPoolExecutor() as executor:
             futures = [executor.submit(
                 GroupExecutor.singleExecute, self.groups_dir, i, self.input_dir,
@@ -48,7 +49,7 @@ class ExecutorService:
         self.mergeTiles(path_providers)
 
     def __groupRunMultiprocessing(self):
-        count = Io.getFilesCount(PathProvider.groups_dir)
+        count = Io.getFilesCount(self.groups_dir)
         params = [(self.groups_dir, i, self.input_dir, self.zoom, self.use_profile)
                   for i in range(1, count + 1)]
         with NoDaemonProcessPool(mp.cpu_count()) as p:
@@ -59,7 +60,7 @@ class ExecutorService:
 
     def __groupRunRay(self):
         ray.init(num_cpus=mp.cpu_count())
-        count = Io.getFilesCount(PathProvider.groups_dir)
+        count = Io.getFilesCount(self.groups_dir)
         path_providers = ray.get([GroupExecutor.rayExecute.remote(
             self.groups_dir, i, self.input_dir, self.zoom, self.use_profile)
             for i in range(1, count + 1)])

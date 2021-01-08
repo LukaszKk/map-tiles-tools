@@ -13,7 +13,7 @@ def main(argv=None):
     input_dir = PathProvider.input_250k
     zoom = '13'
     use_profile = False
-    method = 'multiprocessing'
+    method = 'ray'
     groups = '7'
 
     opts, args = getopt.getopt(argv, 'kz:')
@@ -31,12 +31,12 @@ def main(argv=None):
         groups = groups + '-250'
 
     # --- Temp TODO: delete
-    if use_profile:
-        zoom = '13'
-        input_dir = PathProvider.input_50k
-    else:
+    if not use_profile:
         zoom = '11'
         input_dir = PathProvider.input_250k
+    else:
+        zoom = '13'
+        input_dir = PathProvider.input_50k
     # ---
 
     Io.makeDirectories(PathProvider.log_dir)
