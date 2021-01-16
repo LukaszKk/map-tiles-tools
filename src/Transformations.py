@@ -40,7 +40,7 @@ def translateIntoOneFile(input_data, out_path):
             '-ot', 'Byte',
             '-co', 'PHOTOMETRIC=RGB',
             '-co', 'COMPRESS=DEFLATE',
-            '-co', 'BIGTIFF=IF_NEEDED',
+            '-co', 'BIGTIFF=YES',
             file,
             out_path + file_name
         ]
@@ -57,7 +57,7 @@ def gdalMerge(input_data, out_file, is_pct=False):
         '-ot', 'Byte',
         '-of', 'GTiff',
         '-co', 'COMPRESS=DEFLATE',
-        '-co', 'BIGTIFF=IF_NEEDED',
+        '-co', 'BIGTIFF=YES',
         '-o', out_file
         ]
     params = params + files_to_merge
@@ -71,7 +71,7 @@ def gdalTranslate(input_file, out_file):
         '-expand', 'rgb',
         '-co', 'PHOTOMETRIC=RGB',
         '-co', 'COMPRESS=DEFLATE',
-        '-co', 'BIGTIFF=IF_NEEDED',
+        '-co', 'BIGTIFF=YES',
         input_file,
         out_file]
     subprocess.call([PathProvider.env_path + 'Library\\bin\\gdal_translate.exe'] + params)
@@ -85,7 +85,7 @@ def gdalWarp(in_file, out_file):
         '-t_srs', 'EPSG:3857',
         '-co', 'PHOTOMETRIC=RGB',
         '-co', 'COMPRESS=DEFLATE',
-        '-co', 'BIGTIFF=IF_NEEDED',
+        '-co', 'BIGTIFF=YES',
         in_file,
         out_file]
     subprocess.call([PathProvider.env_path + 'Library\\bin\\gdalwarp.exe'] + params)

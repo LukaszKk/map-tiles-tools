@@ -1,0 +1,711 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <WORKSPACE
+#    Command-line to run this workspace:
+#        "C:\Program Files\FME\fme.exe" C:\Users\obliczenia\map-tiles-tools\fme\pngraster.fmw
+#              --SourceDataset_PNGRASTER "C:\Users\obliczenia\map-tiles-tools\output\tiles-1-250\11\**\*.png"
+#              --SourceDataset_PNGRASTER_3 "C:\Users\obliczenia\map-tiles-tools\output\tiles-1-250\11\**\*.png"
+#    
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BEGIN_PYTHON=""
+#!   BEGIN_TCL=""
+#!   CATEGORY=""
+#!   DESCRIPTION=""
+#!   DESTINATION="NONE"
+#!   DESTINATION_ROUTING_FILE=""
+#!   DOC_EXTENTS="454 71"
+#!   DOC_TOP_LEFT="-589.381 -349.75"
+#!   END_PYTHON=""
+#!   END_TCL=""
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="20202"
+#!   FME_DOCUMENT_GUID="fd286d77-58f1-4fc0-9aa4-d23266d00cb3"
+#!   FME_DOCUMENT_PRIORGUID=""
+#!   FME_GEOMETRY_HANDLING="Enhanced"
+#!   FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
+#!   FME_REPROJECTION_ENGINE="FME"
+#!   FME_SERVER_SERVICES=""
+#!   FME_STROKE_MAX_DEVIATION="0"
+#!   HISTORY=""
+#!   IGNORE_READER_FAILURE="No"
+#!   LAST_SAVE_BUILD="FME(R) 2020.0.0.1 (20200316 - Build 20202 - WIN64)"
+#!   LAST_SAVE_DATE="2021-01-16T13:37:22"
+#!   LOG_FILE=""
+#!   LOG_MAX_RECORDED_FEATURES="200"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOG_FEATURES="200"
+#!   MULTI_WRITER_DATASET_ORDER="BY_ID"
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="37"
+#!   REDIRECT_TERMINATORS="NONE"
+#!   SAVE_ON_PROMPT_AND_RUN="Yes"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   SOURCE="NONE"
+#!   SOURCE_ROUTING_FILE=""
+#!   TERMINATE_REJECTED="YES"
+#!   TITLE=""
+#!   USAGE=""
+#!   USE_MARKDOWN=""
+#!   VIEW_POSITION="-750.008 246.877"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! <DATASET
+#!   IS_SOURCE="true"
+#!   ROLE="SCHEMA_READER"
+#!   FORMAT="PNGRASTER"
+#!   DATASET="$(SourceDataset_PNGRASTER)"
+#!   KEYWORD="PNGRASTER_1"
+#!   MULTI_GEOM_ALLOWED="false"
+#!   ATTR_MAX_LENGTH="0"
+#!   ATTR_CASE="ANY"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE=""
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="fme_geometry char(50) fme_primary_axis float multi_reader_type char(50) pngraster_description char(255) pngraster_author char(255) fme_sweep_angle float fme_basename char(50) fme_text_string char(50) fme_start_angle float pngraster_type char(255) pngraster_title char(255) multi_reader_full_id integer fme_secondary_axis float fme_dataset char(50) fme_type char(50) pngraster_software char(255) fme_feature_type char(50) fme_rotation float multi_reader_keyword char(50) pngraster_disclaimer char(255) pngraster_copyright char(255) fme_text_size float multi_reader_id integer fme_color char(50) fme_fill_color char(50)"
+#!   DEFLINE_PARMS=""
+#!   ATTR_INDEX_TYPES=""
+#!   ATTR_NAME_INVALID_CHARS=""
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="FILEDIR"
+#!   FTTR_TYPE="FEATURE_TYPES_ENCODED"
+#!   GENERATE_FME_BUILD_NUM="20202"
+#!   COORDSYS="EPSG:27700"
+#!   FEATURE_TYPES=""
+#!   MAX_FEATURES=""
+#!   MAX_FEATURES_PER_FEATURE_TYPE=""
+#!   MIN_FEATURES=""
+#!   START_FEATURE=""
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="AUTO_FANOUT_ATTRIBUTE"
+#!   VALUE="fme_basename"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DATASET_NAME"
+#!   VALUE="png file"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_DEFAULT_NAME"
+#!   VALUE="Raster1"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_NAME"
+#!   VALUE="Raster File"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="MIME_TYPE"
+#!   VALUE="image/PNG"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="READER_AUTO_EXPOSE"
+#!   VALUE="fme_basename char(50)"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="READER_DATASET_HINT"
+#!   VALUE="Select the PNG raster file(s)"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="WRITER_DATASET_HINT"
+#!   VALUE="Specify a folder for the PNG raster file"
+#! />
+#! </DATASET>
+#! <DATASET
+#!   IS_SOURCE="true"
+#!   ROLE="READER"
+#!   FORMAT="PNGRASTER"
+#!   DATASET="$(SourceDataset_PNGRASTER_3)"
+#!   KEYWORD="PNGRASTER_2"
+#!   MULTI_GEOM_ALLOWED="false"
+#!   ATTR_MAX_LENGTH="0"
+#!   ATTR_CASE="ANY"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE=""
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="fme_geometry char(50) fme_primary_axis float multi_reader_type char(50) pngraster_description char(255) pngraster_author char(255) fme_sweep_angle float fme_basename char(50) fme_text_string char(50) fme_start_angle float pngraster_type char(255) pngraster_title char(255) multi_reader_full_id integer fme_secondary_axis float fme_dataset char(50) fme_type char(50) pngraster_software char(255) fme_feature_type char(50) fme_rotation float multi_reader_keyword char(50) pngraster_disclaimer char(255) pngraster_copyright char(255) fme_text_size float multi_reader_id integer fme_color char(50) fme_fill_color char(50)"
+#!   DEFLINE_PARMS=""
+#!   ATTR_INDEX_TYPES=""
+#!   ATTR_NAME_INVALID_CHARS=""
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="FILEDIR"
+#!   FTTR_TYPE="LISTBOX_ENCODED"
+#!   GENERATE_FME_BUILD_NUM="20202"
+#!   COORDSYS="EPSG:27700"
+#!   FEATURE_TYPES=""
+#!   MAX_FEATURES=""
+#!   MAX_FEATURES_PER_FEATURE_TYPE=""
+#!   MIN_FEATURES=""
+#!   START_FEATURE=""
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="AUTO_FANOUT_ATTRIBUTE"
+#!   VALUE="fme_basename"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DATASET_NAME"
+#!   VALUE="png file"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_DEFAULT_NAME"
+#!   VALUE="Raster1"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_NAME"
+#!   VALUE="Raster File"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="MIME_TYPE"
+#!   VALUE="image/PNG"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="READER_AUTO_EXPOSE"
+#!   VALUE="fme_basename char(50)"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="READER_DATASET_HINT"
+#!   VALUE="Select the PNG raster file(s)"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="WRITER_DATASET_HINT"
+#!   VALUE="Specify a folder for the PNG raster file"
+#! />
+#! </DATASET>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="char(width)"
+#!   FME_TYPE="fme_varchar(width)"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="char(width)"
+#!   FME_TYPE="fme_varbinary(width)"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="char(width)"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="char(width)"
+#!   FME_TYPE="fme_binary(width)"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="char(254)"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="char(254)"
+#!   FME_TYPE="fme_binarybuffer"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="char(254)"
+#!   FME_TYPE="fme_xml"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="char(254)"
+#!   FME_TYPE="fme_json"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="datetime"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="time"
+#!   FME_TYPE="fme_time"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="date"
+#!   FME_TYPE="fme_date"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="decimal(width,decimal)"
+#!   FME_TYPE="fme_decimal(width,decimal)"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="float"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="float"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="integer"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="largeint"
+#!   FME_TYPE="fme_int64"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="decimal(20,0)"
+#!   FME_TYPE="fme_uint64"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="largeint"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="logical"
+#!   FME_TYPE="fme_boolean"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="smallint"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="integer"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="smallint"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="smallint"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="PNGRASTER"
+#! />
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="pngraster_raster"
+#!   FME_TYPE="fme_raster"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="pngraster_none"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_point"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_text"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_line"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_arc"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_area"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_ellipse"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_rectangle"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_rounded_rectangle"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_surface"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_solid"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="fme_no_map"
+#!   FME_TYPE="fme_point_cloud"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="pngraster_none"
+#!   FME_TYPE="fme_feature_table"
+#!   FORMAT="PNGRASTER"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="pngraster_none"
+#!   FME_TYPE="fme_collection"
+#!   FORMAT="PNGRASTER"
+#! />
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! <FEATURE_TYPE
+#!   IS_SOURCE="true"
+#!   NODE_NAME="PNGRASTER"
+#!   FEATURE_TYPE_NAME=""
+#!   FEATURE_TYPE_NAME_QUALIFIER=""
+#!   IS_EDITABLE="false"
+#!   IDENTIFIER="2"
+#!   FEAT_GEOMTYPE="pngraster_raster"
+#!   POSITION="-589.38109381093807 -278.75043750437499"
+#!   BOUNDING_RECT="-589.38109381093807 -278.75043750437499 454 71"
+#!   ORDER="500000000000000"
+#!   COLLAPSED="true"
+#!   KEYWORD="PNGRASTER_2"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   HIDDEN_USER_ATTRS=""
+#!   MERGE_FILTER="*"
+#!   MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
+#!   MERGE_FILTER_CASE_SENSITIVE="false"
+#!   DYNAMIC_SCHEMA="false"
+#! >
+#!     <FEAT_ATTRIBUTE ATTR_NAME="fme_basename" ATTR_TYPE="char(50)"  EXPOSABLE_ATTR="true" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#! </FEATURE_TYPE>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! <READER_DATASETS>
+#! <DATASET
+#!   NAME="PNGRASTER_1"
+#!   OVERRIDE="-PNGRASTER_1_DATASET"
+#!   DATASET="PNGRASTER_1/*.png"
+#! />
+#! <DATASET
+#!   NAME="PNGRASTER_2"
+#!   OVERRIDE="-PNGRASTER_2_DATASET"
+#!   DATASET="PNGRASTER_2/*.png"
+#! />
+#! </READER_DATASETS>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI MULTIFILE SourceDataset_PNGRASTER PNGRASTER_Files(*.png)|*.png|Compressed_Files(*.bz2;*.gz)|*.bz2;*.gz|Archive_Files(*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx)|*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx|All_Files(*)|* Source PNG (Portable Network Graphics) File(s):"
+#!   DEFAULT_VALUE="C:\Users\obliczenia\map-tiles-tools\output\tiles-1-250\11\**\*.png"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI MULTIFILE SourceDataset_PNGRASTER_3 PNGRASTER_Files(*.png)|*.png|Compressed_Files(*.bz2;*.gz)|*.bz2;*.gz|Archive_Files(*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx)|*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx|All_Files(*)|* Source PNG (Portable Network Graphics) File(s):"
+#!   DEFAULT_VALUE="C:\Users\obliczenia\map-tiles-tools\output\tiles-1-250\11\**\*.png"
+#!   IS_STAND_ALONE="false"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! </TRANSFORMERS>
+#! <FEAT_LINKS>
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </WORKSPACE>
+
+FME_PYTHON_VERSION 37
+GUI IGNORE SourceDataset_PNGRASTER_1,PNGRASTER_IN_USE_SEARCH_ENVELOPE_PNGRASTER_1,PNGRASTER_IN_SEARCH_ENVELOPE_MINX_PNGRASTER_1,PNGRASTER_IN_SEARCH_ENVELOPE_MINY_PNGRASTER_1,PNGRASTER_IN_SEARCH_ENVELOPE_MAXX_PNGRASTER_1,PNGRASTER_IN_SEARCH_ENVELOPE_MAXY_PNGRASTER_1,PNGRASTER_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_PNGRASTER_1,PNGRASTER_IN_CLIP_TO_ENVELOPE_PNGRASTER_1,PNGRASTER_IN_NETWORK_AUTHENTICATION_PNGRASTER_1,SourceDataset_PNGRASTER_2,PNGRASTER_IN_USE_SEARCH_ENVELOPE_PNGRASTER_2,PNGRASTER_IN_SEARCH_ENVELOPE_MINX_PNGRASTER_2,PNGRASTER_IN_SEARCH_ENVELOPE_MINY_PNGRASTER_2,PNGRASTER_IN_SEARCH_ENVELOPE_MAXX_PNGRASTER_2,PNGRASTER_IN_SEARCH_ENVELOPE_MAXY_PNGRASTER_2,PNGRASTER_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_PNGRASTER_2,PNGRASTER_IN_CLIP_TO_ENVELOPE_PNGRASTER_2,PNGRASTER_IN_NETWORK_AUTHENTICATION_PNGRASTER_2
+DEFAULT_MACRO SourceDataset_PNGRASTER C:\Users\obliczenia\map-tiles-tools\output\tiles-1-250\11\**\*.png
+GUI MULTIFILE SourceDataset_PNGRASTER PNGRASTER_Files(*.png)|*.png|Compressed_Files(*.bz2;*.gz)|*.bz2;*.gz|Archive_Files(*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx)|*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx|All_Files(*)|* Source PNG (Portable Network Graphics) File(s):
+DEFAULT_MACRO SourceDataset_PNGRASTER_3 C:\Users\obliczenia\map-tiles-tools\output\tiles-1-250\11\**\*.png
+GUI MULTIFILE SourceDataset_PNGRASTER_3 PNGRASTER_Files(*.png)|*.png|Compressed_Files(*.bz2;*.gz)|*.bz2;*.gz|Archive_Files(*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx)|*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx|All_Files(*)|* Source PNG (Portable Network Graphics) File(s):
+INCLUDE [ if {{$(SourceDataset_PNGRASTER)} == {}} { puts_real {Parameter 'SourceDataset_PNGRASTER' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(SourceDataset_PNGRASTER_3)} == {}} { puts_real {Parameter 'SourceDataset_PNGRASTER_3' must be given a value.}; exit 1; }; ]
+#! START_HEADER
+#! START_WB_HEADER
+READER_TYPE MULTI_READER
+MULTI_READER_TYPE{0} NULL
+MULTI_READER_FORMAT{0} PNGRASTER
+MULTI_READER_KEYWORD{0} PNGRASTER_1
+MULTI_READER_GEN_DIRECTIVES{0} SEARCH_ENVELOPE_COORDINATE_SYSTEM,,_MERGE_SCHEMAS,YES,USE_SEARCH_ENVELOPE,NO,READER_META_ATTRIBUTES,fme_dataset<space>fme_basename,EXPOSE_ATTRS_GROUP,,CLIP_TO_ENVELOPE,NO,SEARCH_ENVELOPE_MINX,0,SEARCH_ENVELOPE_MAXY,0,PNGRASTER_EXPOSE_FORMAT_ATTRS,,SEARCH_ENVELOPE_MINY,0,GROUP_BY_DATASET,No,SEARCH_ENVELOPE_MAXX,0
+MULTI_READER_TYPE{1} PNGRASTER
+MULTI_READER_KEYWORD{1} PNGRASTER_2
+MULTI_READER_GEN_DIRECTIVES{1} SEARCH_ENVELOPE_COORDINATE_SYSTEM,,_MERGE_SCHEMAS,YES,USE_SEARCH_ENVELOPE,NO,READER_META_ATTRIBUTES,fme_dataset<space>fme_basename,EXPOSE_ATTRS_GROUP,,CLIP_TO_ENVELOPE,NO,SEARCH_ENVELOPE_MINX,0,SEARCH_ENVELOPE_MAXY,0,PNGRASTER_EXPOSE_FORMAT_ATTRS,,SEARCH_ENVELOPE_MINY,0,GROUP_BY_DATASET,No,SEARCH_ENVELOPE_MAXX,0
+WRITER_TYPE NULL
+WRITER_KEYWORD NULL_DEST
+NULL_DEST_DATASET null
+#! END_WB_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "PNGRASTER_1"
+#! END_WB_HEADER
+#! START_SOURCE_HEADER PNGRASTER PNGRASTER_1
+# =======================================================================
+# The following GUI line prompts for a file to be used as the source PNGRASTER file.
+# The user input is stored in a macro, which is then used to define
+# the dataset to be read.
+# The dataset this mapping file was generated from was:
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO SourceDataset
+INCLUDE [ if {{$(SourceDataset)} != ""} {                        \
+ puts {DEFAULT_MACRO SourceDataset_PNGRASTER_1 $(SourceDataset)}     \
+ } ]
+#! END_WB_HEADER
+#! START_SOURCE_HEADER PNGRASTER PNGRASTER_1
+DEFAULT_MACRO SourceDataset_PNGRASTER_1 $(SourceDataset_PNGRASTER)
+GUI MULTIFILE SourceDataset_PNGRASTER_1 PNGRASTER_Files(*.png)|*.png|All_Files(*)|* Source PNG (Portable Network Graphics) File(s):
+DEFAULT_MACRO PNGRASTER_IN_READER_META_ATTRIBUTES_PNGRASTER_1 fme_dataset fme_basename
+PNGRASTER_1_READER_META_ATTRIBUTES "$(PNGRASTER_IN_READER_META_ATTRIBUTES_PNGRASTER_1)"
+DEFAULT_MACRO PNGRASTER_IN_GROUP_BY_DATASET_PNGRASTER_1 No
+PNGRASTER_1_GROUP_BY_DATASET "$(PNGRASTER_IN_GROUP_BY_DATASET_PNGRASTER_1)"
+DEFAULT_MACRO PNGRASTER_IN_EXPOSE_ATTRS_GROUP_PNGRASTER_1 
+PNGRASTER_1_EXPOSE_ATTRS_GROUP "$(PNGRASTER_IN_EXPOSE_ATTRS_GROUP_PNGRASTER_1)"
+# Include this file in source setting section to add external search envelope processing
+# Zero as a default means we don't do any search -- this makes workbench happier
+DEFAULT_MACRO PNGRASTER_IN_USE_SEARCH_ENVELOPE_PNGRASTER_1 NO
+PNGRASTER_1_USE_SEARCH_ENVELOPE "$(PNGRASTER_IN_USE_SEARCH_ENVELOPE_PNGRASTER_1)"
+GUI ACTIVEDISCLOSUREGROUP PNGRASTER_IN_USE_SEARCH_ENVELOPE_PNGRASTER_1 PNGRASTER_IN_SEARCH_ENVELOPE_MINX_PNGRASTER_1%PNGRASTER_IN_SEARCH_ENVELOPE_MINY_PNGRASTER_1%PNGRASTER_IN_SEARCH_ENVELOPE_MAXX_PNGRASTER_1%PNGRASTER_IN_SEARCH_ENVELOPE_MAXY_PNGRASTER_1%PNGRASTER_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_PNGRASTER_1%PNGRASTER_IN_CLIP_TO_ENVELOPE_PNGRASTER_1%PNGRASTER_IN_SEARCH_METHOD%PNGRASTER_IN_SEARCH_METHOD_FILTER%PNGRASTER_IN_SEARCH_ORDER%PNGRASTER_IN_SEARCH_FEATURE%PNGRASTER_IN_DUMMY_SEARCH_ENVELOPE_PARAMETER Use Search Envelope
+# ===========================================================================
+GUI LOOKUP PNGRASTER_IN_SEARCH_ENVELOPE_MINX_PNGRASTER_1 <Unused>,0 
+DEFAULT_MACRO PNGRASTER_IN_SEARCH_ENVELOPE_MINX_PNGRASTER_1 0
+PNGRASTER_1_SEARCH_ENVELOPE "$(PNGRASTER_IN_SEARCH_ENVELOPE_MINX_PNGRASTER_1)"
+GUI OPTIONAL FLOAT PNGRASTER_IN_SEARCH_ENVELOPE_MINX_PNGRASTER_1 Minimum X:
+# ===========================================================================
+GUI LOOKUP PNGRASTER_IN_SEARCH_ENVELOPE_MINY_PNGRASTER_1 <Unused>,0 
+DEFAULT_MACRO PNGRASTER_IN_SEARCH_ENVELOPE_MINY_PNGRASTER_1 0
+PNGRASTER_1_SEARCH_ENVELOPE "$(PNGRASTER_IN_SEARCH_ENVELOPE_MINY_PNGRASTER_1)"
+GUI OPTIONAL FLOAT PNGRASTER_IN_SEARCH_ENVELOPE_MINY_PNGRASTER_1 Minimum Y:
+# ===========================================================================
+GUI LOOKUP PNGRASTER_IN_SEARCH_ENVELOPE_MAXX_PNGRASTER_1 <Unused>,0 
+DEFAULT_MACRO PNGRASTER_IN_SEARCH_ENVELOPE_MAXX_PNGRASTER_1 0
+PNGRASTER_1_SEARCH_ENVELOPE "$(PNGRASTER_IN_SEARCH_ENVELOPE_MAXX_PNGRASTER_1)"
+GUI OPTIONAL FLOAT PNGRASTER_IN_SEARCH_ENVELOPE_MAXX_PNGRASTER_1 Maximum X:
+# ===========================================================================
+GUI LOOKUP PNGRASTER_IN_SEARCH_ENVELOPE_MAXY_PNGRASTER_1 <Unused>,0 
+DEFAULT_MACRO PNGRASTER_IN_SEARCH_ENVELOPE_MAXY_PNGRASTER_1 0
+PNGRASTER_1_SEARCH_ENVELOPE "$(PNGRASTER_IN_SEARCH_ENVELOPE_MAXY_PNGRASTER_1)"
+GUI OPTIONAL FLOAT PNGRASTER_IN_SEARCH_ENVELOPE_MAXY_PNGRASTER_1 Maximum Y:
+# ===========================================================================
+GUI LOOKUP PNGRASTER_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_PNGRASTER_1 <Unused>, 
+DEFAULT_MACRO PNGRASTER_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_PNGRASTER_1 
+PNGRASTER_1_SEARCH_ENVELOPE "$(PNGRASTER_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_PNGRASTER_1)"
+GUI OPTIONAL COORDSYS PNGRASTER_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_PNGRASTER_1 Search Envelope Coordinate System:
+# ===========================================================================
+# BUG18999: We now have a soft clip to fall back on like native spatial index
+# thus we are reintroducing the clip to envelop as an option for users.
+# Defualt to soft clip as per the existing database readers we are emulating
+GUI LOOKUP PNGRASTER_IN_CLIP_TO_ENVELOPE_PNGRASTER_1 <Unused>,NO 
+DEFAULT_MACRO PNGRASTER_IN_CLIP_TO_ENVELOPE_PNGRASTER_1 NO
+PNGRASTER_1_CLIP_TO_ENVELOPE "$(PNGRASTER_IN_CLIP_TO_ENVELOPE_PNGRASTER_1)"
+GUI OPTIONAL CHECKBOX PNGRASTER_IN_CLIP_TO_ENVELOPE_PNGRASTER_1 YES%NO Clip to Search Envelope
+# ===========================================================================
+DEFAULT_MACRO PNGRASTER_IN_NETWORK_AUTHENTICATION_PNGRASTER_1 
+PNGRASTER_1_NETWORK_AUTHENTICATION "$(PNGRASTER_IN_NETWORK_AUTHENTICATION_PNGRASTER_1)"
+GUI OPTIONAL AUTHENTICATOR PNGRASTER_IN_NETWORK_AUTHENTICATION_PNGRASTER_1 CONTAINER%GROUP%CONTAINER_TITLE%"Network Authentication"%PROMPT_TYPE%NETWORK Network Authentication
+# ============================================================================ 
+DEFAULT_MACRO PNGRASTER_IN_ATTRIBUTE_READING_PNGRASTER_1 ALL
+PNGRASTER_1_ATTRIBUTE_READING "$(PNGRASTER_IN_ATTRIBUTE_READING_PNGRASTER_1)"
+# ============================================================================ 
+PNGRASTER_1_GENERATE_FME_BUILD_NUM 20202
+PNGRASTER_1_DATASET "$(SourceDataset_PNGRASTER_1)"
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "PNGRASTER_2"
+#! END_WB_HEADER
+#! START_SOURCE_HEADER PNGRASTER PNGRASTER_2
+# =======================================================================
+# The following GUI line prompts for a file to be used as the source PNGRASTER file.
+# The user input is stored in a macro, which is then used to define
+# the dataset to be read.
+# The dataset this mapping file was generated from was:
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO SourceDataset
+INCLUDE [ if {{$(SourceDataset)} != ""} {                        \
+ puts {DEFAULT_MACRO SourceDataset_PNGRASTER_2 $(SourceDataset)}     \
+ } ]
+#! END_WB_HEADER
+#! START_SOURCE_HEADER PNGRASTER PNGRASTER_2
+DEFAULT_MACRO SourceDataset_PNGRASTER_2 $(SourceDataset_PNGRASTER_3)
+GUI MULTIFILE SourceDataset_PNGRASTER_2 PNGRASTER_Files(*.png)|*.png|All_Files(*)|* Source PNG (Portable Network Graphics) File(s):
+DEFAULT_MACRO PNGRASTER_IN_READER_META_ATTRIBUTES_PNGRASTER_2 fme_dataset fme_basename
+PNGRASTER_2_READER_META_ATTRIBUTES "$(PNGRASTER_IN_READER_META_ATTRIBUTES_PNGRASTER_2)"
+DEFAULT_MACRO PNGRASTER_IN_GROUP_BY_DATASET_PNGRASTER_2 No
+PNGRASTER_2_GROUP_BY_DATASET "$(PNGRASTER_IN_GROUP_BY_DATASET_PNGRASTER_2)"
+DEFAULT_MACRO PNGRASTER_IN_EXPOSE_ATTRS_GROUP_PNGRASTER_2 
+PNGRASTER_2_EXPOSE_ATTRS_GROUP "$(PNGRASTER_IN_EXPOSE_ATTRS_GROUP_PNGRASTER_2)"
+# Include this file in source setting section to add external search envelope processing
+# Zero as a default means we don't do any search -- this makes workbench happier
+DEFAULT_MACRO PNGRASTER_IN_USE_SEARCH_ENVELOPE_PNGRASTER_2 NO
+PNGRASTER_2_USE_SEARCH_ENVELOPE "$(PNGRASTER_IN_USE_SEARCH_ENVELOPE_PNGRASTER_2)"
+GUI ACTIVEDISCLOSUREGROUP PNGRASTER_IN_USE_SEARCH_ENVELOPE_PNGRASTER_2 PNGRASTER_IN_SEARCH_ENVELOPE_MINX_PNGRASTER_2%PNGRASTER_IN_SEARCH_ENVELOPE_MINY_PNGRASTER_2%PNGRASTER_IN_SEARCH_ENVELOPE_MAXX_PNGRASTER_2%PNGRASTER_IN_SEARCH_ENVELOPE_MAXY_PNGRASTER_2%PNGRASTER_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_PNGRASTER_2%PNGRASTER_IN_CLIP_TO_ENVELOPE_PNGRASTER_2%PNGRASTER_IN_SEARCH_METHOD%PNGRASTER_IN_SEARCH_METHOD_FILTER%PNGRASTER_IN_SEARCH_ORDER%PNGRASTER_IN_SEARCH_FEATURE%PNGRASTER_IN_DUMMY_SEARCH_ENVELOPE_PARAMETER Use Search Envelope
+# ===========================================================================
+GUI LOOKUP PNGRASTER_IN_SEARCH_ENVELOPE_MINX_PNGRASTER_2 <Unused>,0 
+DEFAULT_MACRO PNGRASTER_IN_SEARCH_ENVELOPE_MINX_PNGRASTER_2 0
+PNGRASTER_2_SEARCH_ENVELOPE "$(PNGRASTER_IN_SEARCH_ENVELOPE_MINX_PNGRASTER_2)"
+GUI OPTIONAL FLOAT PNGRASTER_IN_SEARCH_ENVELOPE_MINX_PNGRASTER_2 Minimum X:
+# ===========================================================================
+GUI LOOKUP PNGRASTER_IN_SEARCH_ENVELOPE_MINY_PNGRASTER_2 <Unused>,0 
+DEFAULT_MACRO PNGRASTER_IN_SEARCH_ENVELOPE_MINY_PNGRASTER_2 0
+PNGRASTER_2_SEARCH_ENVELOPE "$(PNGRASTER_IN_SEARCH_ENVELOPE_MINY_PNGRASTER_2)"
+GUI OPTIONAL FLOAT PNGRASTER_IN_SEARCH_ENVELOPE_MINY_PNGRASTER_2 Minimum Y:
+# ===========================================================================
+GUI LOOKUP PNGRASTER_IN_SEARCH_ENVELOPE_MAXX_PNGRASTER_2 <Unused>,0 
+DEFAULT_MACRO PNGRASTER_IN_SEARCH_ENVELOPE_MAXX_PNGRASTER_2 0
+PNGRASTER_2_SEARCH_ENVELOPE "$(PNGRASTER_IN_SEARCH_ENVELOPE_MAXX_PNGRASTER_2)"
+GUI OPTIONAL FLOAT PNGRASTER_IN_SEARCH_ENVELOPE_MAXX_PNGRASTER_2 Maximum X:
+# ===========================================================================
+GUI LOOKUP PNGRASTER_IN_SEARCH_ENVELOPE_MAXY_PNGRASTER_2 <Unused>,0 
+DEFAULT_MACRO PNGRASTER_IN_SEARCH_ENVELOPE_MAXY_PNGRASTER_2 0
+PNGRASTER_2_SEARCH_ENVELOPE "$(PNGRASTER_IN_SEARCH_ENVELOPE_MAXY_PNGRASTER_2)"
+GUI OPTIONAL FLOAT PNGRASTER_IN_SEARCH_ENVELOPE_MAXY_PNGRASTER_2 Maximum Y:
+# ===========================================================================
+GUI LOOKUP PNGRASTER_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_PNGRASTER_2 <Unused>, 
+DEFAULT_MACRO PNGRASTER_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_PNGRASTER_2 
+PNGRASTER_2_SEARCH_ENVELOPE "$(PNGRASTER_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_PNGRASTER_2)"
+GUI OPTIONAL COORDSYS PNGRASTER_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_PNGRASTER_2 Search Envelope Coordinate System:
+# ===========================================================================
+# BUG18999: We now have a soft clip to fall back on like native spatial index
+# thus we are reintroducing the clip to envelop as an option for users.
+# Defualt to soft clip as per the existing database readers we are emulating
+GUI LOOKUP PNGRASTER_IN_CLIP_TO_ENVELOPE_PNGRASTER_2 <Unused>,NO 
+DEFAULT_MACRO PNGRASTER_IN_CLIP_TO_ENVELOPE_PNGRASTER_2 NO
+PNGRASTER_2_CLIP_TO_ENVELOPE "$(PNGRASTER_IN_CLIP_TO_ENVELOPE_PNGRASTER_2)"
+GUI OPTIONAL CHECKBOX PNGRASTER_IN_CLIP_TO_ENVELOPE_PNGRASTER_2 YES%NO Clip to Search Envelope
+# ===========================================================================
+DEFAULT_MACRO PNGRASTER_IN_NETWORK_AUTHENTICATION_PNGRASTER_2 
+PNGRASTER_2_NETWORK_AUTHENTICATION "$(PNGRASTER_IN_NETWORK_AUTHENTICATION_PNGRASTER_2)"
+GUI OPTIONAL AUTHENTICATOR PNGRASTER_IN_NETWORK_AUTHENTICATION_PNGRASTER_2 CONTAINER%GROUP%CONTAINER_TITLE%"Network Authentication"%PROMPT_TYPE%NETWORK Network Authentication
+# ============================================================================ 
+DEFAULT_MACRO PNGRASTER_IN_ATTRIBUTE_READING_PNGRASTER_2 ALL
+PNGRASTER_2_ATTRIBUTE_READING "$(PNGRASTER_IN_ATTRIBUTE_READING_PNGRASTER_2)"
+# ============================================================================ 
+PNGRASTER_2_GENERATE_FME_BUILD_NUM 20202
+PNGRASTER_2_DATASET "$(SourceDataset_PNGRASTER_2)"
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+#! END_WB_HEADER
+#! END_HEADER
+
+LOG_FILENAME "$(FME_MF_DIR)pngraster.log"
+LOG_APPEND NO
+LOG_FILTER_MASK -1
+LOG_MAX_FEATURES 200
+LOG_MAX_RECORDED_FEATURES 200
+FME_REPROJECTION_ENGINE FME
+FME_IMPLICIT_CSMAP_REPROJECTION_MODE Auto
+FME_GEOMETRY_HANDLING Enhanced
+FME_STROKE_MAX_DEVIATION 0
+DEFAULT_MACRO DATASET_KEYWORD_PNGRASTER_1 PNGRASTER_1
+DEFAULT_MACRO DATASET_KEYWORD_PNGRASTER_2 PNGRASTER_2
+# -------------------------------------------------------------------------
+
+PNGRASTER_1_READER_META_ATTRIBUTES fme_feature_type
+
+# -------------------------------------------------------------------------
+
+PNGRASTER_2_READER_META_ATTRIBUTES fme_basename fme_feature_type
+
+# -------------------------------------------------------------------------
+
+PNGRASTER_1_COORDINATE_SYSTEM EPSG:27700
+PNGRASTER_2_COORDINATE_SYSTEM EPSG:27700
+MULTI_READER_CONTINUE_ON_READER_FAILURE No
+
+# -------------------------------------------------------------------------
+
+MACRO WORKSPACE_NAME pngraster
+MACRO FME_VIEWER_APP fmedatainspector
+# -------------------------------------------------------------------------
+PNGRASTER_2_DEF PNGRASTER
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * RoutingFactory   FACTORY_NAME "Router and Unexpected Input Remover"   COMMAND_PARM_EVALUATION SINGLE_PASS   INPUT FEATURE_TYPE *    ROUTE PNGRASTER PNGRASTER_2::PNGRASTER multi_reader_keyword,$(DATASET_KEYWORD_PNGRASTER_2) TO FME_GENERIC ::PNGRASTER ALIAS_GEOMETRY    MERGE_INPUT Yes   OUTPUT ROUTED FEATURE_TYPE *
+PNGRASTER_2_MERGE_DEF PNGRASTER_2::PNGRASTER EXACT PNGRASTER
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME "PNGRASTER(PNGRASTER_2) Splitter"    INPUT FEATURE_TYPE PNGRASTER
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * RoutingFactory FACTORY_NAME "Destination Feature Type Routing Correlator"   COMMAND_PARM_EVALUATION SINGLE_PASS   INPUT FEATURE_TYPE *   FEATURE_TYPE_ATTRIBUTE __wb_out_feat_type__   OUTPUT ROUTED FEATURE_TYPE *    OUTPUT NOT_ROUTED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 [FME_GetAttribute fme_template_feature_type] 818060 818061 fme_warn")
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "Final Output Nuker"   INPUT FEATURE_TYPE __nuke_me__
+

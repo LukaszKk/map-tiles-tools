@@ -90,6 +90,14 @@ class ProcessService:
         Io.moveFiles(self.path_provider.output_data_path,
                      self.path_provider.output_data_path + '4\\', regex=reg)
 
+        Io.deleteFile(self.path_provider.merged_file)
+        Io.makeDirectories(self.path_provider.output_merged_path)
+
+        Io.deleteFile(self.path_provider.output_merged_path + 'merged1.tif')
+        Io.deleteFile(self.path_provider.output_merged_path + 'merged2.tif')
+        Io.deleteFile(self.path_provider.output_merged_path + 'merged3.tif')
+        Io.deleteFile(self.path_provider.output_merged_path + 'merged4.tif')
+
         print('Merge 1')
         Tr.gdalMerge(input_data=self.path_provider.output_data_path + '1\\',
                      out_file=self.path_provider.output_merged_path + 'merged1.tif')

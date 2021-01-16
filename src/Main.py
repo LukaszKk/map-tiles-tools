@@ -41,7 +41,7 @@ def main(argv=None):
 
     Io.makeDirectories(PathProvider.log_dir)
 
-    logger_service = LoggerService(groups, interval=8, backup_count=15)
+    logger_service = LoggerService(groups, interval=600, backup_count=15)
 
     logger_service.start()
     es = ExecutorService(groups, input_dir, zoom, use_profile)

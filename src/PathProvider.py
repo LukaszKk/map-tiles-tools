@@ -3,7 +3,7 @@ import os
 
 class PathProvider:
 
-    env_path = 'C:\\Users\\obliczenia\\anaconda3\\envs\\geo2\\'
+    env_path = 'C:\\Users\\obliczenia\\anaconda3\\envs\\geo3\\'
 
     src_dir = os.path.dirname(os.path.abspath(__file__))
     log_dir = src_dir + '\\..\\logs\\'
@@ -17,6 +17,7 @@ class PathProvider:
     input_50k_incomplete = input_data_path + '50kIncomplete\\'
     input_50kTmp = input_data_path + '50kTmp\\'
     input_250k = input_data_path + '250k\\'
+    input_250kTmp = input_data_path + '250kTmp\\'
     groups_dir = input_data_path + 'groups\\'
 
     input_icc = input_path + 'OS_Map_uncoated_FOGRA29_GCR_bas.icc'
