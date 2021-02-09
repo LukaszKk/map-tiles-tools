@@ -67,11 +67,11 @@ class ExecutorService:
         self.mergeTiles(path_providers)
 
     def execute(self, method):
-        if method == 'single':
+        if method == 'single' or method == 's':
             self.__singleRun()
-        elif method == 'multithreading':
+        elif method == 'multithreading' or method == 'mt':
             self.__groupRunMultithreading()
-        elif method == 'multiprocessing':
+        elif method == 'multiprocessing' or method == 'mp':
             self.__groupRunMultiprocessing()
-        elif method == 'ray':
+        elif method == 'ray' or method == 'r':
             self.__groupRunRay()

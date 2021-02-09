@@ -13,8 +13,8 @@ def main(argv=None):
     input_dir = PathProvider.input_250k
     zoom = '13'
     use_profile = False
-    method = 'ray'
-    groups = '7'
+    method = 'mt'
+    groups = '3'
 
     opts, args = getopt.getopt(argv, 'kz:')
     for opt, arg in opts:

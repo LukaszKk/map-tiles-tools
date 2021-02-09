@@ -37,7 +37,6 @@ def translateIntoOneFile(input_data, out_path):
             '-b', '3',
             '-a_srs', 'EPSG:27700',
             '-of', 'GTiff',
-            '-ot', 'Byte',
             '-co', 'PHOTOMETRIC=RGB',
             '-co', 'COMPRESS=DEFLATE',
             '-co', 'BIGTIFF=YES',
@@ -54,7 +53,6 @@ def gdalMerge(input_data, out_file, is_pct=False):
     else:
         additional_options = ['-co', 'PHOTOMETRIC=RGB']
     params = additional_options + [
-        '-ot', 'Byte',
         '-of', 'GTiff',
         '-co', 'COMPRESS=DEFLATE',
         '-co', 'BIGTIFF=YES',
@@ -67,9 +65,9 @@ def gdalMerge(input_data, out_file, is_pct=False):
 def gdalTranslate(input_file, out_file):
     params = [
         '-ot', 'Byte',
-        '-of', 'GTiff',
+        '-of', 'vrt',
         '-expand', 'rgb',
-        '-co', 'PHOTOMETRIC=RGB',
+        '-a_srs', 'EPSG:27700',
         '-co', 'COMPRESS=DEFLATE',
         '-co', 'BIGTIFF=YES',
         input_file,
@@ -81,9 +79,9 @@ def gdalWarp(in_file, out_file):
     Io.deleteFile(out_file)
     params = [
         '-ot', 'Byte',
-        '-of', 'GTiff',
+        '-of', 'vrt',
+        '-s_srs', 'EPSG:27700',
         '-t_srs', 'EPSG:3857',
-        '-co', 'PHOTOMETRIC=RGB',
         '-co', 'COMPRESS=DEFLATE',
         '-co', 'BIGTIFF=YES',
         in_file,
@@ -94,7 +92,6 @@ def gdalWarp(in_file, out_file):
 def gdal2Tiles(in_file, out_dir, zoom):
     params = [
         '-s', 'EPSG:3857',
-        '-a', '0',
         '-z', zoom,
         '--xyz',
         in_file,

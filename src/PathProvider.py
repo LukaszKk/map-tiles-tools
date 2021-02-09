@@ -34,5 +34,5 @@ class PathProvider:
 
         self.output_merged_path = self.output_path + 'merged\\'
         self.merged_file = self.output_merged_path + 'merged.tif'
-        self.warped_file = self.output_merged_path + 'warped.tif'
-        self.translated_file = self.output_merged_path + 'translated.tif'
+        self.warped_file = self.output_merged_path + 'warped.vrt'
+        self.translated_file = self.output_merged_path + 'translated.vrt'
