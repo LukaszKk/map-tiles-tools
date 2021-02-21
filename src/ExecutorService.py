@@ -25,18 +25,18 @@ class ExecutorService:
             ps.profileMergeSingleRun(self.input_dir)
         else:
             ps.basicMerge(self.input_dir)
-        ps.basicTile(self.zoom)
+        ps.basicTile(not self.use_profile, self.zoom)
 
-        Io.deleteDirectory(path_provider.output_data_path)
-        Io.deleteDirectory(path_provider.output_merged_path)
+        # Io.deleteDirectory(path_provider.output_data_path)
+        # Io.deleteDirectory(path_provider.output_merged_path)
 
     def mergeTiles(self, path_providers):
         print("Merging tiles...")
         src_paths = [provider.output_tiles_path for provider in path_providers]
         Io.mergeTiles(src_paths, PathProvider().output_tiles_path, self.zoom)
 
-        for provider in path_providers:
-            Io.deleteDirectory(provider.output_path)
+        # for provider in path_providers:
+        #     Io.deleteDirectory(provider.output_path)
 
     def __groupRunMultithreading(self):
         count = Io.getFilesCount(self.groups_dir)

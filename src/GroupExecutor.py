@@ -17,7 +17,7 @@ class GroupExecutor:
             ps.profileMerge(input_dir)
         else:
             ps.basicMerge(input_dir)
-        ps.basicTile(zoom)
+        ps.basicTile(not use_profile, zoom)
 
         return path_provider
 
