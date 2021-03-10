@@ -1,24 +1,19 @@
 import shutil
 import os
+import csv
 
 
-def main():
-    input_dir = "..\\..\\logs\\"
-    output_dir = "..\\..\\logs\\output\\"
-
+def prepareLogFile(input_dir, output_dir, separator):
     shutil.rmtree(output_dir, ignore_errors=True)
     os.makedirs(output_dir)
 
-    separator = "|"
     start_line = 6
     line_break = 4
 
     for (dir_path, dir_names, filenames) in os.walk(input_dir):
-        file_counter = 1
-
         for file in filenames:
             with open(input_dir + file, "r") as reader:
-                output_file_name = file[0:file.index(".log")] + "-" + str(file_counter) + ".csv"
+                output_file_name = file[0:file.index(".log")] + "-" + file.split(".")[2] + ".csv"
 
                 with open(output_dir + output_file_name, "w") as writer:
                     line_break_counter = 1
@@ -46,8 +41,114 @@ def main():
 
                     writer.close()
                 reader.close()
-            file_counter = file_counter + 1
         break
+
+
+def loadFileData(file, output_dir, group, separator, time, cpu, ram, file_idx, single):
+    if any(pre == file for pre in group):
+        with open(output_dir + file, "r", newline='') as reader:
+            csv_reader = csv.reader(reader, delimiter=separator)
+            header = True
+            for row in csv_reader:
+                if header:
+                    header = False
+                    continue
+
+                for (i, v) in enumerate(row):
+                    if i == 0:
+                        if not single:
+                            time[file_idx].append(v)
+                        else:
+                            time.append(v)
+                    elif i == 1:
+                        if not single:
+                            cpu[file_idx].append(v)
+                        else:
+                            cpu.append(v)
+                    elif i == 2:
+                        if not single:
+                            ram[file_idx].append(v)
+                        else:
+                            ram.append(v)
+        reader.close()
+        return True
+
+    return False
+
+
+def createCharts(output_dir, separator):
+    group_7_50k_files = ["logfile-1.csv", "logfile-2.csv", "logfile-3.csv"]
+    group_3_50k_files = ["logfile-4.csv", "logfile-5.csv", "logfile-6.csv"]
+    group_7_250k_files = ["logfile-7.csv", "logfile-8.csv", "logfile-9.csv"]
+    group_3_250k_files = ["logfile-10.csv", "logfile-11.csv", "logfile-12.csv"]
+    group_1_250k_files = ["logfile-13.csv"]
+    group_1_50k_files = ["logfile-14.csv"]
+
+    time_7_50k = [[], [], []]
+    cpu_7_50k = [[], [], []]
+    ram_7_50k = [[], [], []]
+
+    time_3_50k = [[], [], []]
+    cpu_3_50k = [[], [], []]
+    ram_3_50k = [[], [], []]
+
+    time_7_250k = [[], [], []]
+    cpu_7_250k = [[], [], []]
+    ram_7_250k = [[], [], []]
+
+    time_3_250k = [[], [], []]
+    cpu_3_250k = [[], [], []]
+    ram_3_250k = [[], [], []]
+
+    time_1_250k = []
+    cpu_1_250k = []
+    ram_1_250k = []
+
+    time_1_50k = []
+    cpu_1_50k = []
+    ram_1_50k = []
+
+    for (dir_path, dir_names, filenames) in os.walk(output_dir):
+        file_idx = 0
+        single = False
+        for file in filenames:
+
+            if loadFileData(file, output_dir, group_7_50k_files, separator, time_7_50k, cpu_7_50k, ram_7_50k,
+                            file_idx, False):
+                file_idx = file_idx + 1
+
+            if loadFileData(file, output_dir, group_3_50k_files, separator, time_3_50k, cpu_3_50k, ram_3_50k,
+                            file_idx, False):
+                file_idx = file_idx + 1
+
+            if loadFileData(file, output_dir, group_7_250k_files, separator, time_7_250k, cpu_7_250k, ram_7_250k,
+                            file_idx, False):
+                file_idx = file_idx + 1
+
+            if loadFileData(file, output_dir, group_3_250k_files, separator, time_3_250k, cpu_3_250k, ram_3_250k,
+                            file_idx, False):
+                file_idx = file_idx + 1
+
+            if loadFileData(file, output_dir, group_1_250k_files, separator, time_1_250k, cpu_1_250k, ram_1_250k,
+                            file_idx, True):
+                file_idx = file_idx + 1
+                single = True
+
+            if loadFileData(file, output_dir, group_1_50k_files, separator, time_1_50k, cpu_1_50k, ram_1_50k,
+                            file_idx, True):
+                file_idx = file_idx + 1
+                single = True
+
+            if file_idx == 3 or single:
+                file_idx = 0
+
+
+def main():
+    input_dir = "..\\..\\logs\\"
+    output_dir = "..\\..\\logs\\output\\"
+    separator = "|"
+    # prepareLogFile(input_dir, output_dir, separator)
+    createCharts(output_dir, separator)
 
 
 if __name__ == '__main__':
