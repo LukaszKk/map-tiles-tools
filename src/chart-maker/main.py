@@ -1,6 +1,7 @@
 import shutil
 import os
 import csv
+import plotly.graph_objects as go
 
 
 def prepareLogFile(input_dir, output_dir, separator):
@@ -62,14 +63,14 @@ def loadFileData(file, output_dir, group, separator, time, cpu, ram, file_idx, s
                             time.append(v)
                     elif i == 1:
                         if not single:
-                            cpu[file_idx].append(v)
+                            cpu[file_idx].append(float(v))
                         else:
-                            cpu.append(v)
+                            cpu.append(float(v))
                     elif i == 2:
                         if not single:
-                            ram[file_idx].append(v)
+                            ram[file_idx].append(float(v))
                         else:
-                            ram.append(v)
+                            ram.append(float(v))
         reader.close()
         return True
 
@@ -109,38 +110,187 @@ def createCharts(output_dir, separator):
     ram_1_50k = []
 
     for (dir_path, dir_names, filenames) in os.walk(output_dir):
-        file_idx = 0
-        single = False
+        file_idx_7_50k = 0
+        file_idx_3_50k = 0
+        file_idx_7_250k = 0
+        file_idx_3_250k = 0
+        file_idx_1_250k = 0
+        file_idx_1_50k = 0
         for file in filenames:
 
             if loadFileData(file, output_dir, group_7_50k_files, separator, time_7_50k, cpu_7_50k, ram_7_50k,
-                            file_idx, False):
-                file_idx = file_idx + 1
+                            file_idx_7_50k, False):
+                file_idx_7_50k = file_idx_7_50k + 1
 
             if loadFileData(file, output_dir, group_3_50k_files, separator, time_3_50k, cpu_3_50k, ram_3_50k,
-                            file_idx, False):
-                file_idx = file_idx + 1
+                            file_idx_3_50k, False):
+                file_idx_3_50k = file_idx_3_50k + 1
 
             if loadFileData(file, output_dir, group_7_250k_files, separator, time_7_250k, cpu_7_250k, ram_7_250k,
-                            file_idx, False):
-                file_idx = file_idx + 1
+                            file_idx_7_250k, False):
+                file_idx_7_250k = file_idx_7_250k + 1
 
             if loadFileData(file, output_dir, group_3_250k_files, separator, time_3_250k, cpu_3_250k, ram_3_250k,
-                            file_idx, False):
-                file_idx = file_idx + 1
+                            file_idx_3_250k, False):
+                file_idx_3_250k = file_idx_3_250k + 1
 
             if loadFileData(file, output_dir, group_1_250k_files, separator, time_1_250k, cpu_1_250k, ram_1_250k,
-                            file_idx, True):
-                file_idx = file_idx + 1
-                single = True
+                            file_idx_1_250k, True):
+                file_idx_1_250k = file_idx_1_250k + 1
 
             if loadFileData(file, output_dir, group_1_50k_files, separator, time_1_50k, cpu_1_50k, ram_1_50k,
-                            file_idx, True):
-                file_idx = file_idx + 1
-                single = True
+                            file_idx_1_50k, True):
+                file_idx_1_50k = file_idx_1_50k + 1
 
-            if file_idx == 3 or single:
-                file_idx = 0
+    # ==================== 7 250k
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=time_7_250k[1], y=cpu_7_250k[1],
+                             mode='lines',
+                             name='multiprocessing'))
+    fig.add_trace(go.Scatter(x=time_7_250k[0], y=cpu_7_250k[0],
+                             mode='lines',
+                             name='multithreading'))
+    fig.add_trace(go.Scatter(x=time_7_250k[2], y=cpu_7_250k[2],
+                             mode='lines',
+                             name='ray'))
+    fig.update_layout(
+        title="CPU Usage: data-250k, groups-7",
+        xaxis_title="Time",
+        yaxis_title="CPU %",
+        legend_title="Legend",
+        font=dict(
+            family="Courier New, monospace",
+            size=18,
+            color="RebeccaPurple"
+        )
+    )
+
+    fig.show()
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=time_7_250k[1], y=ram_7_250k[1],
+                             mode='lines',
+                             name='multiprocessing'))
+    fig.add_trace(go.Scatter(x=time_7_250k[0], y=ram_7_250k[0],
+                             mode='lines',
+                             name='multithreading'))
+    fig.add_trace(go.Scatter(x=time_7_250k[2], y=ram_7_250k[2],
+                             mode='lines',
+                             name='ray'))
+    fig.update_layout(
+        title="RAM Usage: data-250k, groups-7",
+        xaxis_title="Time",
+        yaxis_title="RAM %",
+        legend_title="Legend",
+        font=dict(
+            family="Courier New, monospace",
+            size=18,
+            color="RebeccaPurple"
+        )
+    )
+
+    fig.show()
+
+    # ==================== 3 250k
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=time_3_250k[2], y=cpu_3_250k[2],
+                             mode='lines',
+                             name='multiprocessing'))
+    fig.add_trace(go.Scatter(x=time_3_250k[1], y=cpu_3_250k[1],
+                             mode='lines',
+                             name='multithreading'))
+    fig.add_trace(go.Scatter(x=time_3_250k[0], y=cpu_3_250k[0],
+                             mode='lines',
+                             name='ray'))
+    fig.update_layout(
+        title="CPU Usage: data-250k, groups-3",
+        xaxis_title="Time",
+        yaxis_title="CPU %",
+        legend_title="Legend",
+        font=dict(
+            family="Courier New, monospace",
+            size=18,
+            color="RebeccaPurple"
+        )
+    )
+
+    fig.show()
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=time_3_250k[2], y=ram_3_250k[2],
+                             mode='lines',
+                             name='multiprocessing'))
+    fig.add_trace(go.Scatter(x=time_3_250k[1], y=ram_3_250k[1],
+                             mode='lines',
+                             name='multithreading'))
+    fig.add_trace(go.Scatter(x=time_3_250k[0], y=ram_3_250k[0],
+                             mode='lines',
+                             name='ray'))
+    fig.update_layout(
+        title="RAM Usage: data-250k, groups-3",
+        xaxis_title="Time",
+        yaxis_title="RAM %",
+        legend_title="Legend",
+        font=dict(
+            family="Courier New, monospace",
+            size=18,
+            color="RebeccaPurple"
+        )
+    )
+
+    fig.show()
+
+    # ==================== 7 50k
+
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(x=time_7_50k[2], y=cpu_7_50k[2],
+                             mode='lines',
+                             name='multithreading'))
+    fig.add_trace(go.Scatter(x=time_7_50k[1], y=cpu_7_50k[1],
+                             mode='lines',
+                             name='multiprocessing'))
+    # fig.add_trace(go.Scatter(x=time_7_50k[0], y=cpu_7_50k[0],
+    #                          mode='lines',
+    #                          name='ray'))
+    fig.update_layout(
+        title="CPU Usage: data-50k, groups-7",
+        xaxis_title="Time",
+        yaxis_title="CPU %",
+        legend_title="Legend",
+        font=dict(
+            family="Courier New, monospace",
+            size=18,
+            color="RebeccaPurple"
+        )
+    )
+
+    fig.show()
+
+    # fig = go.Figure()
+    # fig.add_trace(go.Scatter(x=time_7_50k[1], y=ram_7_50k[1],
+    #                          mode='lines',
+    #                          name='multiprocessing'))
+    # fig.add_trace(go.Scatter(x=time_7_50k[0], y=ram_7_50k[0],
+    #                          mode='lines',
+    #                          name='multithreading'))
+    # fig.add_trace(go.Scatter(x=time_7_50k[2], y=ram_7_50k[2],
+    #                          mode='lines',
+    #                          name='ray'))
+    # fig.update_layout(
+    #     title="RAM Usage: data-50k, groups-7",
+    #     xaxis_title="Time",
+    #     yaxis_title="RAM %",
+    #     legend_title="Legend",
+    #     font=dict(
+    #         family="Courier New, monospace",
+    #         size=18,
+    #         color="RebeccaPurple"
+    #     )
+    # )
+    #
+    # fig.show()
 
 
 def main():
