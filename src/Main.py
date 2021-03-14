@@ -13,8 +13,8 @@ def main(argv=None):
     input_dir = PathProvider.input_250k
     zoom = '13'
     use_profile = False
-    method = 'mp'
-    groups = '3.1'
+    method = 'single'
+    groups = '1'
 
     opts, args = getopt.getopt(argv, 'kz:')
     for opt, arg in opts:
@@ -33,15 +33,15 @@ def main(argv=None):
     # --- Temp TODO: delete
     if not use_profile:
         zoom = '11'
-        input_dir = PathProvider.input_250kTmp + '13\\'
+        input_dir = PathProvider.input_250k
     else:
         zoom = '13'
-        input_dir = PathProvider.input_50k + '1\\'
+        input_dir = PathProvider.input_50k
     # ---
 
     Io.makeDirectories(PathProvider.log_dir)
 
-    logger_service = LoggerService(groups, interval=5, backup_count=15)
+    logger_service = LoggerService(groups, method, interval=10, backup_count=15)
 
     logger_service.start()
     es = ExecutorService(groups, input_dir, zoom, use_profile)

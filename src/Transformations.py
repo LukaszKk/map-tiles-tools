@@ -54,6 +54,7 @@ def gdalMerge(input_data, out_file, is_pct=False):
         additional_options = ['-a_nodata', '0',
                               '-co', 'PHOTOMETRIC=RGB']
     params = additional_options + [
+        '-ot', 'Byte',
         '-of', 'GTiff',
         '-co', 'COMPRESS=DEFLATE',
         '-co', 'BIGTIFF=YES',

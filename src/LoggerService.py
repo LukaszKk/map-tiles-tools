@@ -8,11 +8,12 @@ from Logger import Logger
 
 class LoggerService:
 
-    def __init__(self, groups, interval=600, backup_count=8):
+    def __init__(self, groups, method, interval=600, backup_count=8):
         self.logger = None
         self.init_time = 0
         self.interval = interval
         self.groups = groups
+        self.method = method
 
         self.logger = Logger().create_logger(backup_count)
         self.thread = threading.Thread(target=self.run)
@@ -48,6 +49,7 @@ class LoggerService:
             cpu_freq = psutil.cpu_freq()
             ram = psutil.virtual_memory().total
             self.logger.debug('Groups: {}'.format(self.groups))
+            self.logger.debug('Method: {}'.format(self.method))
             self.logger.debug('CPU count: {}'.format(cpu_count))
             self.logger.debug('CPU frequency: {}'.format(cpu_freq))
             self.logger.debug('Total RAM: {}\n'.format(ram))
