@@ -1,5 +1,6 @@
 import Transformations as Tr
 import IOperations as Io
+from PathProvider import PathProvider
 
 
 class ProcessService:
@@ -53,56 +54,84 @@ class ProcessService:
         Tr.gdalMerge(input_data=self.path_provider.output_data_path,
                      out_file=self.path_provider.merged_file)
 
-    def profileMergeSingleRun(self, input_dir):
-        self.__profilePrep(input_dir)
+    def profileMergeSingleRun(self, input_dir, use_profile, zoom):
+        # self.__profilePrep(input_dir)
 
-        Io.deleteDirectory(self.path_provider.output_data_path + '1\\')
-        Io.deleteDirectory(self.path_provider.output_data_path + '2\\')
-        Io.deleteDirectory(self.path_provider.output_data_path + '3\\')
-        Io.deleteDirectory(self.path_provider.output_data_path + '4\\')
+        Io.deleteDirectory(self.path_provider.output_tmp2_path + '0\\')
+        Io.deleteDirectory(self.path_provider.output_tmp2_path + '1\\')
+        Io.deleteDirectory(self.path_provider.output_tmp2_path + '2\\')
+        Io.deleteDirectory(self.path_provider.output_tmp2_path + '3\\')
+        Io.deleteDirectory(self.path_provider.output_tmp2_path + '4\\')
 
-        Io.makeDirectories(self.path_provider.output_data_path + '1\\')
-        Io.makeDirectories(self.path_provider.output_data_path + '2\\')
-        Io.makeDirectories(self.path_provider.output_data_path + '3\\')
-        Io.makeDirectories(self.path_provider.output_data_path + '4\\')
+        Io.makeDirectories(self.path_provider.output_tmp2_path + '0\\')
+        Io.makeDirectories(self.path_provider.output_tmp2_path + '1\\')
+        Io.makeDirectories(self.path_provider.output_tmp2_path + '2\\')
+        Io.makeDirectories(self.path_provider.output_tmp2_path + '3\\')
+        Io.makeDirectories(self.path_provider.output_tmp2_path + '4\\')
 
+        # Io.deleteFile(self.path_provider.merged_file)
+        # Io.makeDirectories(self.path_provider.output_merged_path)
+
+        # Io.deleteFile(self.path_provider.output_merged_path + 'merged1.tif')
+        # Io.deleteFile(self.path_provider.output_merged_path + 'merged2.tif')
+        # Io.deleteFile(self.path_provider.output_merged_path + 'merged3.tif')
+        # Io.deleteFile(self.path_provider.output_merged_path + 'merged4.tif')
+
+        # print('Merge 1')
+        # Tr.gdalMerge(input_data=self.path_provider.output_data_path + '1\\',
+        #              out_file=self.path_provider.output_merged_path + 'merged1.tif')
+        # print('Merge 2')
+        # Tr.gdalMerge(input_data=self.path_provider.output_data_path + '2\\',
+        #              out_file=self.path_provider.output_merged_path + 'merged2.tif')
+        # print('Merge 3')
+        # Tr.gdalMerge(input_data=self.path_provider.output_data_path + '3\\',
+        #              out_file=self.path_provider.output_merged_path + 'merged3.tif')
+        # print('Merge 4')
+        # Tr.gdalMerge(input_data=self.path_provider.output_data_path + '4\\',
+        #              out_file=self.path_provider.output_merged_path + 'merged4.tif')
+        # print('Merge all')
+        # Tr.gdalMerge(input_data=self.path_provider.output_merged_path,
+        #              out_file=self.path_provider.merged_file)
+
+        Io.copyFiles(input_dir, self.path_provider.output_tmp2_path + '0\\')
         reg = ('HP', 'HT', 'HU', 'HW', 'HX', 'HY', 'HZ', 'NA', 'NB', 'NC', 'ND',
                'NF', 'NG', 'NH', 'NJ', 'NK', 'NL', 'NM', 'NN', 'NO')
-        Io.moveFiles(self.path_provider.output_data_path,
-                     self.path_provider.output_data_path + '1\\', regex=reg)
+        Io.moveFiles(self.path_provider.output_tmp2_path + '0\\',
+                     self.path_provider.output_tmp2_path + '1\\', regex=reg)
         reg = ('NR', 'NS', 'NT', 'NU', 'NW', 'NX', 'NY', 'NZ', 'OV', 'SC', 'SD', 'SE', 'TA')
-        Io.moveFiles(self.path_provider.output_data_path,
-                     self.path_provider.output_data_path + '2\\', regex=reg)
+        Io.moveFiles(self.path_provider.output_tmp2_path + '0\\',
+                     self.path_provider.output_tmp2_path + '2\\', regex=reg)
         reg = ('SH', 'SJ', 'SK', 'TF', 'TG', 'SM', 'SN', 'SO', 'SP', 'TL', 'TM')
-        Io.moveFiles(self.path_provider.output_data_path,
-                     self.path_provider.output_data_path + '3\\', regex=reg)
+        Io.moveFiles(self.path_provider.output_tmp2_path + '0\\',
+                     self.path_provider.output_tmp2_path + '3\\', regex=reg)
         reg = ('SR', 'SS', 'ST', 'SU', 'TQ', 'TR', 'SV', 'SW', 'SX', 'SY', 'SZ', 'TV')
-        Io.moveFiles(self.path_provider.output_data_path,
-                     self.path_provider.output_data_path + '4\\', regex=reg)
+        Io.moveFiles(self.path_provider.output_tmp2_path + '0\\',
+                     self.path_provider.output_tmp2_path + '4\\', regex=reg)
+        Io.deleteDirectory(self.path_provider.output_tmp2_path + '0\\')
 
-        Io.deleteFile(self.path_provider.merged_file)
-        Io.makeDirectories(self.path_provider.output_merged_path)
+        path_provider = PathProvider("1\\")
+        ps = ProcessService(path_provider)
+        ps.profileMerge(self.path_provider.output_tmp2_path + '1\\')
+        ps.basicTile(not use_profile, zoom)
+        Io.deleteDirectory(self.path_provider.output_tmp2_path + '1\\')
 
-        Io.deleteFile(self.path_provider.output_merged_path + 'merged1.tif')
-        Io.deleteFile(self.path_provider.output_merged_path + 'merged2.tif')
-        Io.deleteFile(self.path_provider.output_merged_path + 'merged3.tif')
-        Io.deleteFile(self.path_provider.output_merged_path + 'merged4.tif')
+        path_provider = PathProvider("2\\")
+        ps = ProcessService(path_provider)
+        ps.profileMerge(self.path_provider.output_tmp2_path + '2\\')
+        ps.basicTile(not use_profile, zoom)
+        Io.deleteDirectory(self.path_provider.output_tmp2_path + '2\\')
 
-        print('Merge 1')
-        Tr.gdalMerge(input_data=self.path_provider.output_data_path + '1\\',
-                     out_file=self.path_provider.output_merged_path + 'merged1.tif')
-        print('Merge 2')
-        Tr.gdalMerge(input_data=self.path_provider.output_data_path + '2\\',
-                     out_file=self.path_provider.output_merged_path + 'merged2.tif')
-        print('Merge 3')
-        Tr.gdalMerge(input_data=self.path_provider.output_data_path + '3\\',
-                     out_file=self.path_provider.output_merged_path + 'merged3.tif')
-        print('Merge 4')
-        Tr.gdalMerge(input_data=self.path_provider.output_data_path + '4\\',
-                     out_file=self.path_provider.output_merged_path + 'merged4.tif')
-        print('Merge all')
-        Tr.gdalMerge(input_data=self.path_provider.output_merged_path,
-                     out_file=self.path_provider.merged_file)
+        path_provider = PathProvider("3\\")
+        ps = ProcessService(path_provider)
+        ps.profileMerge(self.path_provider.output_tmp2_path + '3\\')
+        ps.basicTile(not use_profile, zoom)
+        Io.deleteDirectory(self.path_provider.output_tmp2_path + '3\\')
+
+        path_provider = PathProvider("4\\")
+        ps = ProcessService(path_provider)
+        ps.profileMerge(self.path_provider.output_tmp2_path + '4\\')
+        ps.basicTile(not use_profile, zoom)
+        Io.deleteDirectory(self.path_provider.output_tmp2_path + '4\\')
 
     def basicTile(self, is_pct, zoom):
         print('Translating')

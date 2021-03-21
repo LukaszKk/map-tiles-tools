@@ -22,13 +22,12 @@ class ExecutorService:
         ps = ProcessService(path_provider)
 
         if self.use_profile:
-            ps.profileMergeSingleRun(self.input_dir)
+            ps.profileMergeSingleRun(self.input_dir, self.use_profile, self.zoom)
         else:
             ps.basicMerge(self.input_dir)
-        ps.basicTile(not self.use_profile, self.zoom)
-
-        Io.deleteDirectory(path_provider.output_data_path)
-        Io.deleteDirectory(path_provider.output_merged_path)
+            ps.basicTile(not self.use_profile, self.zoom)
+            Io.deleteDirectory(path_provider.output_data_path)
+            Io.deleteDirectory(path_provider.output_merged_path)
 
     def mergeTiles(self, path_providers):
         print("Merging tiles...")

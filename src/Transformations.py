@@ -63,6 +63,23 @@ def gdalMerge(input_data, out_file, is_pct=False):
     params = params + files_to_merge
     subprocess.call(["python", PathProvider.scripts_path + "gdal_merge.py"] + params)
 
+    # if is_pct:
+    #     additional_options = ['-srcnodata', '255']
+    # else:
+    #     additional_options = ['-srcnodata', '0',
+    #                           '-co', 'PHOTOMETRIC=RGB']
+    # params = additional_options + [
+    #     "--config", "GDAL_CACHEMAX", "512",
+    #     "-wm", "4096",
+    #     '-ot', 'Byte',
+    #     '-of', 'GTiff',
+    #     '-dstnodata', '0',
+    #     '-co', 'COMPRESS=DEFLATE',
+    #     '-co', 'BIGTIFF=YES'
+    # ]
+    # params = params + files_to_merge + [out_file]
+    # subprocess.call([PathProvider.env_path + 'Library\\bin\\gdalwarp.exe'] + params)
+
 
 def gdalTranslate(input_file, out_file, is_pct=False):
     if is_pct:
