@@ -22,13 +22,22 @@ class ExecutorService:
         ps = ProcessService(path_provider)
 
         if self.use_profile:
-            # ps.profileMergeSingleRun(self.input_dir, self.use_profile, self.zoom)
-            path_provider1 = PathProvider("1\\")
-            path_provider2 = PathProvider("2\\")
-            path_provider3 = PathProvider("3\\")
-            path_provider4 = PathProvider("4\\")
-            path_providers = [path_provider1, path_provider2, path_provider3, path_provider4]
+            path_providers = [GroupExecutor.singleExecute(self.groups_dir, 1, self.input_dir, self.zoom,
+                                                          self.use_profile),
+                              GroupExecutor.singleExecute(self.groups_dir, 2, self.input_dir, self.zoom,
+                                                          self.use_profile),
+                              GroupExecutor.singleExecute(self.groups_dir, 3, self.input_dir, self.zoom,
+                                                          self.use_profile)]
+
             self.mergeTiles(path_providers)
+
+            # ps.profileMergeSingleRun(self.input_dir, self.use_profile, self.zoom)
+            # path_provider1 = PathProvider("1\\")
+            # path_provider2 = PathProvider("2\\")
+            # path_provider3 = PathProvider("3\\")
+            # path_provider4 = PathProvider("4\\")
+            # path_providers = [path_provider1, path_provider2, path_provider3, path_provider4]
+            # self.mergeTiles(path_providers)
         else:
             ps.basicMerge(self.input_dir)
             ps.basicTile(not self.use_profile, self.zoom)

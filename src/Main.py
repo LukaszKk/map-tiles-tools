@@ -14,7 +14,7 @@ def main(argv=None):
     zoom = '13'
     use_profile = False
     method = 'single'
-    groups = '1'
+    groups = '3'
 
     opts, args = getopt.getopt(argv, 'kz:')
     for opt, arg in opts:
