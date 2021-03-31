@@ -159,10 +159,14 @@ def createCharts(output_dir, separator):
         xaxis_title="Time",
         yaxis_title="CPU %",
         legend_title="Legend",
+        xaxis_nticks=15,
         font=dict(
             family="Courier New, monospace",
-            size=18,
-            color="RebeccaPurple"
+            size=30,
+            color="black"
+        ),
+        legend=dict(
+            yanchor="auto"
         )
     )
 
@@ -183,10 +187,14 @@ def createCharts(output_dir, separator):
         xaxis_title="Time",
         yaxis_title="RAM %",
         legend_title="Legend",
+        xaxis_nticks=15,
         font=dict(
             family="Courier New, monospace",
-            size=18,
-            color="RebeccaPurple"
+            size=30,
+            color="black"
+        ),
+        legend=dict(
+            yanchor="auto"
         )
     )
 
@@ -209,10 +217,14 @@ def createCharts(output_dir, separator):
         xaxis_title="Time",
         yaxis_title="CPU %",
         legend_title="Legend",
+        xaxis_nticks=15,
         font=dict(
             family="Courier New, monospace",
-            size=18,
-            color="RebeccaPurple"
+            size=30,
+            color="black"
+        ),
+        legend=dict(
+            yanchor="auto"
         )
     )
 
@@ -233,10 +245,14 @@ def createCharts(output_dir, separator):
         xaxis_title="Time",
         yaxis_title="RAM %",
         legend_title="Legend",
+        xaxis_nticks=15,
         font=dict(
             family="Courier New, monospace",
-            size=18,
-            color="RebeccaPurple"
+            size=30,
+            color="black"
+        ),
+        legend=dict(
+            yanchor="auto"
         )
     )
 
@@ -275,10 +291,14 @@ def createCharts(output_dir, separator):
         xaxis_title="Time",
         yaxis_title="CPU %",
         legend_title="Legend",
+        xaxis_nticks=15,
         font=dict(
             family="Courier New, monospace",
-            size=18,
-            color="RebeccaPurple"
+            size=30,
+            color="black"
+        ),
+        legend=dict(
+            yanchor="auto"
         )
     )
 
@@ -311,10 +331,14 @@ def createCharts(output_dir, separator):
         xaxis_title="Time",
         yaxis_title="RAM %",
         legend_title="Legend",
+        xaxis_nticks=15,
         font=dict(
             family="Courier New, monospace",
-            size=18,
-            color="RebeccaPurple"
+            size=30,
+            color="black"
+        ),
+        legend=dict(
+            yanchor="auto"
         )
     )
 
@@ -353,10 +377,14 @@ def createCharts(output_dir, separator):
         xaxis_title="Time",
         yaxis_title="CPU %",
         legend_title="Legend",
+        xaxis_nticks=15,
         font=dict(
             family="Courier New, monospace",
-            size=18,
-            color="RebeccaPurple"
+            size=30,
+            color="black"
+        ),
+        legend=dict(
+            yanchor="auto"
         )
     )
 
@@ -389,10 +417,14 @@ def createCharts(output_dir, separator):
         xaxis_title="Time",
         yaxis_title="RAM %",
         legend_title="Legend",
+        xaxis_nticks=15,
         font=dict(
             family="Courier New, monospace",
-            size=18,
-            color="RebeccaPurple"
+            size=30,
+            color="black"
+        ),
+        legend=dict(
+            yanchor="auto"
         )
     )
 
@@ -408,10 +440,14 @@ def createCharts(output_dir, separator):
         xaxis_title="Time",
         yaxis_title="CPU %",
         legend_title="Legend",
+        xaxis_nticks=15,
         font=dict(
             family="Courier New, monospace",
-            size=18,
-            color="RebeccaPurple"
+            size=30,
+            color="black"
+        ),
+        legend=dict(
+            yanchor="auto"
         )
     )
 
@@ -425,10 +461,14 @@ def createCharts(output_dir, separator):
         xaxis_title="Time",
         yaxis_title="RAM %",
         legend_title="Legend",
+        xaxis_nticks=15,
         font=dict(
             family="Courier New, monospace",
-            size=18,
-            color="RebeccaPurple"
+            size=30,
+            color="black"
+        ),
+        legend=dict(
+            yanchor="auto"
         )
     )
 
@@ -453,10 +493,14 @@ def createCharts(output_dir, separator):
         xaxis_title="Time",
         yaxis_title="CPU %",
         legend_title="Legend",
+        xaxis_nticks=15,
         font=dict(
             family="Courier New, monospace",
-            size=18,
-            color="RebeccaPurple"
+            size=30,
+            color="black"
+        ),
+        legend=dict(
+            yanchor="auto"
         )
     )
 
@@ -474,10 +518,14 @@ def createCharts(output_dir, separator):
         xaxis_title="Time",
         yaxis_title="RAM %",
         legend_title="Legend",
+        xaxis_nticks=15,
         font=dict(
             family="Courier New, monospace",
-            size=18,
-            color="RebeccaPurple"
+            size=30,
+            color="black"
+        ),
+        legend=dict(
+            yanchor="auto"
         )
     )
 
