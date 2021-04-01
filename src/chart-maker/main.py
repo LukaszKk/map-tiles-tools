@@ -142,6 +142,8 @@ def createCharts(output_dir, separator):
                             file_idx_1_50k, True):
                 file_idx_1_50k = file_idx_1_50k + 1
 
+    y_ticks = 20
+
     # ==================== 7 250k
 
     fig = go.Figure()
@@ -261,19 +263,19 @@ def createCharts(output_dir, separator):
     # ==================== 7 50k
 
     time_7_50k_tmp = [time_7_50k[0][0]]
-    time_7_50k_tmp = time_7_50k_tmp + time_7_50k[0][::50]
+    time_7_50k_tmp = time_7_50k_tmp + time_7_50k[0][::y_ticks]
     time_7_50k_tmp.append(time_7_50k[0][len(time_7_50k[0]) - 1])
 
     cpu_7_50k_2_tmp = [cpu_7_50k[2][0]]
-    cpu_7_50k_2_tmp = cpu_7_50k_2_tmp + cpu_7_50k[2][::50]
+    cpu_7_50k_2_tmp = cpu_7_50k_2_tmp + cpu_7_50k[2][::y_ticks]
     cpu_7_50k_2_tmp.append(cpu_7_50k[2][len(cpu_7_50k[2]) - 1])
 
     cpu_7_50k_1_tmp = [cpu_7_50k[1][0]]
-    cpu_7_50k_1_tmp = cpu_7_50k_1_tmp + cpu_7_50k[1][::50]
+    cpu_7_50k_1_tmp = cpu_7_50k_1_tmp + cpu_7_50k[1][::y_ticks]
     cpu_7_50k_1_tmp.append(cpu_7_50k[1][len(cpu_7_50k[1]) - 1])
 
     cpu_7_50k_0_tmp = [cpu_7_50k[0][0]]
-    cpu_7_50k_0_tmp = cpu_7_50k_0_tmp + cpu_7_50k[0][::50]
+    cpu_7_50k_0_tmp = cpu_7_50k_0_tmp + cpu_7_50k[0][::y_ticks]
     cpu_7_50k_0_tmp.append(cpu_7_50k[0][len(cpu_7_50k[0]) - 1])
 
     fig = go.Figure()
@@ -305,15 +307,15 @@ def createCharts(output_dir, separator):
     fig.show()
 
     ram_7_50k_2_tmp = [ram_7_50k[2][0]]
-    ram_7_50k_2_tmp = ram_7_50k_2_tmp + ram_7_50k[2][::50]
+    ram_7_50k_2_tmp = ram_7_50k_2_tmp + ram_7_50k[2][::y_ticks]
     ram_7_50k_2_tmp.append(ram_7_50k[2][len(ram_7_50k[2]) - 1])
 
     ram_7_50k_1_tmp = [ram_7_50k[1][0]]
-    ram_7_50k_1_tmp = ram_7_50k_1_tmp + ram_7_50k[1][::50]
+    ram_7_50k_1_tmp = ram_7_50k_1_tmp + ram_7_50k[1][::y_ticks]
     ram_7_50k_1_tmp.append(ram_7_50k[1][len(ram_7_50k[1]) - 1])
 
     ram_7_50k_0_tmp = [ram_7_50k[0][0]]
-    ram_7_50k_0_tmp = ram_7_50k_0_tmp + ram_7_50k[0][::50]
+    ram_7_50k_0_tmp = ram_7_50k_0_tmp + ram_7_50k[0][::y_ticks]
     ram_7_50k_0_tmp.append(ram_7_50k[0][len(ram_7_50k[0]) - 1])
 
     fig = go.Figure()
@@ -347,19 +349,19 @@ def createCharts(output_dir, separator):
     # ==================== 3 50k
 
     time_3_50k_tmp = [time_3_50k[0][0]]
-    time_3_50k_tmp = time_3_50k_tmp + time_3_50k[0][::50]
+    time_3_50k_tmp = time_3_50k_tmp + time_3_50k[0][::y_ticks]
     time_3_50k_tmp.append(time_3_50k[0][len(time_3_50k[0]) - 1])
 
     cpu_3_50k_2_tmp = [cpu_3_50k[2][0]]
-    cpu_3_50k_2_tmp = cpu_3_50k_2_tmp + cpu_3_50k[2][::50]
+    cpu_3_50k_2_tmp = cpu_3_50k_2_tmp + cpu_3_50k[2][::y_ticks]
     cpu_3_50k_2_tmp.append(cpu_3_50k[2][len(cpu_3_50k[2]) - 1])
 
     cpu_3_50k_1_tmp = [cpu_3_50k[1][0]]
-    cpu_3_50k_1_tmp = cpu_3_50k_1_tmp + cpu_3_50k[1][::50]
+    cpu_3_50k_1_tmp = cpu_3_50k_1_tmp + cpu_3_50k[1][::y_ticks]
     cpu_3_50k_1_tmp.append(cpu_3_50k[1][len(cpu_3_50k[1]) - 1])
 
     cpu_3_50k_0_tmp = [cpu_3_50k[0][0]]
-    cpu_3_50k_0_tmp = cpu_3_50k_0_tmp + cpu_3_50k[0][::50]
+    cpu_3_50k_0_tmp = cpu_3_50k_0_tmp + cpu_3_50k[0][::y_ticks]
     cpu_3_50k_0_tmp.append(cpu_3_50k[0][len(cpu_3_50k[0]) - 1])
 
     fig = go.Figure()
@@ -391,15 +393,15 @@ def createCharts(output_dir, separator):
     fig.show()
 
     ram_3_50k_2_tmp = [ram_3_50k[2][0]]
-    ram_3_50k_2_tmp = ram_3_50k_2_tmp + ram_3_50k[2][::50]
+    ram_3_50k_2_tmp = ram_3_50k_2_tmp + ram_3_50k[2][::y_ticks]
     ram_3_50k_2_tmp.append(ram_3_50k[2][len(ram_3_50k[2]) - 1])
 
     ram_3_50k_1_tmp = [ram_3_50k[1][0]]
-    ram_3_50k_1_tmp = ram_3_50k_1_tmp + ram_3_50k[1][::50]
+    ram_3_50k_1_tmp = ram_3_50k_1_tmp + ram_3_50k[1][::y_ticks]
     ram_3_50k_1_tmp.append(ram_3_50k[1][len(ram_3_50k[1]) - 1])
 
     ram_3_50k_0_tmp = [ram_3_50k[0][0]]
-    ram_3_50k_0_tmp = ram_3_50k_0_tmp + ram_3_50k[0][::50]
+    ram_3_50k_0_tmp = ram_3_50k_0_tmp + ram_3_50k[0][::y_ticks]
     ram_3_50k_0_tmp.append(ram_3_50k[0][len(ram_3_50k[0]) - 1])
 
     fig = go.Figure()
@@ -477,11 +479,11 @@ def createCharts(output_dir, separator):
     # ==================== 1 50k
 
     time_1_50k_tmp = [time_1_50k[0]]
-    time_1_50k_tmp = time_1_50k_tmp + time_1_50k[::50]
+    time_1_50k_tmp = time_1_50k_tmp + time_1_50k[::y_ticks]
     time_1_50k_tmp.append(time_1_50k[len(time_1_50k) - 1])
 
     cpu_1_50k_tmp = [cpu_1_50k[0]]
-    cpu_1_50k_tmp = cpu_1_50k_tmp + cpu_1_50k[::50]
+    cpu_1_50k_tmp = cpu_1_50k_tmp + cpu_1_50k[::y_ticks]
     cpu_1_50k_tmp.append(cpu_1_50k[len(cpu_1_50k) - 1])
 
 
@@ -507,7 +509,7 @@ def createCharts(output_dir, separator):
     fig.show()
 
     ram_1_50k_tmp = [ram_1_50k[0]]
-    ram_1_50k_tmp = ram_1_50k_tmp + ram_1_50k[::50]
+    ram_1_50k_tmp = ram_1_50k_tmp + ram_1_50k[::y_ticks]
     ram_1_50k_tmp.append(ram_1_50k[len(ram_1_50k) - 1])
 
     fig = go.Figure()
