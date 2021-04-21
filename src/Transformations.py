@@ -8,6 +8,11 @@ from PathProvider import PathProvider
 
 Image.MAX_IMAGE_PIXELS = None
 
+'''
+Wrapper functions.
+Invocations of Gdal functions with parameters.
+'''
+
 
 def profileToProfile(input_data, out_path):
     files = Io.getFilesList(input_data)

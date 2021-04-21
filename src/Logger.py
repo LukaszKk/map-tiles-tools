@@ -2,7 +2,9 @@ import logging.handlers
 
 from PathProvider import PathProvider
 
-
+'''
+Logger
+'''
 class Logger:
 
     FILE = PathProvider.log_dir + 'logfile.log'

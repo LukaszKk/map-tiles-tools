@@ -2,13 +2,19 @@ import Transformations as Tr
 import IOperations as Io
 from PathProvider import PathProvider
 
-
+'''
+Wrapper class.
+Contains different generation elements.
+'''
 class ProcessService:
 
     def __init__(self, path_provider, file_names=()):
         self.path_provider = path_provider
         self.file_names = file_names
 
+    """
+    Copy and merge data.
+    """
     def basicMerge(self, input_dir):
         Io.deleteDirectory(self.path_provider.output_data_path)
         Io.makeDirectories(self.path_provider.output_data_path)
@@ -21,6 +27,9 @@ class ProcessService:
         Tr.gdalMerge(input_data=self.path_provider.output_data_path,
                      out_file=self.path_provider.merged_file, is_pct=True)
 
+    """
+    Copy and use profileToProfile.
+    """
     def __profilePrep(self, input_dir):
         Io.deleteDirectory(self.path_provider.output_tmp_path)
         Io.makeDirectories(self.path_provider.output_tmp_path)
@@ -45,6 +54,9 @@ class ProcessService:
         Io.deleteDirectory(self.path_provider.output_tmp_path)
         # Io.deleteDirectory(self.path_provider.output_tmp2_path)
 
+    """
+    Use profileToProfile and merge data.
+    """
     def profileMerge(self, input_dir):
         self.__profilePrep(input_dir)
 
@@ -54,6 +66,9 @@ class ProcessService:
         Tr.gdalMerge(input_data=self.path_provider.output_data_path,
                      out_file=self.path_provider.merged_file)
 
+    """
+    Merge in 4 consecutive steps.
+    """
     def profileMergeSingleRun(self, input_dir, use_profile, zoom):
         # self.__profilePrep(input_dir)
 
@@ -133,6 +148,9 @@ class ProcessService:
         ps.basicTile(not use_profile, zoom)
         Io.deleteDirectory(self.path_provider.output_tmp2_path + '4\\')
 
+    """
+    Translate, warp and generate tiles.
+    """
     def basicTile(self, is_pct, zoom):
         print('Translating')
         Io.deleteFile(self.path_provider.translated_file)

@@ -1,14 +1,17 @@
 import csv
 
-from PathProvider import PathProvider
-
-
+'''
+CSV reader class. 
+'''
 class CSVReader:
 
     def __init__(self):
         pass
 
-    # returns list of file names
+    """
+    Returns list of file names.
+    Reads from csv file with name combined with 'group' and <x> placed in <directory>.
+    """
     @staticmethod
     def read_group(directory, x):
         file = directory + 'group' + str(x) + '.csv'

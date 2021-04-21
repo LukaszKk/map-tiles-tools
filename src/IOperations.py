@@ -4,6 +4,10 @@ import shutil
 from PIL import Image
 from pathlib import Path
 
+'''
+Utility methods on IO. 
+'''
+
 
 def getFilesList(directory, file_ext='*.tif'):
     return glob.glob(directory + file_ext)

@@ -6,8 +6,19 @@ import threading
 from Logger import Logger
 
 
+'''
+Logger Service that take care about creating logger and logging messages.
+'''
 class LoggerService:
 
+    """
+    Creates and starts logger.
+    Parameters
+        groups : number of generation groups
+        method : method of generation
+        interval : number of seconds between consecutive messages
+        backup_count : number of backup files to hold on file system
+    """
     def __init__(self, groups, method, interval=600, backup_count=8):
         self.logger = None
         self.init_time = 0
@@ -58,6 +69,9 @@ class LoggerService:
         with self.lock:
             self.logger.info(message)
 
+    """
+    Stops logger and logs last message.
+    """
     def close(self):
         self.stop = True
         self.log()

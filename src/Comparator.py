@@ -9,7 +9,10 @@ from PIL import ImageChops
 from PathProvider import PathProvider
 
 
-# Unused. Compare 2 images
+'''
+UNUSED.
+Compare 2 images.
+'''
 
 
 def root_mean_square_diff(img1, img2):

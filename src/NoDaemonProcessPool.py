@@ -1,6 +1,9 @@
 import multiprocessing.pool
 
 
+'''
+Internal class.
+'''
 class NoDaemonProcess(multiprocessing.Process):
 
     @property
@@ -12,6 +15,9 @@ class NoDaemonProcess(multiprocessing.Process):
         pass
 
 
+'''
+Internal class.
+'''
 class NoDaemonProcessPool(multiprocessing.pool.Pool):
 
     def Process(self, *args, **kwds):

@@ -4,7 +4,9 @@ from CSVReader import CSVReader
 from ProcessService import ProcessService
 from PathProvider import PathProvider
 
-
+'''
+Internal executor for generating output of defined input read from csv file.
+'''
 class GroupExecutor:
 
     @staticmethod

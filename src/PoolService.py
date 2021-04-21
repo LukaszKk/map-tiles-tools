@@ -1,7 +1,9 @@
 import multiprocessing as mp
 
 
-# UNUSED
+'''
+UNUSED.
+'''
 class PoolService:
 
     def __init__(self):

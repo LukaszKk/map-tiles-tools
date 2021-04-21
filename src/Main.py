@@ -6,9 +6,30 @@ from LoggerService import LoggerService
 from PathProvider import PathProvider
 from ExecutorService import ExecutorService
 
+'''
+An application that generates raster data in XYZ format.
 
+Requirements
+    Gdal 3.1+ (conda install -c conda-forge/label/main gdal)
+    
+Parameters
+    k : generate output of input data 50k. If not defined generates output of input data 250k
+    z <level> : generate output data for defined <level>
+    m <method> : use one of below methods as a simultaneous way of generation
+        s, single : generate data without parallel mode. Parameter -g is ignored.
+        mt, multithreading : use multiple threads in parallel mode 
+        mp, multiprocessing : use multiple processes in parallel mode 
+        r, ray : use ray library in parallel mode
+    g <groups> : define number of groups to generate simultaneously
+    
+Example of execution
+    50k
+        python src\\Main.py -k -z 13 -m single -g 1
+    250K
+        python src\\Main.py -z 11 -m mp -g 7
+'''
 def main(argv=None):
-    print('Usage: python src\\Main.py [-k -z <zoom_levels>]')
+    print('Usage: python src\\Main.py [-k -z <zoom_levels> -m <method> -g <groups>]')
 
     input_dir = PathProvider.input_250k
     zoom = '13'
@@ -31,12 +52,12 @@ def main(argv=None):
         groups = groups + '-250'
 
     # --- Temp TODO: delete
-    if not use_profile:
-        zoom = '11'
-        input_dir = PathProvider.input_250k
-    else:
-        zoom = '13'
-        input_dir = PathProvider.input_50k
+    # if not use_profile:
+    #     zoom = '11'
+    #     input_dir = PathProvider.input_250k
+    # else:
+    #     zoom = '13'
+    #     input_dir = PathProvider.input_50k
     # ---
 
     Io.makeDirectories(PathProvider.log_dir)

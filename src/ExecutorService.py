@@ -9,6 +9,9 @@ from PathProvider import PathProvider
 from GroupExecutor import GroupExecutor
 
 
+'''
+Service that manages generation execution.
+'''
 class ExecutorService:
 
     def __init__(self, groups, input_dir, zoom, use_profile):
@@ -80,6 +83,9 @@ class ExecutorService:
             for i in range(1, count + 1)])
         self.mergeTiles(path_providers)
 
+    """
+    Executor that runs defined method.
+    """
     def execute(self, method):
         if method == 'single' or method == 's':
             self.__singleRun()

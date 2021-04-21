@@ -1,6 +1,9 @@
 import os
 
 
+'''
+Provides required paths in file system.
+'''
 class PathProvider:
 
     env_path = 'C:\\Users\\obliczenia\\anaconda3\\envs\\geo3\\'

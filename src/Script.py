@@ -7,6 +7,10 @@ import IOperations as Io
 from PIL import Image
 from PIL import ImageCms
 
+'''
+UNUSED.
+'''
+
 Image.MAX_IMAGE_PIXELS = None
 
 env_path = 'C:\\Users\\obliczenia\\anaconda3\\envs\\geo3\\'
