@@ -24,7 +24,7 @@ Parameters
     
 Example of execution
     50k
-        python src\\Main.py -k -z 13 -m single -g 1
+        python src\\Main.py -k -z 13 -m single -g 3
     250K
         python src\\Main.py -z 11 -m mp -g 7
 '''
@@ -37,7 +37,7 @@ def main(argv=None):
     method = 'single'
     groups = '3'
 
-    opts, args = getopt.getopt(argv, 'kz:')
+    opts, args = getopt.getopt(argv, 'kz:m:g:')
     for opt, arg in opts:
         if opt == '-k':
             use_profile = True
