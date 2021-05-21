@@ -1,6 +1,10 @@
 # Description
 An application that converts raster data to XYZ format.
-Requires data from British map agency in scale 1:250000 or 1:50000 put in a directory ./input/data/<250k or 50k>.
+
+Requires data from British map agency in scale 1:250000 or 1:50000 put in a directory ./input/data/<250k or 50k>
+
+An extra requirement for data 1:50000 is that input and output (RGB) color profile needs to be put in ./input/<x>.icc
+
 In case of using parallelism requires putting in a directory ./input/data/groups/<3 or 3-250 or 7 or 7-250> files with names group<x>.csv containing 2 columns (fileName,filePath) with a name and path to input files included in specified group. 
 
 ## Additional Requirements
